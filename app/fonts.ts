@@ -1,4 +1,4 @@
-import { Inter, Bodoni_Moda } from "next/font/google"
+import { Inter, Bodoni_Moda, Playfair_Display } from "next/font/google"
 import localFont from "next/font/local"
 
 // Load Inter font from Google Fonts
@@ -41,32 +41,12 @@ export const bodoni = localFont({
   fallback: ["Georgia", "serif"],
 })
 
-// Load Playfair Display from Google Fonts
-export const playfair = localFont({
-  src: [
-    {
-      path: "../public/fonts/PlayfairDisplay-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/PlayfairDisplay-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/PlayfairDisplay-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/PlayfairDisplay-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+// Load Playfair Display from Google Fonts instead of local files
+export const playfair = Playfair_Display({
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
   preload: true,
   fallback: ["Georgia", "serif"],
 })
