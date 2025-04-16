@@ -1,4 +1,4 @@
-import { CTA } from "@/components/ui/cta";
+import { CTA } from "@/components/cta";
 
 export default function CTADemoPage() {
   return (
