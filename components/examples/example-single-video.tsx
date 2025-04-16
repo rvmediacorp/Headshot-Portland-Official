@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { SingleVideo } from "./ui/single-video";
+import { SingleVideo } from "../single-video";
 
 export function ExampleSingleVideoSection() {
   return (

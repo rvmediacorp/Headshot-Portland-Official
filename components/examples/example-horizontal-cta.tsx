@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { HorizontalCTA } from "./horizontal-cta";
+import { HorizontalCTA } from "../horizontal-cta";
 
 export function ExampleHorizontalCTASection() {
   return (

@@ -1,4 +1,4 @@
-import { ExampleHorizontalCTASection } from "@/components/example-horizontal-cta";
+import { ExampleHorizontalCTASection } from "@/components/examples/example-horizontal-cta";
 
 export default function HorizontalCTAPage() {
   return <ExampleHorizontalCTASection />;
