@@ -35,7 +35,7 @@ export function CTA({
   return (
     <div 
       className={cn(
-        "relative rounded-lg overflow-hidden border border-black", 
+        "relative rounded-xl overflow-hidden border border-black", 
         backgroundImage && "rounded-xl",
         imageBgColor,
         className
@@ -57,7 +57,7 @@ export function CTA({
           className="w-full h-full object-cover"
         />
       ) : (
-        <div className="p-12">
+        <div className={`p-12 ${textColor}`}>
           <p className="italic text-2xl">Lorem Ipsum Dolor</p>
           <p className="mt-4">
             CLICK BOOK NOW FROM EITHER THE{" "}
