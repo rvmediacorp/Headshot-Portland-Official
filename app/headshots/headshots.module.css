@@ -12,6 +12,7 @@
   column-count: 2; /* 2 columns for mobile */
   column-gap: 12px;
   width: 100%;
+  contain: content; /* Improve performance with CSS containment */
 }
 
 .masonryItem {
@@ -24,6 +25,8 @@
   width: 100%;
   background-color: #000;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+  will-change: transform, opacity; /* Hint to browser for optimization */
+  contain: layout; /* Improve performance */
 }
 
 .masonryItem:hover {
@@ -42,6 +45,8 @@
   position: relative;
   width: 100%;
   display: block;
+  background-color: #1a1a1a; /* Placeholder color while image loads */
+  min-height: 100px; /* Minimum height to prevent layout shifts */
 }
 
 .masonryImage {
@@ -49,11 +54,29 @@
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.5s ease; /* Smooth fade in */
+}
+
+.masonryImageLoaded {
+  opacity: 1;
 }
 
 /* New item animation */
 .newItem {
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeInUp 0.8s ease-out forwards;
+  transform-origin: center bottom;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Video container styles */
@@ -112,10 +135,31 @@
 /* Loading animation */
 @keyframes fadeIn {
   from {
-    opacity: 0.5;
+    opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Skeleton loading animation */
+.skeletonPulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
   }
 }
 

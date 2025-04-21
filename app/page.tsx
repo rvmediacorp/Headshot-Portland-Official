@@ -13,10 +13,12 @@ import WhoWeWorkWithSection from "@/components/who-we-work-with-section"
 import LatestWorkSection from "@/components/latest-work-section"
 import VisitUsSection from "@/components/visit-us-section"
 import Footer from "@/components/footer"
+import GoogleAnalytics from "@/components/google-analytics"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-dark-bg text-white">
+      <GoogleAnalytics />
       <Navbar />
       <Hero />
       <QuotesSection />

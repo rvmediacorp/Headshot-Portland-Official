@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ArrowRight, ArrowUpRight, Instagram, Facebook, Star, Volume2, VolumeX, Play, Pause } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import styles from "./headshots.module.css"
+import GoogleAnalytics from "@/components/google-analytics"
 
 export default function HeadshotsPage() {
   // Your component state and logic
@@ -393,7 +394,12 @@ export default function HeadshotsPage() {
     if (page === 1) return // Skip for initial load
 
     const loadMoreItems = () => {
+      if (isLoading) return // Prevent multiple simultaneous loads
+
       setIsLoading(true)
+
+      // Calculate the height of the masonry grid before adding new items
+      const gridHeight = masonryRef.current?.offsetHeight || 0
 
       // Simulate network delay (shorter delay for better UX)
       setTimeout(() => {
@@ -406,26 +412,31 @@ export default function HeadshotsPage() {
         } else {
           // Track the IDs of new items for styling
           setNewItemsIds(newItems.map((item) => item.id))
+
+          // Add new items to the displayed items
           setDisplayedItems((prev) => [...prev, ...newItems])
 
-          // Clear the new items IDs after a short delay
+          // Clear the new items IDs after animation completes
           setTimeout(() => {
             setNewItemsIds([])
-          }, 1000)
+          }, 1500) // Match this with animation duration
         }
 
         setIsLoading(false)
-      }, 500) // Reduced from 800ms to 500ms
+      }, 300) // Reduced from 500ms to 300ms for better responsiveness
     }
 
     loadMoreItems()
-  }, [page])
+  }, [page, isLoading])
 
   // Set up intersection observer for infinite scroll
   useEffect(() => {
+    // Debounce function to prevent multiple triggers
+    let debounceTimer
+
     const options = {
       root: null, // Use the viewport as the root
-      rootMargin: "0px 0px 400px 0px", // Start loading when sentinel is 400px from viewport
+      rootMargin: "0px 0px 600px 0px", // Start loading when sentinel is 600px from viewport (increased from 400px)
       threshold: 0.1, // Trigger when 10% of the sentinel is visible
     }
 
@@ -433,7 +444,13 @@ export default function HeadshotsPage() {
       const [entry] = entries
 
       if (entry.isIntersecting && !isLoading && hasMore) {
-        setPage((prevPage) => prevPage + 1)
+        // Clear any existing timer
+        clearTimeout(debounceTimer)
+
+        // Set a new timer to debounce the page increment
+        debounceTimer = setTimeout(() => {
+          setPage((prevPage) => prevPage + 1)
+        }, 150) // Small debounce to prevent multiple triggers
       }
     }, options)
 
@@ -444,6 +461,7 @@ export default function HeadshotsPage() {
     observerRef.current = observer
 
     return () => {
+      clearTimeout(debounceTimer)
       if (observerRef.current) {
         observerRef.current.disconnect()
       }
@@ -529,6 +547,7 @@ export default function HeadshotsPage() {
 
   return (
     <main className={styles.container}>
+      <GoogleAnalytics />
       {/* Header and Hero Section - Wrapped in the same container structure */}
       <div className="w-full px-[10px] my-[10px]">
         <section
@@ -678,12 +697,17 @@ export default function HeadshotsPage() {
                   {item.type === "image" && (
                     <div className={styles.mediaContent}>
                       <div className={styles.masonryImageContainer}>
+                        <div className={styles.skeletonPulse}></div>
                         <Image
                           src={item.src || "/confident-professional.png"}
                           alt={item.alt || "Gallery image"}
                           width={800}
                           height={600}
-                          className={styles.masonryImage}
+                          className={`${styles.masonryImage} ${styles.masonryImageLoaded}`}
+                          loading="lazy"
+                          onLoadingComplete={(img) => {
+                            img.classList.add(styles.masonryImageLoaded)
+                          }}
                         />
                       </div>
                     </div>
@@ -812,14 +836,20 @@ export default function HeadshotsPage() {
               ))}
             </div>
 
-            {/* Loading Sentinel */}
+            {/* Loading Sentinel with improved visual feedback */}
             {hasMore && (
-              <div ref={loadingRef} className="h-10 w-full flex items-center justify-center my-8">
-                {isLoading && (
+              <div
+                ref={loadingRef}
+                className="h-20 w-full flex items-center justify-center my-8"
+                style={{ minHeight: isLoading ? "100px" : "0" }}
+              >
+                {isLoading ? (
                   <div className="flex flex-col items-center">
-                    <div className="h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#247BA0] border-r-transparent"></div>
-                    <p className="mt-2 text-gray-400 text-sm">Loading more...</p>
+                    <div className="h-10 w-10 animate-spin rounded-full border-4 border-solid border-[#247BA0] border-r-transparent"></div>
+                    <p className="mt-2 text-gray-400 text-sm">Loading more images...</p>
                   </div>
+                ) : (
+                  <div className="h-10 opacity-0">Loading trigger</div>
                 )}
               </div>
             )}
