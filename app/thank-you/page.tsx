@@ -123,7 +123,7 @@ export default function ThankYouPage() {
       <footer className="bg-black text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400 text-sm">
-            750 SW 9TH AVE | PORTLAND, OR 97205 • STUDIO HOURS | 8 AM—10 PM DAILY • 24/7 CUSTOMER SERVICE | 503-313-7121
+            805 SW Broadway | PORTLAND, OR 97205 • STUDIO HOURS | 8 AM—10 PM DAILY • 24/7 CUSTOMER SERVICE | 503-313-7121
           </p>
           <p className="mt-4 text-xs text-gray-500">
             © {new Date().getFullYear()} Headshot Portland. All rights reserved.

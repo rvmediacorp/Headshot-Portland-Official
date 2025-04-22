@@ -49,11 +49,11 @@ export default function Footer() {
           {/* Info Section - Desktop */}
           <div className="hidden md:flex md:justify-between md:items-center">
             <div className="flex items-center text-white text-sm">
-              <span>750 SW 9TH AVE | PORTLAND, OR 97205</span>
+              <span>805 SW Broadway | PORTLAND, OR 97205</span>
               <span className="mx-4 text-lg">•</span>
               <span>STUDIO HOURS | 8 AM—10 PM DAILY</span>
               <span className="mx-4 text-lg">•</span>
-              <span>24/7 CUSTOMER SERVICE | 509.840.7925</span>
+              <span>24/7 CUSTOMER SERVICE | 503.313.7121</span>
             </div>
             <Link
               href="/contact"
@@ -94,14 +94,14 @@ export default function Footer() {
             <div className="flex flex-col space-y-4 text-white text-sm mb-6">
               <div className="flex items-center">
                 <span className="mr-2 text-lg">•</span>
-                <span>750 SW 9TH AVE | PORTLAND, OR 97205</span>
+                <span>805 SW Broadway | PORTLAND, OR 97205</span>
               </div>
               <div className="flex items-center">
                 <span className="mr-2 text-lg">•</span>
                 <span>STUDIO HOURS | 8 AM—10 PM DAILY</span>
               </div>
               <div>
-                <span>24/7 CUSTOMER SERVICE | 509.840.7925</span>
+                <span>24/7 CUSTOMER SERVICE | 503.313.7121</span>
               </div>
             </div>
 
