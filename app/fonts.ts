@@ -24,13 +24,13 @@ export const bodoniModa = Bodoni_Moda({
 export const bodoni = localFont({
   src: [
     {
-      path: "./fonts/LTCBodoni175Pro-Regular.woff2",
+      path: "../public/fonts/LTCBodoni175Pro-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     // Uncomment and add additional weights when available
     // {
-    //   path: './fonts/LTCBodoni175Pro-Bold.woff2',
+    //   path: '../public/fonts/LTCBodoni175Pro-Bold.woff2',
     //   weight: '700',
     //   style: 'normal',
     // },
