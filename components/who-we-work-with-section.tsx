@@ -22,130 +22,130 @@ export default function WhoWeWorkWithSection() {
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
-  // Client headshot images for the grid
+  // Client headshot images for the grid - now with all 24 unique images
   const clientHeadshots = [
-    // First row - original images
+    // First row - first batch of images (0-11)
     {
       id: 1,
-      src: "/images/john-headshot.jpeg",
-      alt: "Professional headshot of man in navy suit",
+      src: "/images/wwwwgrid/intel-headshots-portland.webp",
+      alt: "Professional headshot of a young woman with long brown hair wearing a blue patterned blouse",
     },
     {
       id: 2,
-      src: "/images/angela-headshot.jpeg",
-      alt: "Professional headshot of woman in blue floral top",
+      src: "/images/wwwwgrid/kittelson-headshots-portland.webp",
+      alt: "Professional headshot of a young man with glasses wearing a navy blue suit with a patterned tie",
     },
     {
       id: 3,
-      src: "/images/cheryl-headshot.jpeg",
-      alt: "Professional headshot of woman in patterned jacket",
+      src: "/images/wwwwgrid/headshot-portland-studio.webp",
+      alt: "Professional headshot of a bald man with a mustache and earrings wearing a floral patterned shirt",
     },
     {
       id: 4,
-      src: "/images/maureen-headshot.jpeg",
-      alt: "Professional headshot of woman with shoulder-length brown hair",
+      src: "/images/wwwwgrid/headshot-portraits-erica.webp",
+      alt: "Professional headshot of a woman with shoulder-length brown hair wearing a navy blue top",
     },
     {
       id: 5,
-      src: "/images/man-glasses-headshot.jpeg",
-      alt: "Professional headshot of man with glasses",
+      src: "/images/wwwwgrid/headshot-portland-pdx-studio.webp",
+      alt: "Professional headshot of a woman with long black and silver hair wearing a black top with white trim",
     },
     {
       id: 6,
-      src: "/images/woman-white-top-headshot.jpeg",
-      alt: "Professional headshot of woman in white top",
+      src: "/images/wwwwgrid/executive-portraits-portland.webp",
+      alt: "Professional headshot of a man with dark hair wearing a navy blue suit and white shirt",
     },
     {
       id: 7,
-      src: "/images/tom-fisher-headshot.jpeg",
-      alt: "Professional headshot of man in navy suit",
+      src: "/images/wwwwgrid/doctor-headshots-portland.webp",
+      alt: "Professional headshot of a man with dark hair, beard and glasses wearing a white dotted shirt and burgundy tie",
     },
     {
       id: 8,
-      src: "/images/siddhi-headshot.jpeg",
-      alt: "Professional headshot of woman with red hair",
+      src: "/images/wwwwgrid/andrew-portland-headshot.webp",
+      alt: "Professional headshot of a middle-aged man with glasses and a beard wearing a black sweater over a navy shirt",
     },
     {
       id: 9,
-      src: "/images/valerie-headshot.jpeg",
-      alt: "Professional headshot of woman with short dark hair",
+      src: "/images/wwwwgrid/erik-portland-photographer.webp",
+      alt: "Professional headshot of a man with short brown hair and a beard wearing a navy blue suit with a patterned tie",
     },
     {
       id: 10,
-      src: "/images/man-plaid-jacket-headshot.jpeg",
-      alt: "Professional headshot of man with glasses in plaid jacket",
+      src: "/images/wwwwgrid/dental-headshots-portland.webp",
+      alt: "Professional headshot of a young Asian woman with long dark hair wearing a white button-up shirt",
     },
     {
       id: 11,
-      src: "/images/woman-hijab-headshot.jpeg",
-      alt: "Professional headshot of woman in hijab and black blazer",
+      src: "/images/wwwwgrid/portland-photo-studio-woman.webp",
+      alt: "Professional headshot of a middle-aged woman with shoulder-length gray/brown hair wearing a light blue button-up shirt",
     },
     {
       id: 12,
-      src: "/images/andrew-headshot.jpeg",
-      alt: "Professional headshot of man with beard and glasses",
+      src: "/images/wwwwgrid/scott-headshot-2191-Edit-2.webp",
+      alt: "Professional headshot of a man with brown hair and beard wearing a black shirt against a dark background",
     },
-
-    // Second row - new images (will be used for indices 12-19 in the grid)
+    // Second row - second batch of images (12-23)
     {
       id: 13,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/emily-headshot-04-03-253299%201%202.jpg-VmsMOaDmN9MMWdSK2k64n0VUyzlVTE.jpeg",
-      alt: "Professional headshot of woman with curly dark hair in black top and gold earrings",
+      src: "/images/wwwwgrid/portland-doctor-headshots.webp",
+      alt: "Professional headshot of a woman with black hair wearing a white and black patterned jacket and pearl necklace",
     },
     {
       id: 14,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/scott-headshot-2191-Edit-2.jpg-uozArjpKzrVoYRUvzXCjiASTBjJgDn.jpeg",
-      alt: "Professional headshot of man with short brown hair and beard in black shirt",
+      src: "/images/wwwwgrid/portland-photo-studios.webp",
+      alt: "Professional headshot of a person with short brown hair and glasses wearing a green polo shirt with colorful tattoo",
     },
     {
       id: 15,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/siddhi-307-Edit.jpg-5HqPigNI6jfHsV1B2SyzKLG5ESSiEB.jpeg",
-      alt: "Professional headshot of woman with reddish-brown hair in black top",
+      src: "/images/wwwwgrid/sahil-headshot-5085-Edit-2.webp",
+      alt: "Professional headshot of a young woman wearing a light gray hijab and black blazer over a white shirt",
     },
     {
       id: 16,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/erica%20headshot%20retouch-12778.jpg-dc7LJ5mpo0WtdXWx9uMVAED6KmNnny.jpeg",
-      alt: "Professional headshot of woman with straight brown hair in navy blue top against gray background",
+      src: "/images/wwwwgrid/law-headshots-portland.webp",
+      alt: "Professional headshot of a man with reddish-blonde hair, beard and glasses wearing a dark suit and gray tie",
     },
     {
       id: 17,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/austyn-lee-headshot-757-Edit-3.jpg-uXm9ianyJpmSwjwMymuuhGbN3EYrEO.jpeg",
-      alt: "Professional headshot of bald man with mustache and beard in floral patterned shirt with tattoos",
+      src: "/images/wwwwgrid/mercer-headshots-pdx.webp",
+      alt: "Professional headshot of a middle-aged man with gray hair, glasses wearing a patterned blazer and white shirt",
     },
     {
       id: 18,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/erik-vankeulen-headshot2353%201.jpg-lbKyJCRxzAkeuFhx79Bji8txdlCZCK.jpeg",
-      alt: "Professional headshot of man with dark hair and beard in navy blue suit with patterned tie",
+      src: "/images/wwwwgrid/non-profit-headshot-portland.webp",
+      alt: "Professional headshot of a woman with short dark curly hair wearing a black top and gold earrings",
     },
     {
       id: 19,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hannah-connell-1628-Edit-3.jpg-SOVodBaRNFm7E7FlUmsExRTtc5C8OR.jpeg",
-      alt: "Professional headshot of person with short brown hair and glasses in green polo shirt",
+      src: "/images/wwwwgrid/mercer-headshot-portland.webp",
+      alt: "Professional headshot of a woman with shoulder-length brown wavy hair wearing a white high-neck top",
     },
     {
       id: 20,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8-27-megan-headshot-3890-Edit-4.jpg-RF5IzkpIDaMGsbnyODK9ZiEQFAxv80.jpeg",
-      alt: "Professional headshot of woman with long brown hair in blue patterned top",
+      src: "/images/wwwwgrid/office-headshots-portland.webp",
+      alt: "Professional headshot of a young woman with shoulder-length dark hair wearing a blue floral patterned top",
     },
+    // Final batch of images (20-23)
     {
       id: 21,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cameron-headshot0916%202.jpg-u13EAaOwkeC8jwXPOGwtTMY30hfL3J.jpeg",
-      alt: "Professional headshot of man with reddish-blonde hair and beard wearing glasses, dark suit and light gray tie",
+      src: "/images/wwwwgrid/valerie-1519-Edit-2.webp",
+      alt: "Professional headshot of a woman with short dark hair wearing a black cardigan over a white top with a leaf pendant necklace",
     },
     {
       id: 22,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jilma-headshot1430%202%201%202.jpg-YROL2AP7I3Qcgk6MSDzqvufKTER8mL.jpeg",
-      alt: "Professional headshot of woman with long black and silver hair wearing a black top with decorative neckline",
+      src: "/images/wwwwgrid/siddhi-307-Edit-1.webp",
+      alt: "Professional headshot of a young woman with long reddish-brown hair wearing a black sleeveless top",
     },
     {
       id: 23,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/amy-headshot-2033-Edit-3.jpg-FHn7nXjcJeRNrVHBHzyHF4wJ6ZUzog.jpeg",
-      alt: "Professional headshot of young Asian woman with long dark hair in white button-up shirt with a bright smile",
+      src: "/images/wwwwgrid/siddhi-307-Edit.webp",
+      alt: "Professional headshot of a young woman with long reddish-brown hair wearing a black sleeveless top, alternate angle",
     },
     {
       id: 24,
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cameron-1291-Edit-3.jpg-8QcYr5penzrpBkv5M1dHdXvqrsfoQZ.jpeg",
-      alt: "Professional headshot of young man with glasses in navy blue suit and patterned tie",
+      src: "/images/wwwwgrid/tom-fisher-698-Edit-2.webp",
+      alt: "Professional headshot of a bald older man with a big smile wearing a navy patterned blazer and white shirt",
     },
   ]
 
@@ -235,24 +235,10 @@ export default function WhoWeWorkWithSection() {
           {/* Headshot Grid - 12 columns and 2 rows for desktop */}
           <div className="grid grid-cols-12 gap-0">
             {Array.from({ length: 24 }).map((_, index) => {
-              let headshotIndex
+              const headshot = getHeadshot(index)
 
-              if (index < 12) {
-                // First row - use original images (indices 0-11)
-                headshotIndex = index
-              } else if (index < 24) {
-                // Second row - use new images (indices 12-23)
-                headshotIndex = index
-              } else {
-                // Fallback - use images from first row
-                headshotIndex = index - 24
-              }
-
-              const headshot = getHeadshot(headshotIndex)
-
-              // Special styling for the 12th image in the second row (index 23)
-              const imageStyle =
-                index === 23 ? { objectFit: "cover", objectPosition: "center 25%" } : { objectFit: "cover" }
+              // Special styling for specific images if needed
+              const imageStyle = { objectFit: "cover" }
 
               return (
                 <div key={`grid-${index}`} className="aspect-square relative">
@@ -313,8 +299,8 @@ export default function WhoWeWorkWithSection() {
         <div className="md:hidden relative">
           {/* Headshot Grid - 2x4 for mobile */}
           <div className="grid grid-cols-2 gap-0">
-            {/* Show a mix of original and new images */}
-            {[0, 1, 2, 3, 12, 13, 14, 15].map((index) => {
+            {/* Show a diverse mix of images for mobile */}
+            {[0, 1, 21, 22, 12, 13, 23, 24].map((index) => {
               const headshot = getHeadshot(index)
               return (
                 <div key={`mobile-${index}`} className="aspect-square relative">
