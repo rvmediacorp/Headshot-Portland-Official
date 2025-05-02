@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight, Instagram, Facebook, Star } from "lucide-react"
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import styles from "./headshots.module.css"
 import GoogleAnalytics from "@/components/google-analytics"
 
@@ -452,12 +452,21 @@ export default function HeadshotsPage() {
     const thumbnailEl = document.getElementById(`thumbnail-${id}`)
 
     if (videoEl) {
+      // For mobile Safari, we need to ensure video is visible first
+      if (thumbnailEl) {
+        thumbnailEl.style.display = "none"
+      }
+
       if (videoEl.muted) {
         // First click: Keep playing but unmute
         videoEl.muted = false
-        if (thumbnailEl) {
-          thumbnailEl.style.display = "none"
-        }
+        // Force play for mobile Safari
+        videoEl.play().catch((error) => {
+          console.error("Error playing video:", error)
+          // Keep muted if unmuting fails (common on mobile)
+          videoEl.muted = true
+          videoEl.play().catch((err) => console.error("Still can't play:", err))
+        })
       } else if (videoEl.paused) {
         // If paused, play and unmute
         videoEl
@@ -470,6 +479,9 @@ export default function HeadshotsPage() {
           })
           .catch((error) => {
             console.error("Error playing video:", error)
+            // Try playing muted as fallback
+            videoEl.muted = true
+            videoEl.play().catch((err) => console.error("Still can't play:", err))
           })
       } else {
         // Already playing and unmuted, so pause
@@ -482,6 +494,28 @@ export default function HeadshotsPage() {
       }
     }
   }, [])
+
+  // Add this after the other useEffect hooks
+  useEffect(() => {
+    // Force autoplay for all videos on mobile Safari
+    const videoElements = document.querySelectorAll("video")
+    videoElements.forEach((video) => {
+      video.muted = true
+      video.setAttribute("playsinline", "")
+      video.setAttribute("muted", "")
+
+      // For iOS Safari specifically
+      video.playsInline = true
+
+      // Try to play the video
+      const playPromise = video.play()
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.error("Autoplay prevented:", error)
+        })
+      }
+    })
+  }, [allLoaded]) // Run when all images are loaded
 
   return (
     <main className={styles.container}>
@@ -705,7 +739,18 @@ export default function HeadshotsPage() {
                             muted
                             loop
                             autoPlay
-                            onLoadedMetadata={handleImageLoad}
+                            onLoadedMetadata={(e) => {
+                              // Force play on mobile Safari
+                              const video = e.currentTarget
+                              video.muted = true
+                              video.play().catch((err) => {
+                                console.log("Autoplay prevented:", err)
+                                // Show thumbnail as fallback
+                                const thumbnailEl = document.getElementById(`thumbnail-${item.id}`)
+                                if (thumbnailEl) thumbnailEl.style.display = "block"
+                              })
+                              handleImageLoad()
+                            }}
                             onError={handleImageLoad}
                           />
 

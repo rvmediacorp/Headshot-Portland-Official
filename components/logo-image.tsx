@@ -11,7 +11,7 @@ interface LogoProps {
 
 export default function LogoImage({ src, alt, width, height, className = "" }: LogoProps) {
   // Check if the image is an SVG
-  const isSvg = src.endsWith(".svg")
+  const isSvg = src && typeof src === "string" && src.endsWith(".svg")
 
   if (isSvg) {
     // For SVGs, use a regular img tag which handles SVGs better than Next.js Image in some cases

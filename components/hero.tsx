@@ -117,43 +117,114 @@ export default function Hero() {
       {/* Leave it to the Pros Section - Updated to match Figma design */}
       <section className="w-full relative mt-0 mb-0">
         <div className="relative">
-          {/* Remove the black background div that was here */}
-
           {/* Headshot Grid - Responsive grid of images with updated rows */}
           <div className="w-full relative overflow-hidden">
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 md:gap-2">
-              {/* Row 1 - First set of headshots */}
+              {/* Row 1 - First set of headshots - Alternating light/dark backgrounds */}
               <div className="aspect-square overflow-hidden">
                 <Image
-                  src="/images/john-headshot.jpeg"
+                  src="/images/HeroGrid18/angela-headshot-photo.webp"
+                  alt="Professional headshot of woman with dark hair in blue floral top"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square overflow-hidden">
+                <Image
+                  src="/images/HeroGrid18/abby-headshot-portland.webp"
+                  alt="Professional headshot of woman with reddish-brown hair in purple sweater"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square overflow-hidden">
+                <Image
+                  src="/images/HeroGrid18/austyn-portland-headshots.webp"
+                  alt="Professional headshot of bald man with mustache in floral shirt"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square overflow-hidden hidden sm:block">
+                <Image
+                  src="/images/HeroGrid18/john-headshot-portland.webp"
                   alt="Professional headshot of man in navy suit"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden hidden md:block">
                 <Image
-                  src="/images/angela-headshot.jpeg"
-                  alt="Professional headshot of woman in blue floral top"
+                  src="/images/HeroGrid18/cheryl-doctor-headshots.webp"
+                  alt="Professional headshot of woman in black and white checkered jacket"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden hidden md:block">
                 <Image
-                  src="/images/scott-black-shirt-headshot.jpeg"
+                  src="/images/HeroGrid18/scott-black-shirt-headshot.webp"
                   alt="Professional headshot of man in black shirt"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: "center 30%" }}
+                />
+              </div>
+
+              {/* Row 2 - Second set of headshots - Alternating light/dark backgrounds */}
+              <div className="aspect-square overflow-hidden">
+                <Image
+                  src="/images/HeroGrid18/headshot-portland-amy.webp"
+                  alt="Professional headshot of Asian woman in white button-up shirt"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square overflow-hidden">
+                <Image
+                  src="/images/HeroGrid18/cameron-suit-headshot.webp"
+                  alt="Professional headshot of young man with glasses in navy suit"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square overflow-hidden">
+                <Image
+                  src="/images/HeroGrid18/hannah-headshots-pdx.webp"
+                  alt="Professional headshot of person with short brown hair in green polo"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
                 <Image
-                  src="/images/maureen-new-headshot.jpeg"
+                  src="/images/HeroGrid18/valerie-headshot-photographer.webp"
+                  alt="Professional headshot of woman with short dark hair"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square overflow-hidden hidden md:block">
+                <Image
+                  src="/images/HeroGrid18/portland-headshot-studio-andrew.webp"
+                  alt="Professional headshot of man with glasses and beard"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-square overflow-hidden hidden md:block">
+                <Image
+                  src="/images/HeroGrid18/maureen-studio-headshot.webp"
                   alt="Professional headshot of woman with shoulder-length brown hair in light blue shirt"
                   width={200}
                   height={200}
@@ -161,114 +232,30 @@ export default function Hero() {
                   style={{ objectPosition: "center 20%" }}
                 />
               </div>
-              <div className="aspect-square overflow-hidden hidden md:block">
-                <Image
-                  src="/images/man-glasses-headshot.jpeg"
-                  alt="Professional headshot of man with glasses"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square overflow-hidden hidden md:block">
-                <Image
-                  src="/images/woman-white-top-headshot.jpeg"
-                  alt="Professional headshot of woman in white top"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
 
-              {/* Row 2 - Second set of headshots */}
+              {/* Row 3 - Third set of headshots - Alternating light/dark backgrounds */}
               <div className="aspect-square overflow-hidden">
                 <Image
-                  src="/images/tom-fisher-headshot.jpeg"
-                  alt="Professional headshot of man in navy suit"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/siddhi-headshot.jpeg"
-                  alt="Professional headshot of woman with red hair"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/valerie-headshot.jpeg"
-                  alt="Professional headshot of woman with short dark hair"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square overflow-hidden hidden sm:block">
-                <Image
-                  src="/images/man-plaid-jacket-headshot.jpeg"
-                  alt="Professional headshot of man with glasses in plaid jacket"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square overflow-hidden hidden md:block">
-                <Image
-                  src="/images/woman-hijab-headshot.jpeg"
+                  src="/images/HeroGrid18/woman-hijab-headshot-studio.webp"
                   alt="Professional headshot of woman in hijab and black blazer"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="aspect-square overflow-hidden hidden md:block">
+              <div className="aspect-square overflow-hidden">
                 <Image
-                  src="/images/andrew-headshot.jpeg"
-                  alt="Professional headshot of man with beard and glasses"
+                  src="/images/HeroGrid18/siddhi-headshot-photographer.webp"
+                  alt="Professional headshot of woman with reddish-brown hair"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* Row 3 - Updated with new headshot images */}
               <div className="aspect-square overflow-hidden">
                 <Image
-                  src="/images/amy-headshot.jpeg"
-                  alt="Professional headshot of young Asian woman with long dark hair in white shirt"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  style={{
-                    objectPosition: "center 20%",
-                    objectFit: "cover",
-                    transform: "scale(1.2)",
-                  }}
-                />
-              </div>
-              <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/cameron-suit-headshot.jpeg"
-                  alt="Professional headshot of man in navy suit"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  style={{
-                    objectPosition: "center 20%",
-                    objectFit: "cover",
-                    transform: "scale(1.4)",
-                  }}
-                />
-              </div>
-              <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/abby-purple-sweater-headshot.jpeg"
-                  alt="Professional headshot of woman in purple sweater"
+                  src="/images/HeroGrid18/woman-white-top-headshot-portraits.webp"
+                  alt="Professional headshot of woman in white top"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
@@ -276,8 +263,8 @@ export default function Hero() {
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
                 <Image
-                  src="/images/cheryl-headshot.jpeg"
-                  alt="Professional headshot of woman in patterned jacket"
+                  src="/images/HeroGrid18/headshot-medical-portland.webp"
+                  alt="Professional headshot of man with glasses and beard in white shirt and tie"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
@@ -285,8 +272,8 @@ export default function Hero() {
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
                 <Image
-                  src="/images/austyn-floral-shirt-headshot.jpeg"
-                  alt="Professional headshot of man in floral shirt"
+                  src="/images/HeroGrid18/tom-fisher-headshot-photographer.webp"
+                  alt="Professional headshot of man in navy suit"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
@@ -294,8 +281,8 @@ export default function Hero() {
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
                 <Image
-                  src="/images/hannah-green-polo-headshot.jpeg"
-                  alt="Professional headshot of person in green polo"
+                  src="/images/HeroGrid18/male-headshot-portland.webp"
+                  alt="Professional headshot of man with glasses in plaid jacket"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
