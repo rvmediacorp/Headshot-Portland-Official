@@ -57,7 +57,7 @@ export default function Hero() {
             muted
             loop
             playsInline
-            poster="/modern-photography-studio.png"
+            poster="/modern-photography-studio.webp"
           >
             <source
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshothero-pdhaIqDrwHMpqHtCjlzLW1nNsrRcPD.mp4"
@@ -128,6 +128,8 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -137,6 +139,8 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -146,6 +150,8 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
@@ -155,6 +161,8 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -164,6 +172,8 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -173,6 +183,8 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
+                  priority
                 />
               </div>
 
@@ -184,6 +196,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -193,6 +206,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -202,6 +216,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
@@ -211,6 +226,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -220,6 +236,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -229,6 +246,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                   style={{ objectPosition: "center 20%" }}
                 />
               </div>
@@ -241,6 +259,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -250,6 +269,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -259,6 +279,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
@@ -268,6 +289,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -277,6 +299,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -286,6 +309,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 639px) 33vw, (max-width: 767px) 25vw, 16.7vw"
                 />
               </div>
             </div>

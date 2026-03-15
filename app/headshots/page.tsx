@@ -13,26 +13,26 @@ export default function HeadshotsPage() {
     {
       id: 1,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-AB8I9699-Edit.jpg",
+      src: "/images/headshots-gallery/headshot-portland-AB8I9699-Edit.webp",
       alt: "Professional headshot of woman with brown hair in black blazer",
     },
     {
       id: 2,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-8-27-angela-headshot-3304-Edit-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-8-27-angela-headshot-3304-Edit-2.webp",
       alt: "Professional headshot of woman in blue floral patterned top",
     },
     {
       id: 3,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-angel-headshot-session2294.jpg",
+      src: "/images/headshots-gallery/headshot-portland-angel-headshot-session2294.webp",
       alt: "Professional headshot of man in dark suit with pink shirt",
     },
     {
       id: 4,
       type: "video",
       src: "https://rvideo.b-cdn.net/headshot-website-videos/headshot-photographer-portland-oregon.mp4",
-      poster: "/images/headshots-gallery/erica-headshot-portland_sm.jpeg",
+      poster: "/images/headshots-gallery/erica-headshot-portland_sm.webp",
       name: "Erica Carnrite",
       title: "VP Head of Data, Medtronic.",
       quote:
@@ -41,26 +41,26 @@ export default function HeadshotsPage() {
     {
       id: 5,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-8-27-megan-headshot-3890-Edit.jpg",
+      src: "/images/headshots-gallery/headshot-portland-8-27-megan-headshot-3890-Edit.webp",
       alt: "Professional headshot of woman with long brown hair in blue patterned shirt",
     },
     {
       id: 6,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-AB8I0521-2-Edit.jpg",
+      src: "/images/headshots-gallery/headshot-portland-AB8I0521-2-Edit.webp",
       alt: "Professional headshot of man with gray hair in blue plaid blazer",
     },
     {
       id: 7,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-amy-headshot-2033-Edit-3.jpg",
+      src: "/images/headshots-gallery/headshot-portland-amy-headshot-2033-Edit-3.webp",
       alt: "Professional headshot of Asian woman in white button-up shirt",
     },
     {
       id: 8,
       type: "video",
       src: "https://rvideo.b-cdn.net/headshot-website-videos/mark%20headshot%20testimonial.mp4",
-      poster: "/images/headshots-gallery/mark-headshot-portland-professional.jpg",
+      poster: "/images/headshots-gallery/mark-headshot-portland-professional.webp",
       name: "Mark Johnson",
       title: "Business Development Manager",
       quote:
@@ -69,25 +69,25 @@ export default function HeadshotsPage() {
     {
       id: 9,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-Andy-headshot-5257-Edit-3.jpg",
+      src: "/images/headshots-gallery/headshot-portland-Andy-headshot-5257-Edit-3.webp",
       alt: "Professional headshot of man with glasses in white lab coat",
     },
     {
       id: 10,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-abby-931-Edit-Edit-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-abby-931-Edit-Edit-2.webp",
       alt: "Professional headshot of woman with reddish-brown hair in purple turtleneck",
     },
     {
       id: 11,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-austyn-lee-headshot-757-Edit-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-austyn-lee-headshot-757-Edit-2.webp",
       alt: "Professional headshot of man with mustache and beard in floral shirt",
     },
     {
       id: 12,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-apple headshot photographer.jpg",
+      src: "/images/headshots-gallery/headshot-portland-apple headshot photographer.webp",
       alt: "Professional headshot of man with styled hair and beard in patterned shirt",
     },
     {
@@ -121,61 +121,61 @@ export default function HeadshotsPage() {
     {
       id: 16,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-bay area headshot.jpg",
+      src: "/images/headshots-gallery/headshot-portland-bay area headshot.webp",
       alt: "Professional headshot of man with reddish-blonde beard in light blue shirt against gray background",
     },
     {
       id: 17,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-cheryl-233-Edit.jpg",
+      src: "/images/headshots-gallery/headshot-portland-cheryl-233-Edit.webp",
       alt: "Professional headshot of woman with black hair in white and black tweed jacket with pearl jewelry",
     },
     {
       id: 18,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-chris--5.jpg",
+      src: "/images/headshots-gallery/headshot-portland-chris--5.webp",
       alt: "Professional headshot of bald man in gray suit jacket with white shirt",
     },
     {
       id: 19,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-Colby columbia wealth3545 1 1.jpg",
+      src: "/images/headshots-gallery/headshot-portland-Colby columbia wealth3545 1 1.webp",
       alt: "Professional headshot of man with glasses and mustache in navy suit with white shirt",
     },
     {
       id: 20,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-colby--5.jpg",
+      src: "/images/headshots-gallery/headshot-portland-colby--5.webp",
       alt: "Professional headshot of man with beard smiling in black denim jacket",
     },
     {
       id: 21,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-colby--6.jpg",
+      src: "/images/headshots-gallery/headshot-portland-colby--6.webp",
       alt: "Professional headshot of man with beard laughing in black denim jacket",
     },
     {
       id: 22,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-eddie-headshot3156.jpg",
+      src: "/images/headshots-gallery/headshot-portland-eddie-headshot3156.webp",
       alt: "Professional headshot of man with glasses in navy suit with blue shirt and striped tie",
     },
     {
       id: 23,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-emily-headshot-04-03-253415.jpg",
+      src: "/images/headshots-gallery/headshot-portland-emily-headshot-04-03-253415.webp",
       alt: "Professional headshot of woman with dark curly hair in light blue button-up shirt",
     },
     {
       id: 24,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-erica headshot retouch-12415-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-erica headshot retouch-12415-2.webp",
       alt: "Professional headshot of woman with brown hair in black top smiling broadly",
     },
     {
       id: 25,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-erica headshot retouch-12778-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-erica headshot retouch-12778-2.webp",
       alt: "Professional headshot of woman with brown hair in navy blue top with subtle smile",
     },
     {
@@ -395,25 +395,25 @@ export default function HeadshotsPage() {
     {
       id: 60,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-vestasteam-8019.jpg",
+      src: "/images/headshots-gallery/headshot-portland-vestasteam-8019.webp",
       alt: "Professional headshot of young man with brown hair and beard wearing a navy blue suit and light blue shirt against a gray background",
     },
     {
       id: 61,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-womens-headshots.jpg",
+      src: "/images/headshots-gallery/headshot-portland-womens-headshots.webp",
       alt: "Professional headshot of woman with blonde wavy hair wearing glasses and a green top against a gray background",
     },
     {
       id: 62,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-vestasteam-8681.jpg",
+      src: "/images/headshots-gallery/headshot-portland-vestasteam-8681.webp",
       alt: "Professional headshot of woman with short dark hair wearing a white and black plaid button-up shirt against a gray background",
     },
     {
       id: 63,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-vestasteam-8803.jpg",
+      src: "/images/headshots-gallery/headshot-portland-vestasteam-8803.webp",
       alt: "Professional headshot of woman with long blonde hair wearing a navy blazer with a patterned blouse against a gray background",
     },
   ]
@@ -542,10 +542,10 @@ export default function HeadshotsPage() {
                       <Image
                         src="/images/headshotportlandwhitelogo.png"
                         alt="Headshot Portland"
-                        fill
+                        width={100}
+                        height={34}
                         priority
-                        className="object-contain"
-                        style={{ maxWidth: "100px", width: "auto", height: "auto" }}
+                        className="object-contain h-auto"
                       />
                     </div>
                   </Link>
@@ -663,6 +663,7 @@ export default function HeadshotsPage() {
                         src={getImageSrc(item.src) || "/placeholder.svg"}
                         alt={item.alt || "Gallery image"}
                         className={styles.masonryImage}
+                        loading="lazy"
                         onLoad={handleImageLoad}
                         onError={handleImageLoad}
                       />
@@ -683,6 +684,7 @@ export default function HeadshotsPage() {
                                   src="/images/profile photos/trenten-profile-photo.jpg"
                                   alt="Trenten Cassity"
                                   className="w-full h-full object-cover"
+                                  loading="lazy"
                                   onLoad={handleImageLoad}
                                   onError={handleImageLoad}
                                 />
@@ -692,6 +694,7 @@ export default function HeadshotsPage() {
                                   src="/images/profile photos/tom-danowski-headshot.jpg"
                                   alt="Tom Danowski"
                                   className="w-full h-full object-cover"
+                                  loading="lazy"
                                   onLoad={handleImageLoad}
                                   onError={handleImageLoad}
                                 />
@@ -701,6 +704,7 @@ export default function HeadshotsPage() {
                                   src={getImageSrc(item.avatar) || "/placeholder.svg"}
                                   alt={`${item.name} avatar`}
                                   className="w-full h-full object-cover"
+                                  loading="lazy"
                                   onLoad={handleImageLoad}
                                   onError={handleImageLoad}
                                 />
@@ -760,6 +764,7 @@ export default function HeadshotsPage() {
                             src={getImageSrc(item.poster) || "/placeholder.svg"}
                             alt={`${item.name} video testimonial`}
                             className={`${styles.videoThumbnail} hidden`}
+                            loading="lazy"
                             onLoad={handleImageLoad}
                             onError={handleImageLoad}
                           />
