@@ -4,29 +4,29 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight, Instagram, Facebook, Star } from "lucide-react"
 import { useState, useCallback, useEffect } from "react"
-import styles from "./headshots.module.css"
+import styles from "./portraits.module.css"
 import GoogleAnalytics from "@/components/google-analytics"
 
-export default function HeadshotsPage() {
-  // Gallery items array
+export default function PortraitsPage() {
+  // Gallery items array — replace these with portrait images
   const galleryItems = [
     {
       id: 1,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-AB8I9699-Edit.jpg",
-      alt: "Professional headshot of woman with brown hair in black blazer",
+      alt: "Portrait photography example",
     },
     {
       id: 2,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-8-27-angela-headshot-3304-Edit-2.jpg",
-      alt: "Professional headshot of woman in blue floral patterned top",
+      alt: "Portrait photography example",
     },
     {
       id: 3,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-angel-headshot-session2294.jpg",
-      alt: "Professional headshot of man in dark suit with pink shirt",
+      alt: "Portrait photography example",
     },
     {
       id: 4,
@@ -42,19 +42,19 @@ export default function HeadshotsPage() {
       id: 5,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-8-27-megan-headshot-3890-Edit.jpg",
-      alt: "Professional headshot of woman with long brown hair in blue patterned shirt",
+      alt: "Portrait photography example",
     },
     {
       id: 6,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-AB8I0521-2-Edit.jpg",
-      alt: "Professional headshot of man with gray hair in blue plaid blazer",
+      alt: "Portrait photography example",
     },
     {
       id: 7,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-amy-headshot-2033-Edit-3.jpg",
-      alt: "Professional headshot of Asian woman in white button-up shirt",
+      alt: "Portrait photography example",
     },
     {
       id: 8,
@@ -70,25 +70,25 @@ export default function HeadshotsPage() {
       id: 9,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-Andy-headshot-5257-Edit-3.jpg",
-      alt: "Professional headshot of man with glasses in white lab coat",
+      alt: "Portrait photography example",
     },
     {
       id: 10,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-abby-931-Edit-Edit-2.jpg",
-      alt: "Professional headshot of woman with reddish-brown hair in purple turtleneck",
+      alt: "Portrait photography example",
     },
     {
       id: 11,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-austyn-lee-headshot-757-Edit-2.jpg",
-      alt: "Professional headshot of man with mustache and beard in floral shirt",
+      alt: "Portrait photography example",
     },
     {
       id: 12,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-apple headshot photographer.jpg",
-      alt: "Professional headshot of man with styled hair and beard in patterned shirt",
+      alt: "Portrait photography example",
     },
     {
       id: 13,
@@ -103,7 +103,7 @@ export default function HeadshotsPage() {
       id: 14,
       type: "cta",
       title: "Get Free Quote",
-      text: "Click here to get a quick and easy quote for your professional headshots",
+      text: "Click here to get a quick and easy quote for your portrait session",
       url: "https://ww3.headshotportland.com/instant-quote",
       color: "blue",
     },
@@ -122,321 +122,77 @@ export default function HeadshotsPage() {
       id: 16,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-bay area headshot.jpg",
-      alt: "Professional headshot of man with reddish-blonde beard in light blue shirt against gray background",
+      alt: "Portrait photography example",
     },
     {
       id: 17,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-cheryl-233-Edit.jpg",
-      alt: "Professional headshot of woman with black hair in white and black tweed jacket with pearl jewelry",
+      alt: "Portrait photography example",
     },
     {
       id: 18,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-chris--5.jpg",
-      alt: "Professional headshot of bald man in gray suit jacket with white shirt",
+      alt: "Portrait photography example",
     },
     {
       id: 19,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-Colby columbia wealth3545 1 1.jpg",
-      alt: "Professional headshot of man with glasses and mustache in navy suit with white shirt",
+      alt: "Portrait photography example",
     },
     {
       id: 20,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-colby--5.jpg",
-      alt: "Professional headshot of man with beard smiling in black denim jacket",
+      alt: "Portrait photography example",
     },
     {
       id: 21,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-colby--6.jpg",
-      alt: "Professional headshot of man with beard laughing in black denim jacket",
+      alt: "Portrait photography example",
     },
     {
       id: 22,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-eddie-headshot3156.jpg",
-      alt: "Professional headshot of man with glasses in navy suit with blue shirt and striped tie",
+      alt: "Portrait photography example",
     },
     {
       id: 23,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-emily-headshot-04-03-253415.jpg",
-      alt: "Professional headshot of woman with dark curly hair in light blue button-up shirt",
+      alt: "Portrait photography example",
     },
     {
       id: 24,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-erica headshot retouch-12415-2.jpg",
-      alt: "Professional headshot of woman with brown hair in black top smiling broadly",
+      alt: "Portrait photography example",
     },
     {
       id: 25,
       type: "image",
       src: "/images/headshots-gallery/headshot-portland-erica headshot retouch-12778-2.jpg",
-      alt: "Professional headshot of woman with brown hair in navy blue top with subtle smile",
+      alt: "Portrait photography example",
     },
     {
       id: 26,
       type: "cta",
       title: "Book Your Session",
-      text: "Ready to schedule? Book your headshot session directly on our calendar",
+      text: "Ready to schedule? Book your portrait session directly on our calendar",
       url: "https://ww3.headshotportland.com/instant",
       color: "green",
     },
-    // New headshots to add to the gallery
-    {
-      id: 27,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Jennifer%20Holland%20Headshot1603.jpg-oj8l6VjnXcMn4pJxFUZPCYgqwoPkuW.jpeg",
-      alt: "Professional headshot of woman with long reddish-brown hair in black top against gray background",
-    },
-    {
-      id: 28,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-headshot%20portland.jpg-OLy9UizNOYMq7ffxYsoAQqTn3uxQPg.jpeg",
-      alt: "Professional headshot of woman with short platinum blonde hair, red lipstick and black top against white background",
-    },
-    {
-      id: 29,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-headshots-9-10-4434-Edit-4.jpg-VfhTTfPWIXTtmUuYaSQyKizrOxo3e5.jpeg",
-      alt: "Professional headshot of young man with dark hair and beard in dark suit and white shirt",
-    },
-    {
-      id: 30,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Erik-Schmidt-Heashot1006.jpg-kIstIf2CUh3V5OW77PGtJYY7yw893u.jpeg",
-      alt: "Professional headshot of man with reddish-brown hair and beard in dark collared shirt against gray background",
-    },
-    {
-      id: 31,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-headshot%20portraits.jpg-EYxzW63wFHLHDPnQmWWjvzDR2xYMxS.jpeg",
-      alt: "Professional headshot of man with styled brown hair and beard in black shirt against gray background",
-    },
-    {
-      id: 32,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Headshots%202043.jpg-uIrJm7mQ8krG9jSoueIPYoRYXNOS1c.jpeg",
-      alt: "Professional headshot of woman with curly blonde hair in black textured top against dark background",
-    },
-    {
-      id: 33,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-headshots%20san%20francisco.jpg-w4a6ADfi9RnNJ8gVUxfWI3kJTLAxbA.jpeg",
-      alt: "Professional headshot of woman with shoulder-length brown hair in navy blue top against white background",
-    },
-    {
-      id: 34,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-headshots-9-10-4381-Edit.jpg-vqGj0JT0clawZHe8HkIdkTNV0s2kHF.jpeg",
-      alt: "Professional headshot of young man in dark suit and white shirt against outdoor greenery background",
-    },
-    {
-      id: 35,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Headshots_Denver-2-2.jpg-RINlybQu2VErsPgCg0R2n1BEgTWi0M.jpeg",
-      alt: "Professional headshot of woman with short curly dark hair in green cardigan over blue top against dark background",
-    },
-    {
-      id: 36,
-      type: "cta",
-      title: "Team Headshots",
-      text: "Need headshots for your entire team? Get special group pricing",
-      url: "https://ww3.headshotportland.com/for-teams",
-      color: "teal",
-    },
-    {
-      id: 37,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-headshots-9-10-4255-Edit.jpg-0fPtuGrKv2vzRyXz8pOxzVTMrMQb6B.jpeg",
-      alt: "Professional headshot of man with light brown hair, beard and glasses in navy suit and white shirt against gray background",
-    },
-    {
-      id: 38,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-leon-headshot-2856-Edit.jpg-aesjTh1P7FyuHYXoT6KlcFSj9YPcZy.jpeg",
-      alt: "Professional headshot of a young man with short dark hair in a black suit and white shirt against a gray background",
-    },
-    {
-      id: 39,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-john-headshot-2419-Edit-3.jpg-wVJ7CKpv1l0u9wRRjyPAG3i7LkFIzx.jpeg",
-      alt: "Professional headshot of a smiling man with dark hair in a navy suit and white shirt against a gray background",
-    },
-    {
-      id: 40,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-levi-headshot-after-.jpg-cTb4gUcvf7mAecKvV8euBv2YBV2Buf.jpeg",
-      alt: "Professional headshot of a young man with styled brown hair and beard in a black shirt against a dark gray background",
-    },
-    {
-      id: 41,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Jexport-7480.jpg-zWnWvMo61fi9Vu74fa3nn9xSgv5QYb.jpeg",
-      alt: "Professional headshot of a woman with shoulder-length blonde hair in a black top with arms crossed against a white background",
-    },
-    {
-      id: 42,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Mercer-1651-Edit-Edit-2.jpg-PCr9neQkpktFpcvCLdgtiwpFWrRzIt.jpeg",
-      alt: "Professional headshot of a woman with short curly hair and glasses wearing a striped shirt and mustard-colored jacket against a dark gray background",
-    },
-    {
-      id: 43,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Mercer-609-Edit-2.jpg-MlgFZVxLbUhzGcxLsGMaMJQjNA8M2m.jpeg",
-      alt: "Professional headshot of a smiling man with beard and short hair in a navy suit and blue shirt against a dark gray background",
-    },
-    {
-      id: 44,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-liveperson-.jpg-L3ZrEViXCqYTEWgDbGokC1vO0Qt66a.jpeg",
-      alt: "Professional headshot of a man with glasses and beard in a navy button-up shirt against a white background",
-    },
-    {
-      id: 45,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-kittleson%20headshot%20sam-headshot-5605-Edit.jpg-5DE1LYIiKEcpFzMbsrm5hReHyaRmTR.jpeg",
-      alt: "Professional headshot of a man with long curly blonde hair in a plaid button-up shirt against a gray background",
-    },
-    {
-      id: 46,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-joel-soltman-headshot1344.jpg-sIU0wYHhvfILlNIUDwmjHwqPzIxSvU.jpeg",
-      alt: "Professional headshot of a man with glasses and mustache in a navy patterned suit jacket and white shirt against a light gray background",
-    },
-    {
-      id: 47,
-      type: "testimonial",
-      name: "Trenten Cassity",
-      title: "Regional Sales, Nationwide Solar",
-      quote:
-        "Great experince working with Nathan, he is the man to go to for headshots and portraits in Portland! He took care of me, made me look great and I'll be back agai!",
-      avatar: "/images/profile photos/trenten-profile-photo.jpg",
-    },
-    {
-      id: 48,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Mercer-1308-Edit-2.jpg-1vLmNLR3dcwIp8SOnUadgKNP6CDmjI.jpeg",
-      alt: "Professional headshot of an older man with gray hair, glasses, wearing a patterned suit jacket and white shirt against a dark background",
-    },
-    {
-      id: 49,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-micah%20headshot-.jpg-s7z4RXsifnjN81rquKNKykvlH1zHpf.jpeg",
-      alt: "Professional headshot of young man with dark hair in a black button-up shirt against a white background",
-    },
-    {
-      id: 50,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-nten-13511.jpg-N7ZKSFTpHDJYQK3L2MVqi2tuMXBzWt.jpeg",
-      alt: "Professional headshot of woman wearing a tan hijab and black button-up shirt against a gray background",
-    },
-    {
-      id: 51,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Mikayla%20Montoya%20Headshot-4152-Edit.jpg-bk3KnsPcsE8mEkXcSlIiPCZTXFAy1O.jpeg",
-      alt: "Professional headshot of young woman with dark hair in a burgundy sleeveless turtleneck top against a gray background",
-    },
-    {
-      id: 52,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Tom%20Fisher-698-Edit.jpg-yrZnS6IWAbUpl77BnAe3VtymuSsGq9.jpeg",
-      alt: "Professional headshot of bald man with a big smile wearing a navy patterned suit jacket and white shirt against a gray background",
-    },
-    {
-      id: 53,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Philip--4.jpg-mboJB3gaHc72ZEDCqonf0MkMqmXWBb.jpeg",
-      alt: "Professional headshot of middle-aged man with brown hair in a black button-up shirt against a white background",
-    },
-    {
-      id: 54,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Philip--2.jpg-QKkvSjBrxm4ixXoruraLxx6B49c4d9.jpeg",
-      alt: "Professional headshot of man with brown hair in a black button-up shirt against a light blue background",
-    },
-    {
-      id: 55,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-Non%20Profit%20Headshot%20Photographer.jpg-yYBiijYHCif85zoiRaG2E6XiHwWmxL.jpeg",
-      alt: "Professional headshot of woman wearing a tan hijab and black button-up shirt against a neutral background",
-    },
-    {
-      id: 56,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-scott-headshot-2191-Edit.jpg-AJMZ5ybNJLx0CMFV05lR86Jr6ggnRt.jpeg",
-      alt: "Professional headshot of man with brown hair and beard in a black shirt against a gray background",
-    },
-    {
-      id: 57,
-      type: "cta",
-      title: "Contact Us",
-      text: "Have questions? Reach out to our team for personalized assistance",
-      url: "https://ww3.headshotportland.com/contact",
-      color: "purple",
-    },
-    {
-      id: 58,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-scott-headshot-2762-Edit.jpg-9SplBI4EjSTyMtVxVGU7j6r0XaZ9TS.jpeg",
-      alt: "Professional headshot of man with brown hair and beard in a blue linen shirt against a gray background",
-    },
-    {
-      id: 59,
-      type: "image",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshot-portland-sahil-headshot-5085-Edit.jpg-w8naFiXKKl6QKdLC8tnEFeaPvtxKDH.jpeg",
-      alt: "Professional headshot of young woman wearing a light gray hijab, white shirt and black blazer against a light gray background",
-    },
-    {
-      id: 60,
-      type: "image",
-      src: "/images/headshots-gallery/headshot-portland-vestasteam-8019.jpg",
-      alt: "Professional headshot of young man with brown hair and beard wearing a navy blue suit and light blue shirt against a gray background",
-    },
-    {
-      id: 61,
-      type: "image",
-      src: "/images/headshots-gallery/headshot-portland-womens-headshots.jpg",
-      alt: "Professional headshot of woman with blonde wavy hair wearing glasses and a green top against a gray background",
-    },
-    {
-      id: 62,
-      type: "image",
-      src: "/images/headshots-gallery/headshot-portland-vestasteam-8681.jpg",
-      alt: "Professional headshot of woman with short dark hair wearing a white and black plaid button-up shirt against a gray background",
-    },
-    {
-      id: 63,
-      type: "image",
-      src: "/images/headshots-gallery/headshot-portland-vestasteam-8803.jpg",
-      alt: "Professional headshot of woman with long blonde hair wearing a navy blazer with a patterned blouse against a gray background",
-    },
   ]
 
-  // State for tracking loaded images
-  const [loadedCount, setLoadedCount] = useState(0)
   const [allLoaded, setAllLoaded] = useState(false)
 
-  // Count total images and videos that need to load
-  const totalItems = galleryItems.filter(
-    (item) => item.type === "image" || (item.type === "video" && item.poster),
-  ).length
-
-  // Handle image load
-  const handleImageLoad = useCallback(() => {
-    setLoadedCount((prev) => {
-      const newCount = prev + 1
-      if (newCount >= totalItems) {
-        setAllLoaded(true)
-      }
-      return newCount
-    })
-  }, [totalItems])
+  useEffect(() => {
+    setAllLoaded(true)
+  }, [])
 
   // Function to handle image errors and provide fallbacks
   const getImageSrc = useCallback((src) => {
@@ -452,23 +208,18 @@ export default function HeadshotsPage() {
     const thumbnailEl = document.getElementById(`thumbnail-${id}`)
 
     if (videoEl) {
-      // For mobile Safari, we need to ensure video is visible first
       if (thumbnailEl) {
         thumbnailEl.style.display = "none"
       }
 
       if (videoEl.muted) {
-        // First click: Keep playing but unmute
         videoEl.muted = false
-        // Force play for mobile Safari
         videoEl.play().catch((error) => {
           console.error("Error playing video:", error)
-          // Keep muted if unmuting fails (common on mobile)
           videoEl.muted = true
           videoEl.play().catch((err) => console.error("Still can't play:", err))
         })
       } else if (videoEl.paused) {
-        // If paused, play and unmute
         videoEl
           .play()
           .then(() => {
@@ -479,15 +230,12 @@ export default function HeadshotsPage() {
           })
           .catch((error) => {
             console.error("Error playing video:", error)
-            // Try playing muted as fallback
             videoEl.muted = true
             videoEl.play().catch((err) => console.error("Still can't play:", err))
           })
       } else {
-        // Already playing and unmuted, so pause
         videoEl.pause()
         videoEl.muted = true
-        // Show thumbnail when video is paused
         if (thumbnailEl) {
           thumbnailEl.style.display = "block"
         }
@@ -495,19 +243,15 @@ export default function HeadshotsPage() {
     }
   }, [])
 
-  // Add this after the other useEffect hooks
+  // Force autoplay for all videos on mobile Safari
   useEffect(() => {
-    // Force autoplay for all videos on mobile Safari
     const videoElements = document.querySelectorAll("video")
     videoElements.forEach((video) => {
       video.muted = true
       video.setAttribute("playsinline", "")
       video.setAttribute("muted", "")
-
-      // For iOS Safari specifically
       video.playsInline = true
 
-      // Try to play the video
       const playPromise = video.play()
       if (playPromise !== undefined) {
         playPromise.catch((error) => {
@@ -515,7 +259,7 @@ export default function HeadshotsPage() {
         })
       }
     })
-  }, [allLoaded]) // Run when all images are loaded
+  }, [allLoaded])
 
   return (
     <main className={styles.container}>
@@ -552,12 +296,12 @@ export default function HeadshotsPage() {
                 <nav>
                   <ul className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
                     <li>
-                      <Link href="/headshots" className="bg-white text-[#247BA0] px-4 py-2 rounded">
+                      <Link href="/headshots" className="hover:underline">
                         HEADSHOTS
                       </Link>
                     </li>
                     <li>
-                      <Link href="/portraits" className="hover:underline">
+                      <Link href="/portraits" className="bg-white text-[#247BA0] px-4 py-2 rounded">
                         PORTRAITS
                       </Link>
                     </li>
@@ -596,9 +340,9 @@ export default function HeadshotsPage() {
           <div className="w-full text-white py-16 md:py-24 px-4 md:px-8 lg:px-16">
             <div className="container mx-auto text-center">
               <h1 className="font-bodoniModa text-4xl md:text-5xl lg:text-6xl mb-6 tracking-wide">
-                PROFESSIONAL HEADSHOT GALLERY
+                PORTRAIT GALLERY
               </h1>
-              <p className="font-playfair text-xl md:text-2xl mb-12">Your best headshot ever is a few clicks away</p>
+              <p className="font-playfair text-xl md:text-2xl mb-12">Stunning portraits that capture who you are</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="https://ww3.headshotportland.com/instant-quote"
@@ -642,16 +386,6 @@ export default function HeadshotsPage() {
               Our Latest Work
             </h2>
 
-            {/* Loading indicator */}
-            {!allLoaded && (
-              <div className="text-center mb-8">
-                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#247BA0] border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
-                <p className="mt-2 text-gray-400">
-                  Loading gallery... ({loadedCount}/{totalItems})
-                </p>
-              </div>
-            )}
-
             {/* Masonry Gallery */}
             <div className={styles.masonryContainer}>
               <div className={styles.masonryGrid}>
@@ -662,8 +396,6 @@ export default function HeadshotsPage() {
                         src={getImageSrc(item.src) || "/placeholder.svg"}
                         alt={item.alt || "Gallery image"}
                         className={styles.masonryImage}
-                        onLoad={handleImageLoad}
-                        onError={handleImageLoad}
                       />
                     )}
 
@@ -677,34 +409,21 @@ export default function HeadshotsPage() {
                         <div className="mb-3 sm:mb-4">
                           <div className="flex items-start gap-3 sm:gap-4">
                             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex-shrink-0 hidden sm:block">
-                              {item.id === 47 && (
-                                <img
-                                  src="/images/profile photos/trenten-profile-photo.jpg"
-                                  alt="Trenten Cassity"
-                                  className="w-full h-full object-cover"
-                                  onLoad={handleImageLoad}
-                                  onError={handleImageLoad}
-                                />
-                              )}
-                              {item.id !== 47 && item.id === 13 && (
+                              {item.id === 13 && (
                                 <img
                                   src="/images/profile photos/tom-danowski-headshot.jpg"
                                   alt="Tom Danowski"
                                   className="w-full h-full object-cover"
-                                  onLoad={handleImageLoad}
-                                  onError={handleImageLoad}
                                 />
                               )}
-                              {item.id !== 47 && item.id !== 13 && item.avatar && (
+                              {item.id !== 13 && item.avatar && (
                                 <img
                                   src={getImageSrc(item.avatar) || "/placeholder.svg"}
                                   alt={`${item.name} avatar`}
                                   className="w-full h-full object-cover"
-                                  onLoad={handleImageLoad}
-                                  onError={handleImageLoad}
                                 />
                               )}
-                              {item.id !== 47 && item.id !== 13 && !item.avatar && (
+                              {item.id !== 13 && !item.avatar && (
                                 <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                                   <span className="text-xs text-gray-500">Avatar</span>
                                 </div>
@@ -739,18 +458,14 @@ export default function HeadshotsPage() {
                             loop
                             autoPlay
                             onLoadedMetadata={(e) => {
-                              // Force play on mobile Safari
                               const video = e.currentTarget
                               video.muted = true
                               video.play().catch((err) => {
                                 console.log("Autoplay prevented:", err)
-                                // Show thumbnail as fallback
                                 const thumbnailEl = document.getElementById(`thumbnail-${item.id}`)
                                 if (thumbnailEl) thumbnailEl.style.display = "block"
                               })
-                              handleImageLoad()
                             }}
-                            onError={handleImageLoad}
                           />
 
                           {/* Thumbnail image */}
@@ -759,8 +474,6 @@ export default function HeadshotsPage() {
                             src={getImageSrc(item.poster) || "/placeholder.svg"}
                             alt={`${item.name} video testimonial`}
                             className={`${styles.videoThumbnail} hidden`}
-                            onLoad={handleImageLoad}
-                            onError={handleImageLoad}
                           />
 
                           {/* Gradient overlay */}
