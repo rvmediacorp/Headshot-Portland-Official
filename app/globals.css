@@ -2,12 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Uncomment to use additional font-face declarations */
-/* @import './font-face.css'; */
+@font-face {
+  font-family: 'LTCBodoni175Pro';
+  src: url('/fonts/LTCBodoni175Pro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  --teal-blue: #2a8caa;
-  --dark-bg: #000000;
+  /* ── Brand Teal ── */
+  --color-brand-teal:       oklch(0.598 0.098 222.899); /* #2A8CAA — primary */
+  --color-brand-teal-hover: oklch(0.491 0.083 226.288); /* #1d6a85 — hover   */
+  --color-brand-teal-deep:  oklch(0.332 0.041 229.699); /* #1E3A47 — heading */
+
+  /* ── Dark backgrounds ── */
+  --color-ink-black:  oklch(0 0 0);                     /* #000000 — page bg       */
+  --color-ink:        oklch(0.165 0.003 325.695);        /* #0F0E0F — section bg    */
+  --color-ink-footer: oklch(0.190 0.005 325.775);        /* #151315 — footer        */
+  --color-ink-card:   oklch(0.224 0.002 325.658);        /* #1C1B1C — dark card     */
+  --color-ink-border: oklch(0.228 0.002 325.656);        /* #1D1C1D — card border   */
+
+  /* ── Light surfaces ── */
+  --color-white:        oklch(1 0 0);                    /* #FFFFFF                 */
+  --color-off-white:    oklch(0.994 0.005 325.614);      /* #FFFCFF — btn border    */
+  --color-surface-teal: oklch(0.944 0.015 222.685);      /* #E2EFF4 — light teal    */
+  --color-surface-gray: oklch(0.955 0 0);                /* #F0F0F0 — light gray    */
+  --color-cream:        oklch(0.961 0.024 71.473);       /* #FDF0E1 — warm cream    */
+
+  /* ── Text ── */
+  --color-muted-text:  oklch(0.789 0 0);                 /* #BABABA — muted         */
+  --color-subtle-text: oklch(0.608 0.002 325.6);         /* #838283 — secondary     */
+  --color-faint-text:  oklch(0.888 0 0);                 /* #DADADA — faint/fallback*/
+
+  /* ── Accents ── */
+  --color-star:      oklch(0.793 0.171 70.67);           /* #FFA500 — star rating   */
+  --color-star-gold: oklch(0.844 0.172 84.934);          /* #FFC107 — star gold     */
+
+  /* ── Legacy aliases — keep existing classes working ── */
+  --teal-blue:   var(--color-brand-teal);
+  --dark-bg:     var(--color-ink-black);
+  --font-bodoni: 'LTCBodoni175Pro', Georgia, serif;
 }
 
 body {
@@ -101,8 +136,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1.5rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
 }
 
 .cta-primary {

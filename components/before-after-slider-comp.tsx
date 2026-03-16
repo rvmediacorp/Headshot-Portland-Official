@@ -97,12 +97,12 @@ function BeforeAfterSlider({
     >
       {/* Before Image (Full width) */}
       <div className="absolute inset-0">
-        <Image src={beforeImage || "/placeholder.svg"} alt="Before image" fill className="object-cover" />
+        <Image src={beforeImage || "/placeholder.svg"} alt="Before image" fill className="object-cover" loading="eager" />
       </div>
 
       {/* After Image (Clipped) */}
       <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}>
-        <Image src={afterImage || "/placeholder.svg"} alt="After image" fill className="object-cover" />
+        <Image src={afterImage || "/placeholder.svg"} alt="After image" fill className="object-cover" loading="eager" />
       </div>
 
       {/* Slider Input */}

@@ -1,4 +1,3 @@
-import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import QuotesSection from "@/components/quotes-section"
 import CreativeProcess from "@/components/creative-process"
@@ -19,7 +18,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-dark-bg text-white">
       <GoogleAnalytics />
-      <Navbar />
       <Hero />
       <QuotesSection />
       <CreativeProcess />

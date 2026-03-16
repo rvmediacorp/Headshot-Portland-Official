@@ -1,28 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export default function LatestWorkSection() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
-
   // Latest work data
   const latestWork = [
     {
@@ -155,7 +137,7 @@ export default function LatestWorkSection() {
 
           {/* View Gallery Button */}
           <div className="flex justify-center mb-8">
-            <Link href="/gallery" className="bg-[#247BA0] text-white font-bold py-3 px-8 rounded-md text-center">
+            <Link href="/gallery" className="bg-[#247BA0] text-white font-bold py-3 px-8 rounded-full text-center">
               VIEW GALLERY
             </Link>
           </div>

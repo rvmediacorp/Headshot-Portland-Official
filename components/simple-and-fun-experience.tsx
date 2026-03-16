@@ -1,24 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 export default function SimpleAndFunExperience() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
+  const isMobile = useIsMobile()
 
   return (
     <div className="w-full px-[10px] my-[10px]">

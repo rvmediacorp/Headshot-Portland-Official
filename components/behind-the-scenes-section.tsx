@@ -1,55 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 export default function BehindTheScenesSection() {
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useIsMobile()
   const [playingVideo, setPlayingVideo] = useState<number | null>(1)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
-
-  useEffect(() => {
-    // Auto-play all videos when component mounts
-    const videoElements = [
-      document.getElementById("video-1") as HTMLVideoElement,
-      document.getElementById("video-desktop-1") as HTMLVideoElement,
-      document.getElementById("video-2") as HTMLVideoElement,
-      document.getElementById("video-3") as HTMLVideoElement,
-      document.getElementById("video-desktop-3") as HTMLVideoElement,
-      document.getElementById("video-4") as HTMLVideoElement,
-      document.getElementById("video-desktop-4") as HTMLVideoElement,
-      document.getElementById("video-5") as HTMLVideoElement,
-      document.getElementById("video-desktop-5") as HTMLVideoElement,
-      document.getElementById("video-6") as HTMLVideoElement,
-      document.getElementById("video-desktop-6") as HTMLVideoElement,
-    ]
-
-    videoElements.forEach((video) => {
-      if (video) {
-        video.muted = true // Mute initially to allow autoplay
-        video.play().catch((error) => {
-          console.error("Autoplay failed:", error)
-        })
-      }
-    })
-
-    // Set first video as playing
-    setPlayingVideo(1)
-  }, [])
 
   const handleVideoPlay = (id: number) => {
     if (playingVideo === id) {
@@ -259,6 +216,8 @@ export default function BehindTheScenesSection() {
                         playsInline
                         muted={true}
                         autoPlay
+                        preload="metadata"
+                        poster={testimonial.image || undefined}
                         onClick={() => handleVideoPlay(testimonial.id)}
                       />
                     ) : (
@@ -302,6 +261,8 @@ export default function BehindTheScenesSection() {
                         playsInline
                         muted={true}
                         autoPlay
+                        preload="metadata"
+                        poster={testimonial.image || undefined}
                         onClick={() => handleVideoPlay(testimonial.id)}
                       />
                     ) : (

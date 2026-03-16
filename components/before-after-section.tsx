@@ -1,26 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 export default function BeforeAfterSection() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
+  const isMobile = useIsMobile()
 
   return (
     <div className="w-full px-[10px] my-[10px]">
@@ -58,7 +43,6 @@ export default function BeforeAfterSection() {
                 height={500}
                 className="w-full h-full object-cover object-center rounded-t-lg"
                 priority={true}
-                quality={100}
               />
 
               {/* Before Image Overlay - Positioned to overlap from outside */}
@@ -93,7 +77,6 @@ export default function BeforeAfterSection() {
                 width={400}
                 height={500}
                 className="w-full h-full object-cover object-center rounded-t-lg"
-                quality={100}
               />
 
               {/* Before Image Overlay - Positioned to overlap from outside */}
@@ -123,10 +106,10 @@ export default function BeforeAfterSection() {
         <div className="w-full max-w-4xl mx-auto">
           <Link
             href="https://ww3.headshotportland.com/instant-quote"
-            className="block w-full bg-[#2A8CAA] text-white text-center py-4 md:py-5 rounded-md relative overflow-hidden"
+            className="block w-full bg-[#2A8CAA] text-white text-center py-4 md:py-5 rounded-full relative overflow-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
           >
             <div
-              className="absolute inset-0 rounded-md"
+              className="absolute inset-0 rounded-full"
               style={{
                 background: `
                 linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.1) 1%, transparent 1%, transparent 10%,

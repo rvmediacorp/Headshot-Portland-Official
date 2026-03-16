@@ -4,26 +4,12 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import ExactMasonryGrid from "./exact-masonry-grid"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 export default function UnlimitedSessions() {
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useIsMobile()
   const [isVisible, setIsVisible] = useState(false)
   const underlineRef = useRef(null)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -156,7 +142,7 @@ export default function UnlimitedSessions() {
               <div className="flex flex-col md:flex-row justify-between items-center md:items-center py-4">
                 {/* Google Rating */}
                 <div className="flex items-center mb-4 md:mb-0">
-                  <Image src="/images/google-logo-new.png" alt="Google logo" width={36} height={36} className="mr-3" />
+                  <Image src="/images/google-logo-new.png" alt="Google logo" width={36} height={36} className="mr-3" loading="eager" />
                   <div>
                     <p className="text-white text-base font-medium">Google Rating</p>
                     <div className="flex items-center">

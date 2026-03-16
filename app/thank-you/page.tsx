@@ -95,7 +95,7 @@ export default function ThankYouPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <a
                 href="tel:5033137121"
-                className="bg-[#247BA0] text-white px-8 py-4 rounded-md flex items-center justify-center gap-2 hover:bg-[#1d6a85] transition-colors"
+                className="bg-[#247BA0] text-white px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-[#1d6a85] transition-colors"
               >
                 <Phone className="h-5 w-5" />
                 <span className="font-bold">CALL NOW: 503-313-7121</span>
@@ -103,7 +103,7 @@ export default function ThankYouPage() {
 
               <Link
                 href="https://ww3.headshotportland.com/instant"
-                className="border border-[#247BA0] text-white px-8 py-4 rounded-md flex items-center justify-center gap-2 hover:bg-[#247BA0]/10 transition-colors"
+                className="border border-[#247BA0] text-white px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-[#247BA0]/10 transition-colors"
               >
                 <Calendar className="h-5 w-5" />
                 <span className="font-bold">BOOK NOW</span>

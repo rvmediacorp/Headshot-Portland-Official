@@ -18,6 +18,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-1.png"
                 alt="Professional headshot of man in dark clothing"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden mb-3">
@@ -25,6 +26,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-2.png"
                 alt="Professional headshot of man with beard in suit"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden">
@@ -32,6 +34,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-9.png"
                 alt="Professional headshot of woman with brown hair in blazer"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
           </div>
@@ -43,6 +46,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-5.png"
                 alt="Professional headshot of woman with curly hair"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden">
@@ -50,6 +54,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-3.png"
                 alt="Professional headshot of Asian man in denim shirt"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
           </div>
@@ -61,6 +66,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-4.png"
                 alt="Professional headshot of woman with blonde hair"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden">
@@ -68,6 +74,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-8.png"
                 alt="Professional headshot of man with longer hair"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
           </div>
@@ -79,6 +86,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-7.png"
                 alt="Professional headshot of bald man with mustache in suit"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden">
@@ -86,6 +94,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
                 src="/images/headshot-6.png"
                 alt="Professional closeup headshot of young man with beard"
                 className="w-full rounded-[12px]"
+                loading="lazy"
               />
             </div>
           </div>

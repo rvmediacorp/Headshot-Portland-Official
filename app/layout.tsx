@@ -3,6 +3,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { inter, bodoni, playfair, bodoniModa } from "./fonts"
 import Script from "next/script"
+import Navbar from "@/components/navbar"
 
 export const metadata: Metadata = {
   title: "Headshot Portland - Professional Photography Studio",
@@ -37,7 +38,10 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }

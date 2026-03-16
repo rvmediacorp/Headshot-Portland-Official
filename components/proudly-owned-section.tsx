@@ -1,26 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 export default function ProudlyOwnedSection() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
+  const isMobile = useIsMobile()
 
   return (
     <div className="w-full px-[10px] my-[10px]">
@@ -83,6 +68,7 @@ export default function ProudlyOwnedSection() {
                     src="/images/amazon-logo-new.png"
                     alt="Amazon logo"
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
+                    loading="eager"
                   />
                 </div>
 
@@ -92,6 +78,7 @@ export default function ProudlyOwnedSection() {
                     src="/images/intel-logo-new.png"
                     alt="Intel logo"
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
+                    loading="eager"
                   />
                 </div>
 
@@ -101,6 +88,7 @@ export default function ProudlyOwnedSection() {
                     src="/images/remax-logo-new.svg"
                     alt="RE/MAX logo"
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
+                    loading="eager"
                   />
                 </div>
 
@@ -110,6 +98,7 @@ export default function ProudlyOwnedSection() {
                     src="/images/wework-logo-new.svg"
                     alt="WeWork logo"
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
+                    loading="eager"
                   />
                 </div>
 
@@ -119,6 +108,7 @@ export default function ProudlyOwnedSection() {
                     src="/images/nike-logo-new.svg"
                     alt="Nike logo"
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
+                    loading="eager"
                   />
                 </div>
               </div>

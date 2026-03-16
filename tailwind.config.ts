@@ -61,8 +61,36 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        "teal-blue": "#2A8CAA",
-        "dark-bg": "#000000",
+        /* ── Brand ── */
+        "brand-teal":       "var(--color-brand-teal)",
+        "brand-teal-hover": "var(--color-brand-teal-hover)",
+        "brand-teal-deep":  "var(--color-brand-teal-deep)",
+
+        /* ── Dark backgrounds ── */
+        "ink":        "var(--color-ink)",
+        "ink-black":  "var(--color-ink-black)",
+        "ink-footer": "var(--color-ink-footer)",
+        "ink-card":   "var(--color-ink-card)",
+        "ink-border": "var(--color-ink-border)",
+
+        /* ── Light surfaces ── */
+        "off-white":    "var(--color-off-white)",
+        "surface-teal": "var(--color-surface-teal)",
+        "surface-gray": "var(--color-surface-gray)",
+        "cream":        "var(--color-cream)",
+
+        /* ── Text ── */
+        "muted-text":  "var(--color-muted-text)",
+        "subtle-text": "var(--color-subtle-text)",
+        "faint-text":  "var(--color-faint-text)",
+
+        /* ── Accents ── */
+        "star":      "var(--color-star)",
+        "star-gold": "var(--color-star-gold)",
+
+        /* ── Legacy aliases — existing code keeps working ── */
+        "teal-blue": "var(--color-brand-teal)",
+        "dark-bg":   "var(--color-ink-black)",
       },
       borderRadius: {
         lg: "var(--radius)",

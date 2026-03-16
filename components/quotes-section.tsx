@@ -3,11 +3,12 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { useResponsiveScale } from "@/hooks/use-responsive-scale"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 export default function QuotesSection() {
   const scale = useResponsiveScale()
   const [isVisible, setIsVisible] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useIsMobile()
   const textSectionRef = useRef(null)
 
   useEffect(() => {
@@ -30,22 +31,6 @@ export default function QuotesSection() {
         observer.disconnect()
       }
     }
-  }, [])
-
-  // Check if mobile
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
   // Add marquee animation to the stylesheet
@@ -71,11 +56,11 @@ export default function QuotesSection() {
         className="w-full relative overflow-hidden quotes-section rounded-[10px]"
         style={{
           display: "flex",
-          padding: isMobile ? "80px 0px" : "116px 0px",
+          padding: isMobile ? "40px 0px 80px" : "60px 0px 116px",
           flexDirection: "column",
           alignItems: "center",
           gap: "10px",
-          background: "linear-gradient(0deg, #0F0E0F 48.96%, rgba(15, 14, 15, 0.00) 100%)",
+          background: "#0F0E0F",
         }}
       >
         {/* Simplified ellipse positioning without any background */}
@@ -210,7 +195,7 @@ export default function QuotesSection() {
           >
             <Link
               href="https://ww3.headshotportland.com/instant-quote"
-              className={`bg-teal-blue text-white font-inter font-bold text-center rounded-md flex-shrink-0 ${isMobile ? "w-full mb-8" : ""}`}
+              className={`bg-teal-blue text-white font-inter font-bold text-center rounded-full flex-shrink-0 ${isMobile ? "w-full mb-8" : ""}`}
               style={{
                 padding: "20px 24px",
                 fontSize: "18px",

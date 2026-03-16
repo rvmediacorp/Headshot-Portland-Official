@@ -523,78 +523,17 @@ export default function HeadshotsPage() {
       {/* Header and Hero Section */}
       <div className="w-full px-[10px] my-[10px]">
         <section
-          className="w-full rounded-[10px] bg-[#247BA0]"
+          className="w-full rounded-[10px] bg-[#247BA0] px-5 md:px-16"
           style={{
             display: "flex",
-            padding: "0px 0px",
             flexDirection: "column",
             alignItems: "center",
             gap: "10px",
           }}
         >
-          {/* Header */}
-          <header className="w-full text-white py-6 px-4 md:px-8 lg:px-16">
-            <div className="container mx-auto">
-              <div className="flex flex-col md:flex-row justify-between items-center">
-                <div className="mb-6 md:mb-0">
-                  <Link href="/" className="block">
-                    <div className="w-24 h-8 relative">
-                      <Image
-                        src="/images/headshotportlandwhitelogo.png"
-                        alt="Headshot Portland"
-                        fill
-                        priority
-                        className="object-contain"
-                        style={{ maxWidth: "100px", width: "auto", height: "auto" }}
-                      />
-                    </div>
-                  </Link>
-                </div>
-                <nav>
-                  <ul className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-                    <li>
-                      <Link href="#" className="bg-white text-[#247BA0] px-4 py-2 rounded">
-                        HEADSHOTS
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:underline">
-                        PORTRAITS
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:underline">
-                        FOR TEAMS
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:underline">
-                        GRAD
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:underline">
-                        MODEL
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:underline">
-                        ABOUT
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="hover:underline">
-                        CONTACT
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </header>
 
           {/* Hero Section */}
-          <div className="w-full text-white py-16 md:py-24 px-4 md:px-8 lg:px-16">
+          <div className="w-full text-white py-16 md:py-24">
             <div className="container mx-auto text-center">
               <h1 className="font-bodoniModa text-4xl md:text-5xl lg:text-6xl mb-6 tracking-wide">
                 PROFESSIONAL HEADSHOT GALLERY
@@ -603,7 +542,7 @@ export default function HeadshotsPage() {
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="https://ww3.headshotportland.com/instant-quote"
-                  className="bg-white text-[#247BA0] px-6 py-3 rounded-md flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
+                  className="bg-white text-[#247BA0] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
                 >
                   <span className="font-bold">GET FREE QUOTE</span>
                   <div className="bg-[#247BA0] rounded-full p-1">
@@ -612,7 +551,7 @@ export default function HeadshotsPage() {
                 </Link>
                 <Link
                   href="https://ww3.headshotportland.com/instant"
-                  className="border border-white text-white px-6 py-3 rounded-md flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
+                  className="border border-white text-white px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
                 >
                   <span className="font-bold">BOOK NOW</span>
                   <div className="bg-white/20 rounded-full p-1">
@@ -662,6 +601,9 @@ export default function HeadshotsPage() {
                       <img
                         src={getImageSrc(item.src) || "/placeholder.svg"}
                         alt={item.alt || "Gallery image"}
+                        width={800}
+                        height={800}
+                        loading="lazy"
                         className={styles.masonryImage}
                         onLoad={handleImageLoad}
                         onError={handleImageLoad}
@@ -672,8 +614,9 @@ export default function HeadshotsPage() {
                       <div className={styles.testimonialItem}>
                         <div className="flex mb-3 sm:mb-4">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-[#FFA500] fill-[#FFA500]" />
+                            <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-[#FFA500] fill-[#FFA500]" aria-hidden="true" />
                           ))}
+                          <span className="sr-only">5 out of 5 stars</span>
                         </div>
                         <div className="mb-3 sm:mb-4">
                           <div className="flex items-start gap-3 sm:gap-4">
@@ -727,7 +670,14 @@ export default function HeadshotsPage() {
                     {item.type === "video" && (
                       <div className="flex flex-col">
                         {/* Video container */}
-                        <div className={styles.videoTestimonialItem} onClick={() => handleVideoPlay(item.id)}>
+                        <div
+                          className={styles.videoTestimonialItem}
+                          role="button"
+                          tabIndex={0}
+                          aria-label="Play video testimonial"
+                          onClick={() => handleVideoPlay(item.id)}
+                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleVideoPlay(item.id) } }}
+                        >
                           {/* Video element */}
                           <video
                             id={`video-${item.id}`}
@@ -887,11 +837,11 @@ export default function HeadshotsPage() {
               </div>
             </div>
             <div className="flex gap-4">
-              <Link href="#" className="text-white hover:text-[#247BA0]">
-                <Instagram className="h-6 w-6" />
+              <Link href="#" className="text-white hover:text-[#247BA0] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded" aria-label="Instagram">
+                <Instagram className="h-6 w-6" aria-hidden="true" />
               </Link>
-              <Link href="#" className="text-white hover:text-[#247BA0]">
-                <Facebook className="h-6 w-6" />
+              <Link href="#" className="text-white hover:text-[#247BA0] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded" aria-label="Facebook">
+                <Facebook className="h-6 w-6" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -907,7 +857,7 @@ export default function HeadshotsPage() {
               </div>
               <Link
                 href="#"
-                className="border border-[#247BA0] text-[#247BA0] px-6 py-3 rounded hover:bg-[#247BA0]/10 transition-colors uppercase"
+                className="border border-[#247BA0] text-[#247BA0] px-6 py-3 rounded-full hover:bg-[#247BA0]/10 transition-colors uppercase"
               >
                 Contact Us
               </Link>

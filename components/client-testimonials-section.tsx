@@ -1,25 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Image from "next/image"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 export default function ClientTestimonialsSection() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
+  const isMobile = useIsMobile()
 
   // Testimonial data
   const testimonials = [
@@ -240,7 +225,9 @@ export default function ClientTestimonialsSection() {
                     Watch what clients say
                     <br /> about our experience
                   </h3>
-                  <button className="bg-white text-black font-bold py-3 px-10 rounded hover:bg-gray-100 transition-colors mb-6">
+                  <button className="bg-white text-black font-bold py-3 px-10 rounded-full hover:bg-gray-100 transition-colors mb-6 focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:outline-none"
+                    aria-label="Play client testimonial video"
+                    onKeyDown={(e) => e.key === 'Enter' || e.key === ' ' ? e.currentTarget.click() : null}>
                     PLAY VIDEO
                   </button>
                 </div>
@@ -250,7 +237,9 @@ export default function ClientTestimonialsSection() {
                     Watch what clients say
                     <br /> about our experience
                   </h3>
-                  <button className="bg-white text-black font-bold py-3 px-10 rounded hover:bg-gray-100 transition-colors mr-6">
+                  <button className="bg-white text-black font-bold py-3 px-10 rounded-full hover:bg-gray-100 transition-colors mr-6 focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:outline-none"
+                    aria-label="Play client testimonial video"
+                    onKeyDown={(e) => e.key === 'Enter' || e.key === ' ' ? e.currentTarget.click() : null}>
                     PLAY VIDEO
                   </button>
                 </div>

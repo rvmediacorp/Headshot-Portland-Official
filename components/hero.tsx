@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { Playfair_Display } from "next/font/google"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useRef } from "react"
 
 // Load Playfair Display font
 const playfairDisplay = Playfair_Display({
@@ -13,27 +13,7 @@ const playfairDisplay = Playfair_Display({
 })
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    // Check if we're on the client side
-    if (typeof window !== "undefined") {
-      // Function to update state based on window width
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth < 768)
-      }
-
-      // Initial check
-      checkMobile()
-
-      // Add event listener for window resize
-      window.addEventListener("resize", checkMobile)
-
-      // Cleanup
-      return () => window.removeEventListener("resize", checkMobile)
-    }
-  }, [])
 
   // Ensure video plays when component mounts
   useEffect(() => {
@@ -57,12 +37,16 @@ export default function Hero() {
             muted
             loop
             playsInline
+            preload="auto"
             poster="/modern-photography-studio.png"
+            aria-label="Background video showing headshot photography studio sessions"
+            role="img"
           >
             <source
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshothero-pdhaIqDrwHMpqHtCjlzLW1nNsrRcPD.mp4"
               type="video/mp4"
             />
+
             Your browser does not support the video tag.
           </video>
           {/* Dark overlay for better text readability */}
@@ -128,6 +112,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -137,6 +122,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -146,6 +132,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
@@ -155,6 +142,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -164,6 +152,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -173,6 +162,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
 
@@ -184,6 +174,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -193,6 +184,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -202,6 +194,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
@@ -211,6 +204,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -220,6 +214,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -230,6 +225,7 @@ export default function Hero() {
                   height={200}
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center 20%" }}
+                  priority
                 />
               </div>
 
@@ -241,6 +237,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -250,6 +247,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -259,6 +257,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
@@ -268,6 +267,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -277,6 +277,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -286,6 +287,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
             </div>

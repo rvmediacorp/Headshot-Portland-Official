@@ -1,27 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
 import LogoImage from "./logo-image"
 
 export default function WhoWeWorkWithSection() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener("resize", checkMobile)
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
-
   // Client headshot images for the grid - now with all 24 unique images
   const clientHeadshots = [
     // First row - first batch of images (0-11)
@@ -229,25 +210,25 @@ export default function WhoWeWorkWithSection() {
 
   return (
     <div className="w-full px-[10px] my-[10px]">
-      <section className="w-full rounded-[10px] overflow-hidden">
+      <section className="w-full rounded-[10px]">
         {/* Desktop Layout */}
-        <div className="hidden md:block relative">
+        <div className="hidden md:block relative overflow-hidden rounded-[10px]">
           {/* Headshot Grid - 12 columns and 2 rows for desktop */}
-          <div className="grid grid-cols-12 gap-0">
+          <div className="grid grid-cols-12 gap-0 bg-gray-900" style={{ minHeight: "calc(2 * (100vw / 12))" }}>
             {Array.from({ length: 24 }).map((_, index) => {
               const headshot = getHeadshot(index)
 
-              // Special styling for specific images if needed
-              const imageStyle = { objectFit: "cover" }
-
               return (
-                <div key={`grid-${index}`} className="aspect-square relative">
-                  <Image
-                    src={headshot.src || "/placeholder.svg"}
+                <div key={`grid-${index}`} className="aspect-square overflow-hidden">
+                  <img
+                    src={headshot.src}
                     alt={headshot.alt}
-                    fill
-                    className="object-cover"
-                    style={imageStyle}
+                    width={300}
+                    height={300}
+                    loading="eager"
+                    decoding="sync"
+                    fetchPriority="high"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               )
@@ -296,15 +277,15 @@ export default function WhoWeWorkWithSection() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden relative">
+        <div className="md:hidden relative overflow-hidden rounded-[10px]">
           {/* Headshot Grid - 2x4 for mobile */}
-          <div className="grid grid-cols-2 gap-0">
+          <div className="grid grid-cols-2 gap-0 bg-gray-900" style={{ minHeight: "calc(4 * (100vw / 2))" }}>
             {/* Show a diverse mix of images for mobile */}
             {[0, 1, 21, 22, 12, 13, 23, 24].map((index) => {
               const headshot = getHeadshot(index)
               return (
-                <div key={`mobile-${index}`} className="aspect-square relative">
-                  <Image src={headshot.src || "/placeholder.svg"} alt={headshot.alt} fill className="object-cover" />
+                <div key={`mobile-${index}`} className="aspect-square overflow-hidden">
+                  <img src={headshot.src} alt={headshot.alt} width={300} height={300} loading="eager" decoding="sync" fetchPriority="high" className="w-full h-full object-cover" />
                 </div>
               )
             })}

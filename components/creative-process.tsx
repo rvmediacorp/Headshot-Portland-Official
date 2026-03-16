@@ -3,48 +3,11 @@
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 
 export default function CreativeProcess() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const video2Ref = useRef<HTMLVideoElement>(null)
   const [videoError, setVideoError] = useState(false)
   const [video2Error, setVideo2Error] = useState(false)
-
-  // Initialize video playback when component mounts
-  useEffect(() => {
-    // Handle main video
-    if (videoRef.current) {
-      const playPromise = videoRef.current.play()
-
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.log("Video playback started successfully")
-          })
-          .catch((error) => {
-            console.error("Video playback failed:", error)
-            setVideoError(true)
-          })
-      }
-    }
-
-    // Handle second video
-    if (video2Ref.current) {
-      const playPromise = video2Ref.current.play()
-
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.log("Second video playback started successfully")
-          })
-          .catch((error) => {
-            console.error("Second video playback failed:", error)
-            setVideo2Error(true)
-          })
-      }
-    }
-  }, [])
 
   return (
     <div className="w-full px-[10px] my-[10px]">
@@ -65,12 +28,12 @@ export default function CreativeProcess() {
               <span className="text-black">Our </span>
               <span className="text-teal-blue">Creative Process</span>
             </h2>
-            <Link href="/faq" className="flex items-center group">
+            <Link href="/faq" className="flex items-center group focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:outline-none rounded">
               <span className="font-inter font-bold mr-2 border-b border-black text-black" style={{ fontSize: "16px" }}>
                 EXPLORE COMMON QUESTIONS
               </span>
-              <span className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
-                <ArrowUpRight size={20} className="text-white" />
+              <span className="bg-black rounded-full w-10 h-10 flex items-center justify-center" aria-hidden="true">
+                <ArrowUpRight size={20} className="text-white" aria-hidden="true" />
               </span>
             </Link>
           </div>
@@ -95,6 +58,8 @@ export default function CreativeProcess() {
                   loop
                   muted
                   playsInline
+                  preload="metadata"
+                  poster="/images/gallery.jpeg"
                   onError={(e) => {
                     console.error("Video failed to load:", e)
                   }}
@@ -103,6 +68,7 @@ export default function CreativeProcess() {
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FreeQuoteVid-ZxqKD59Mg2TDb5YkPvOLVe254OiWbr.mp4"
                     type="video/mp4"
                   />
+
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -122,12 +88,13 @@ export default function CreativeProcess() {
               <div className="h-48 md:h-56 lg:h-64 mx-6 md:mx-8 mb-6 md:mb-8 rounded overflow-hidden relative">
                 {!video2Error ? (
                   <video
-                    ref={video2Ref}
                     className="w-full h-full object-cover rounded"
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="metadata"
+                    poster="/images/gallery.jpeg"
                     onError={() => setVideo2Error(true)}
                   >
                     <source
@@ -161,9 +128,10 @@ export default function CreativeProcess() {
                   loop
                   muted
                   playsInline
+                  preload="metadata"
+                  poster="/images/gallery.jpeg"
                   onError={(e) => {
                     console.error("Video failed to load:", e)
-                    // If needed, you could set a state here to show a fallback image
                   }}
                 >
                   <source
@@ -188,12 +156,13 @@ export default function CreativeProcess() {
                 {/* MP4 Video */}
                 {!videoError ? (
                   <video
-                    ref={videoRef}
                     className="w-full h-full object-cover rounded"
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="metadata"
+                    poster="/images/gallery.jpeg"
                     onError={() => setVideoError(true)}
                   >
                     <source
@@ -211,6 +180,7 @@ export default function CreativeProcess() {
                       fill
                       className="object-cover rounded"
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="eager"
                     />
                     {/* Video play button overlay */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded">

@@ -20,7 +20,7 @@ export default function GoogleAnalytics() {
       // Track conversion if it's the thank you page
       if (pathname === "/thank-you") {
         window.gtag?.("event", "conversion", {
-          send_to: "AW-847156852/CONVERSION_LABEL", // Replace with your actual conversion label
+          send_to: "AW-847156852/DiA7CM_nqYEDEPSs-pMD",
         })
       }
 

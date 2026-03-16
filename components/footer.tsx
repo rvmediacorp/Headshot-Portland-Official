@@ -57,7 +57,7 @@ export default function Footer() {
             </div>
             <Link
               href="/contact"
-              className="border border-[#247BA0] text-white hover:bg-[#247BA0] transition-colors px-6 py-3 rounded-md"
+              className="border border-[#247BA0] text-white hover:bg-[#247BA0] transition-colors px-6 py-3 rounded-full"
             >
               CONTACT US
             </Link>
@@ -108,7 +108,7 @@ export default function Footer() {
             {/* Contact Button - Mobile */}
             <Link
               href="/contact"
-              className="w-full border border-[#247BA0] text-white text-center py-4 rounded-md mb-6"
+              className="w-full border border-[#247BA0] text-white text-center py-4 rounded-full mb-6"
             >
               CONTACT US
             </Link>

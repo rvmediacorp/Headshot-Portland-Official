@@ -38,7 +38,7 @@ export const bodoni = localFont({
   display: "swap",
   variable: "--font-bodoni",
   preload: true,
-  fallback: ["Georgia", "serif"],
+  adjustFontFallback: false,
 })
 
 // Load Playfair Display from Google Fonts instead of local files
