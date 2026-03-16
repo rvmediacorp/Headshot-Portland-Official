@@ -13,26 +13,26 @@ export default function PortraitsPage() {
     {
       id: 1,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-AB8I9699-Edit.jpg",
+      src: "/images/headshots-gallery/headshot-portland-AB8I9699.webp",
       alt: "Portrait photography example",
     },
     {
       id: 2,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-8-27-angela-headshot-3304-Edit-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-angela-headshot.webp",
       alt: "Portrait photography example",
     },
     {
       id: 3,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-angel-headshot-session2294.jpg",
+      src: "/images/headshots-gallery/headshot-portland-angel.webp",
       alt: "Portrait photography example",
     },
     {
       id: 4,
       type: "video",
       src: "https://rvideo.b-cdn.net/headshot-website-videos/headshot-photographer-portland-oregon.mp4",
-      poster: "/images/headshots-gallery/erica-headshot-portland_sm.jpeg",
+      poster: "/images/headshots-gallery/erica-headshot-portland-sm.webp",
       name: "Erica Carnrite",
       title: "VP Head of Data, Medtronic.",
       quote:
@@ -41,26 +41,26 @@ export default function PortraitsPage() {
     {
       id: 5,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-8-27-megan-headshot-3890-Edit.jpg",
+      src: "/images/headshots-gallery/headshot-portland-megan-headshot.webp",
       alt: "Portrait photography example",
     },
     {
       id: 6,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-AB8I0521-2-Edit.jpg",
+      src: "/images/headshots-gallery/headshot-portland-AB8I0521.webp",
       alt: "Portrait photography example",
     },
     {
       id: 7,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-amy-headshot-2033-Edit-3.jpg",
+      src: "/images/headshots-gallery/headshot-portland-amy.webp",
       alt: "Portrait photography example",
     },
     {
       id: 8,
       type: "video",
       src: "https://rvideo.b-cdn.net/headshot-website-videos/mark%20headshot%20testimonial.mp4",
-      poster: "/images/headshots-gallery/mark-headshot-portland-professional.jpg",
+      poster: "/images/headshots-gallery/headshot-portland-mark.webp",
       name: "Mark Johnson",
       title: "Business Development Manager",
       quote:
@@ -69,25 +69,25 @@ export default function PortraitsPage() {
     {
       id: 9,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-Andy-headshot-5257-Edit-3.jpg",
+      src: "/images/headshots-gallery/headshot-portland-andy.webp",
       alt: "Portrait photography example",
     },
     {
       id: 10,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-abby-931-Edit-Edit-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-abby.webp",
       alt: "Portrait photography example",
     },
     {
       id: 11,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-austyn-lee-headshot-757-Edit-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-austyn.webp",
       alt: "Portrait photography example",
     },
     {
       id: 12,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-apple headshot photographer.jpg",
+      src: "/images/headshots-gallery/headshot-portland-apple-headshot-photographer.webp",
       alt: "Portrait photography example",
     },
     {
@@ -97,7 +97,7 @@ export default function PortraitsPage() {
       title: "VP Content Marketing, Ziply Fiber",
       quote:
         "Nathan did an amazing job with my headshot studio shoot. Lots of photos to choose from, gave artistic direction and helped us pick the best photos for the new website! 5stars! Thank You!",
-      avatar: "/images/profile photos/tom-danowski-headshot.jpg",
+      avatar: "/images/profile-photos/tom-danowski-headshot.webp",
     },
     {
       id: 14,
@@ -121,61 +121,61 @@ export default function PortraitsPage() {
     {
       id: 16,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-bay area headshot.jpg",
+      src: "/images/headshots-gallery/headshot-portland-bay-area-headshot.webp",
       alt: "Portrait photography example",
     },
     {
       id: 17,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-cheryl-233-Edit.jpg",
+      src: "/images/headshots-gallery/headshot-portland-cheryl.webp",
       alt: "Portrait photography example",
     },
     {
       id: 18,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-chris--5.jpg",
+      src: "/images/headshots-gallery/headshot-portland-chris.webp",
       alt: "Portrait photography example",
     },
     {
       id: 19,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-Colby columbia wealth3545 1 1.jpg",
+      src: "/images/headshots-gallery/headshot-portland-colby-columbia.webp",
       alt: "Portrait photography example",
     },
     {
       id: 20,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-colby--5.jpg",
+      src: "/images/headshots-gallery/headshot-portland-colby-5.webp",
       alt: "Portrait photography example",
     },
     {
       id: 21,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-colby--6.jpg",
+      src: "/images/headshots-gallery/headshot-portland-colby-6.webp",
       alt: "Portrait photography example",
     },
     {
       id: 22,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-eddie-headshot3156.jpg",
+      src: "/images/headshots-gallery/headshot-portland-eddie.webp",
       alt: "Portrait photography example",
     },
     {
       id: 23,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-emily-headshot-04-03-253415.jpg",
+      src: "/images/headshots-gallery/headshot-portland-emily.webp",
       alt: "Portrait photography example",
     },
     {
       id: 24,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-erica headshot retouch-12415-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-erica-retouch-1.webp",
       alt: "Portrait photography example",
     },
     {
       id: 25,
       type: "image",
-      src: "/images/headshots-gallery/headshot-portland-erica headshot retouch-12778-2.jpg",
+      src: "/images/headshots-gallery/headshot-portland-erica-retouch-2.webp",
       alt: "Portrait photography example",
     },
     {
@@ -351,7 +351,7 @@ export default function PortraitsPage() {
                             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex-shrink-0 hidden sm:block">
                               {item.id === 13 && (
                                 <img
-                                  src="/images/profile photos/tom-danowski-headshot.jpg"
+                                  src="/images/profile-photos/tom-danowski-headshot.webp"
                                   alt="Tom Danowski"
                                   className="w-full h-full object-cover"
                                 />

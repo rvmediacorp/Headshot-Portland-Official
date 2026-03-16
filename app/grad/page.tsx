@@ -45,7 +45,7 @@ export default function GradPage() {
       name: "Tom Danowski",
       title: "VP Content Marketing, Ziply Fiber",
       quote: "Nathan did an amazing job with my headshot studio shoot. Lots of photos to choose from, gave artistic direction and helped us pick the best photos for the new website! 5stars! Thank You!",
-      avatar: "/images/profile photos/tom-danowski-headshot.jpg",
+      avatar: "/images/profile-photos/tom-danowski-headshot.webp",
     },
     {
       id: 14,
@@ -250,7 +250,7 @@ export default function GradPage() {
                             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex-shrink-0 hidden sm:block">
                               {item.id === 13 && (
                                 <img
-                                  src="/images/profile photos/tom-danowski-headshot.jpg"
+                                  src="/images/profile-photos/tom-danowski-headshot.webp"
                                   alt="Tom Danowski"
                                   className="w-full h-full object-cover"
                                 />

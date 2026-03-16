@@ -27,7 +27,7 @@ export default function ProudlyOwnedSection() {
             <div className={`w-full ${isMobile ? "h-[400px]" : "md:w-[35%]"} relative`}>
               <div className="h-full relative">
                 <Image
-                  src="/images/nathan-profile.jpg"
+                  src="/images/nathan-profile.webp"
                   alt="Portrait of Nathan Reimche-Vu"
                   fill
                   className="object-cover object-center"

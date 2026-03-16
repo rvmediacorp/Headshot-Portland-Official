@@ -17,7 +17,7 @@ export default function ForTeamsPage() {
       id: 4,
       type: "video",
       src: "https://rvideo.b-cdn.net/headshot-website-videos/headshot-photographer-portland-oregon.mp4",
-      poster: "/images/headshots-gallery/erica-headshot-portland_sm.jpeg",
+      poster: "/images/headshots-gallery/erica-headshot-portland-sm.webp",
       name: "Erica Carnrite",
       title: "VP Head of Data, Medtronic.",
       quote: "I needed new professional headshots and Nathan's work is absolute fantastic! The shoot was fun, relaxed, and Nathan captured my vision, he is a fantastic photographer!",
@@ -37,7 +37,7 @@ export default function ForTeamsPage() {
       name: "Tom Danowski",
       title: "VP Content Marketing, Ziply Fiber",
       quote: "Nathan did an amazing job with my headshot studio shoot. Lots of photos to choose from, gave artistic direction and helped us pick the best photos for the new website! 5stars! Thank You!",
-      avatar: "/images/profile photos/tom-danowski-headshot.jpg",
+      avatar: "/images/profile-photos/tom-danowski-headshot.webp",
     },
     {
       id: 15,
@@ -94,7 +94,7 @@ export default function ForTeamsPage() {
       id: 44,
       type: "video",
       src: "https://rvideo.b-cdn.net/headshot-website-videos/mark%20headshot%20testimonial.mp4",
-      poster: "/images/headshots-gallery/mark-headshot-portland-professional.jpg",
+      poster: "/images/headshots-gallery/headshot-portland-mark.webp",
       name: "Mark Johnson",
       title: "Business Development Manager",
       quote: "I needed new professional headshots and Nathan's work is absolute fantastic! The shoot was fun, relaxed, and Nathan captured my vision, he is a fantastic photographer!",
@@ -288,7 +288,7 @@ export default function ForTeamsPage() {
                             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex-shrink-0 hidden sm:block">
                               {item.id === 13 && (
                                 <img
-                                  src="/images/profile photos/tom-danowski-headshot.jpg"
+                                  src="/images/profile-photos/tom-danowski-headshot.webp"
                                   alt="Tom Danowski"
                                   className="w-full h-full object-cover"
                                 />

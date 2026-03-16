@@ -37,7 +37,7 @@ export default function BeforeAfterSection() {
             {/* Main Image - Added max-width and max-height constraints */}
             <div className="relative aspect-[4/5] md:aspect-square w-full rounded-t-lg overflow-visible">
               <Image
-                src="/images/megan-headshot.png"
+                src="/images/megan-headshot.webp"
                 alt="Professional headshot of Megan"
                 width={400}
                 height={500}
@@ -48,7 +48,7 @@ export default function BeforeAfterSection() {
               {/* Before Image Overlay - Positioned to overlap from outside */}
               <div className="absolute top-[-20px] left-[-20px] w-28 h-28 md:w-32 md:h-32 overflow-hidden rounded-md transform -rotate-6 shadow-lg z-10">
                 <Image
-                  src="/images/megan-selfie.png"
+                  src="/images/megan-selfie.webp"
                   alt="Before selfie of Megan"
                   width={150}
                   height={150}
@@ -72,7 +72,7 @@ export default function BeforeAfterSection() {
             {/* Main Image - Added max-width and max-height constraints */}
             <div className="relative aspect-[4/5] md:aspect-square w-full rounded-t-lg overflow-visible">
               <Image
-                src="/images/jordan-headshot.png"
+                src="/images/jordan-headshot.webp"
                 alt="Professional headshot of Jordan"
                 width={400}
                 height={500}
@@ -82,7 +82,7 @@ export default function BeforeAfterSection() {
               {/* Before Image Overlay - Positioned to overlap from outside */}
               <div className="absolute top-[-20px] left-[-20px] w-28 h-28 md:w-32 md:h-32 overflow-hidden rounded-md transform -rotate-6 shadow-lg z-10">
                 <Image
-                  src="/images/jordan-selfie.png"
+                  src="/images/jordan-selfie.webp"
                   alt="Before selfie of Jordan"
                   width={150}
                   height={150}

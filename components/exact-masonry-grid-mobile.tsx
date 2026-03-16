@@ -28,7 +28,7 @@ export default function ExactMasonryGridWithResponsive() {
         {/* Top row */}
         <div className="aspect-square rounded-[12px] overflow-hidden bg-white relative">
           <Image
-            src="/images/headshot-1.png"
+            src="/images/headshot-1.webp"
             alt="Professional headshot of man in dark clothing"
             fill
             className="object-cover object-center"
@@ -36,7 +36,7 @@ export default function ExactMasonryGridWithResponsive() {
         </div>
         <div className="aspect-square rounded-[12px] overflow-hidden bg-white relative">
           <Image
-            src="/images/headshot-4.png"
+            src="/images/headshot-4.webp"
             alt="Professional headshot of woman with blonde hair"
             fill
             className="object-cover object-center"
@@ -46,7 +46,7 @@ export default function ExactMasonryGridWithResponsive() {
         {/* Middle row - large image */}
         <div className="col-span-2 aspect-[3/4] rounded-[12px] overflow-hidden my-4 bg-white relative">
           <Image
-            src="/images/headshot-5.png"
+            src="/images/headshot-5.webp"
             alt="Professional headshot of woman with curly hair"
             fill
             className="object-cover object-top"
@@ -56,7 +56,7 @@ export default function ExactMasonryGridWithResponsive() {
         {/* Bottom row */}
         <div className="aspect-square rounded-[12px] overflow-hidden bg-white relative">
           <Image
-            src="/images/headshot-2.png"
+            src="/images/headshot-2.webp"
             alt="Professional headshot of man with beard in suit"
             fill
             className="object-cover object-center"
@@ -64,7 +64,7 @@ export default function ExactMasonryGridWithResponsive() {
         </div>
         <div className="aspect-square rounded-[12px] overflow-hidden bg-white relative">
           <Image
-            src="/images/headshot-7.png"
+            src="/images/headshot-7.webp"
             alt="Professional headshot of bald man with mustache in suit"
             fill
             className="object-cover object-center"
@@ -74,7 +74,7 @@ export default function ExactMasonryGridWithResponsive() {
         {/* Bottom row 2 */}
         <div className="aspect-square rounded-[12px] overflow-hidden mt-4 bg-white relative">
           <Image
-            src="/images/headshot-9.png"
+            src="/images/headshot-9.webp"
             alt="Professional headshot of woman with brown hair in blazer"
             fill
             className="object-cover object-top"
@@ -82,7 +82,7 @@ export default function ExactMasonryGridWithResponsive() {
         </div>
         <div className="aspect-square rounded-[12px] overflow-hidden mt-4 bg-white relative">
           <Image
-            src="/images/headshot-3.png"
+            src="/images/headshot-3.webp"
             alt="Professional headshot of Asian man in denim shirt"
             fill
             className="object-cover object-top"

@@ -187,9 +187,9 @@ export default function HighEndRetouchingSection() {
 
           {/* Slider Grid - Three columns on all screen sizes */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16">
-            <BeforeAfterSlider beforeImage="/images/blackbefore1.jpg" afterImage="/images/blackafter2.jpg" index={0} />
-            <BeforeAfterSlider beforeImage="/images/meganbefore1.jpg" afterImage="/images/meganafter2.jpg" index={1} />
-            <BeforeAfterSlider beforeImage="/images/levibefore1.jpg" afterImage="/images/leviafter2.jpg" index={2} />
+            <BeforeAfterSlider beforeImage="/images/blackbefore1.webp" afterImage="/images/blackafter2.webp" index={0} />
+            <BeforeAfterSlider beforeImage="/images/meganbefore1.webp" afterImage="/images/meganafter2.webp" index={1} />
+            <BeforeAfterSlider beforeImage="/images/levibefore1.webp" afterImage="/images/leviafter2.webp" index={2} />
           </div>
 
           {/* Description Text - Adjusted for better readability on mobile */}
