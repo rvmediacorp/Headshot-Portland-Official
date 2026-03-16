@@ -12,7 +12,7 @@ export default function AboutHero() {
         className="w-full rounded-[10px] bg-brand-teal"
         style={{
           display: "flex",
-          padding: isMobile ? "0px 20px 80px" : "0px 64px 116px",
+          padding: isMobile ? "80px 20px 80px" : "116px 64px 116px",
           flexDirection: "column",
           alignItems: "center",
           gap: "10px",
