@@ -45,9 +45,9 @@ export default function CreativeProcess() {
               <div className="p-6 md:p-8 flex-1 min-h-[180px]">
                 <span className="text-teal-blue font-bodoniModa italic text-7xl md:text-8xl lg:text-9xl">1</span>
                 <p className="text-black font-inter text-sm mt-4">
-                  CLICK <span className="font-bold italic">"GET FREE QUOTE"</span> OR{" "}
-                  <span className="font-bold italic">"BOOK NOW"</span> FROM ANYWHERE ON THE PAGE. CUSTOMIZE YOUR
-                  SESSION, SCHEDULE YOUR SESSION, AND THEN YOU'RE BOOKED! YOU'LL RECEIVE AN EMAIL CONFIRMATION WITH
+                  CLICK <span className="font-bold italic">&ldquo;GET FREE QUOTE&rdquo;</span> OR{" "}
+                  <span className="font-bold italic">&ldquo;BOOK NOW&rdquo;</span> FROM ANYWHERE ON THE PAGE. CUSTOMIZE YOUR
+                  SESSION, SCHEDULE YOUR SESSION, AND THEN YOU&apos;RE BOOKED! YOU&apos;LL RECEIVE AN EMAIL CONFIRMATION WITH
                   INFORMATION ON HOW TO REACH US, RESCHEDULE IF NEEDED, AND EVEN CANCEL SHOULD YOU HAVE TO.
                 </p>
               </div>
@@ -80,7 +80,7 @@ export default function CreativeProcess() {
               <div className="p-6 md:p-8 flex-1 min-h-[180px]">
                 <span className="text-black font-bodoniModa italic text-7xl md:text-8xl lg:text-9xl">2</span>
                 <p className="text-black font-inter text-sm mt-4">
-                  ONCE YOU ARRIVE AT THE STUDIO, <span className="font-bold">WE'LL WORK OUR MAGIC</span>. WE SPECIALIZE
+                  ONCE YOU ARRIVE AT THE STUDIO, <span className="font-bold">WE&apos;LL WORK OUR MAGIC</span>. WE SPECIALIZE
                   IN <span className="font-bold">POSING & EXPRESSION COACHING</span>—AND WILL GUIDE YOU THOUGHT OUT THE
                   SESSION TO ENSURE WE CAPTURE YOUR BEST SMILES AND POSES ON CAMERA.
                 </p>
@@ -115,8 +115,8 @@ export default function CreativeProcess() {
               <div className="p-6 md:p-8 flex-1 min-h-[180px]">
                 <span className="text-black font-bodoniModa italic text-7xl md:text-8xl lg:text-9xl">3</span>
                 <p className="text-black font-inter text-sm mt-4">
-                  CHECK OUT YOUR PHOTOS ON THE SPOT—WE'LL TAKE AS MANY AS YOU'D LIKE UNTIL YOU'RE HAPPY WITH YOUR
-                  PHOTOS: <span className="font-bold">UNLIMITED PHOTOS AND NO TIME LIMIT</span> ON YOUR SESSION. WE'LL
+                  CHECK OUT YOUR PHOTOS ON THE SPOT—WE&apos;LL TAKE AS MANY AS YOU&apos;D LIKE UNTIL YOU&apos;RE HAPPY WITH YOUR
+                  PHOTOS: <span className="font-bold">UNLIMITED PHOTOS AND NO TIME LIMIT</span> ON YOUR SESSION. WE&apos;LL
                   HELP YOU SELECT YOUR FAVORITE PHOTOS, WHICH WILL BE DELIVERED{" "}
                   <span className="font-bold">JUST 24-48 HOURS LATER</span>.
                 </p>
@@ -148,7 +148,7 @@ export default function CreativeProcess() {
               <div className="p-6 md:p-8 flex-1 min-h-[180px]">
                 <span className="text-black font-bodoniModa italic text-7xl md:text-8xl lg:text-9xl">4</span>
                 <p className="text-black font-inter text-sm mt-4">
-                  <span className="font-bold">WITHIN 48 HOURS</span>, YOU'LL BE ABLE TO DOWNLOAD, SAVE AND REVIEW THE
+                  <span className="font-bold">WITHIN 48 HOURS</span>, YOU&apos;LL BE ABLE TO DOWNLOAD, SAVE AND REVIEW THE
                   IMAGES AND USE THEM FOR SOCIAL MEDIA, WEB, PROMOTION, MARKETING, PRINT, AND MORE!
                 </p>
               </div>

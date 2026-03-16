@@ -120,7 +120,7 @@ export default function BehindTheScenesSection() {
                 }}
               >
                 <div className="flex mb-4">
-                  <span className="text-black group-hover:text-white text-6xl font-serif">"</span>
+                  <span className="text-black group-hover:text-white text-6xl font-serif">&ldquo;</span>
                 </div>
                 <p className="text-black group-hover:text-white text-base mb-6">{testimonial.text}</p>
                 <div className="flex items-center mb-6">
@@ -280,7 +280,7 @@ export default function BehindTheScenesSection() {
                 <div className="w-[60%] p-6 flex flex-col justify-between">
                   <div>
                     <div className="flex mb-4">
-                      <span className="text-black group-hover:text-white text-6xl font-serif">"</span>
+                      <span className="text-black group-hover:text-white text-6xl font-serif">&ldquo;</span>
                     </div>
                     {testimonial.id === 1 ? (
                       <p className="text-black group-hover:text-white text-base">

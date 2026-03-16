@@ -24,7 +24,7 @@ export default function SimpleAndFunExperience() {
             style={{ lineHeight: "1.4" }}
           >
             <span className="block mb-1 md:mb-2">A photography experience</span>
-            <span className="block">that's simple & fun.</span>
+            <span className="block">that&apos;s simple &amp; fun.</span>
           </h2>
 
           {/* Features Grid */}

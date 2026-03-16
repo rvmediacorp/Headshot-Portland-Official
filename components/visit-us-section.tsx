@@ -63,7 +63,7 @@ export default function VisitUsSection() {
             <div className="flex flex-col items-center text-center">
               <h3 className="font-bodoniModa italic text-[#1E3A47] text-3xl md:text-4xl lg:text-5xl mb-4">LOCATION</h3>
               <p className="font-bold text-black text-center">
-                We're located in the Park Ave West building across from Nordstroms.{" "}
+                We&apos;re located in the Park Ave West building across from Nordstroms.{" "}
                 <a
                   href="https://maps.google.com/?q=750+SW+9TH+AVE,PORTLAND,+OR+97205"
                   target="_blank"
@@ -115,7 +115,7 @@ export default function VisitUsSection() {
             <div className="flex flex-col items-center text-center">
               <h3 className="font-bodoniModa italic text-[#1E3A47] text-3xl md:text-4xl lg:text-5xl mb-2">LOCATION</h3>
               <p className="font-bold text-black text-center">
-                We're located in the Park Ave West building across from Nordstroms.{" "}
+                We&apos;re located in the Park Ave West building across from Nordstroms.{" "}
                 <a
                   href="https://maps.google.com/?q=750+SW+9TH+AVE,PORTLAND,+OR+97205"
                   target="_blank"
@@ -134,7 +134,7 @@ export default function VisitUsSection() {
           {/* Parking Information */}
           <div className="mb-8">
             <p className="text-black text-base md:text-lg">
-              Metered parking, as well as free parking, is available on 9th and Park Avenue. We're a few blocks away
+              Metered parking, as well as free parking, is available on 9th and Park Avenue. We&apos;re a few blocks away
               from the Pioneer Square Mall & Nordstroms. You can get to our studio easily on the Red or Blue Trimet
               Line.
             </p>

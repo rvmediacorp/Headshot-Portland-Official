@@ -64,6 +64,7 @@ export default function ProudlyOwnedSection() {
               <div className={`grid ${isMobile ? "grid-cols-2 gap-6" : "grid-cols-5 gap-4"} w-full`}>
                 {/* Amazon Logo */}
                 <div className="flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/amazon-logo-new.png"
                     alt="Amazon logo"
@@ -74,6 +75,7 @@ export default function ProudlyOwnedSection() {
 
                 {/* Intel Logo */}
                 <div className="flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/intel-logo-new.png"
                     alt="Intel logo"
@@ -84,6 +86,7 @@ export default function ProudlyOwnedSection() {
 
                 {/* RE/MAX Logo */}
                 <div className={`flex items-center justify-center ${isMobile ? "col-span-2" : ""}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/remax-logo-new.svg"
                     alt="RE/MAX logo"
@@ -94,6 +97,7 @@ export default function ProudlyOwnedSection() {
 
                 {/* WeWork Logo */}
                 <div className={`flex items-center justify-center ${isMobile ? "col-span-1" : ""}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/wework-logo-new.svg"
                     alt="WeWork logo"
@@ -104,6 +108,7 @@ export default function ProudlyOwnedSection() {
 
                 {/* Nike Logo */}
                 <div className={`flex items-center justify-center ${isMobile ? "col-span-1" : ""}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/nike-logo-new.svg"
                     alt="Nike logo"

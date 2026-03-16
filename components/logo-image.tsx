@@ -16,6 +16,7 @@ export default function LogoImage({ src, alt, width, height, className = "" }: L
   if (isSvg) {
     // For SVGs, use a regular img tag which handles SVGs better than Next.js Image in some cases
     return (
+      // eslint-disable-next-line @next/next/no-img-element
       <img
         src={src || "/placeholder.svg"}
         alt={alt}

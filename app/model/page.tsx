@@ -288,6 +288,7 @@ export default function ModelPage() {
                 {galleryItems.map((item) => (
                   <div key={item.id} className={styles.masonryItem}>
                     {item.type === "image" && (
+                      // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={getImageSrc(item.src) || "/placeholder.svg"}
                         alt={item.alt || "Gallery image"}
@@ -306,6 +307,7 @@ export default function ModelPage() {
                           <div className="flex items-start gap-3 sm:gap-4">
                             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex-shrink-0 hidden sm:block">
                               {item.id === 13 && (
+                                // eslint-disable-next-line @next/next/no-img-element
                                 <img
                                   src="/images/profile-photos/tom-danowski-headshot.webp"
                                   alt="Tom Danowski"
@@ -313,6 +315,7 @@ export default function ModelPage() {
                                 />
                               )}
                               {item.id !== 13 && item.avatar && (
+                                // eslint-disable-next-line @next/next/no-img-element
                                 <img
                                   src={getImageSrc(item.avatar) || "/placeholder.svg"}
                                   alt={`${item.name} avatar`}
@@ -365,6 +368,7 @@ export default function ModelPage() {
                           />
 
                           {/* Thumbnail image */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             id={`thumbnail-${item.id}`}
                             src={getImageSrc(item.poster) || "/placeholder.svg"}
@@ -410,7 +414,7 @@ export default function ModelPage() {
                           <div className="bg-[#1C1B1C] p-4 rounded-b-lg">
                             <p className="text-white text-sm">
                               <strong>The experience was amazing!</strong> Nathan made me feel so comfortable during the
-                              shoot. He has a great eye for lighting and poses that flatter everyone. I'm thrilled with
+                              shoot. He has a great eye for lighting and poses that flatter everyone. I&apos;m thrilled with
                               my new headshots!
                             </p>
                           </div>
@@ -418,7 +422,7 @@ export default function ModelPage() {
                           <div className="bg-[#1C1B1C] p-4 rounded-b-lg">
                             <p className="text-white text-sm">
                               <strong>Working with Nathan was fantastic!</strong> He guided me through the whole process
-                              and made it fun. The photos turned out better than I expected, and I've already received
+                              and made it fun. The photos turned out better than I expected, and I&apos;ve already received
                               compliments on my new LinkedIn profile.
                             </p>
                           </div>
@@ -491,7 +495,7 @@ export default function ModelPage() {
               </div>
               <div className="hidden lg:block h-12 w-px bg-gray-700"></div>
               <div className="text-center lg:text-left">
-                <p className="uppercase text-sm font-medium">Portland's top full-service</p>
+                <p className="uppercase text-sm font-medium">Portland&apos;s top full-service</p>
                 <p className="uppercase text-sm font-medium">headshot & portrait</p>
                 <p className="uppercase text-sm font-medium">photography studio</p>
               </div>

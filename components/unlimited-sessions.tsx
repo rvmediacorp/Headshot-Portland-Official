@@ -22,14 +22,13 @@ export default function UnlimitedSessions() {
       { threshold: 0.5 },
     )
 
-    if (underlineRef.current) {
-      observer.observe(underlineRef.current)
+    const el = underlineRef.current
+    if (el) {
+      observer.observe(el)
     }
 
     return () => {
-      if (underlineRef.current) {
-        observer.disconnect()
-      }
+      observer.disconnect()
     }
   }, [])
 
@@ -112,7 +111,7 @@ export default function UnlimitedSessions() {
           {/* Description */}
           <div className="text-center mb-12 md:mb-16">
             <p className="text-white text-base md:text-lg max-w-3xl mx-auto">
-              Unlimited sessions mean we capture all your expressions, outfits & moods. It's all included! Capture
+              Unlimited sessions mean we capture all your expressions, outfits &amp; moods. It&apos;s all included! Capture
               photos for different purposes. Get it all done in one visit.
             </p>
           </div>

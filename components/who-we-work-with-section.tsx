@@ -220,6 +220,7 @@ export default function WhoWeWorkWithSection() {
 
               return (
                 <div key={`grid-${index}`} className="aspect-square overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={headshot.src}
                     alt={headshot.alt}
@@ -285,6 +286,7 @@ export default function WhoWeWorkWithSection() {
               const headshot = getHeadshot(index)
               return (
                 <div key={`mobile-${index}`} className="aspect-square overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={headshot.src} alt={headshot.alt} width={300} height={300} loading="eager" decoding="sync" fetchPriority="high" className="w-full h-full object-cover" />
                 </div>
               )

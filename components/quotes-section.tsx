@@ -22,14 +22,13 @@ export default function QuotesSection() {
       { threshold: 0.2 },
     )
 
-    if (textSectionRef.current) {
-      observer.observe(textSectionRef.current)
+    const el = textSectionRef.current
+    if (el) {
+      observer.observe(el)
     }
 
     return () => {
-      if (textSectionRef.current) {
-        observer.disconnect()
-      }
+      observer.disconnect()
     }
   }, [])
 
@@ -95,10 +94,10 @@ export default function QuotesSection() {
                 </div>
                 <div className="space-y-1 ml-8">
                   <p className="text-[#247BA0] font-medium uppercase" style={{ fontSize: isMobile ? "16px" : "20px" }}>
-                    "BUT I HATE BEING PHOTOGRAPHED."
+                    &ldquo;BUT I HATE BEING PHOTOGRAPHED.&rdquo;
                   </p>
                   <p className="text-[#247BA0] font-medium uppercase" style={{ fontSize: isMobile ? "16px" : "20px" }}>
-                    "I NEVER LOOK GOOD IN PHOTOS."
+                    &ldquo;I NEVER LOOK GOOD IN PHOTOS.&rdquo;
                   </p>
                 </div>
               </div>
@@ -107,7 +106,7 @@ export default function QuotesSection() {
               <div className={`mt-8 md:mt-0 pl-0 md:pl-8 lg:pl-12 ${isMobile ? "ml-8" : ""}`}>
                 <p className="text-[#838283] max-w-[700px]" style={{ lineHeight: "170%" }}>
                   <b className="text-white font-medium block md:inline">We hear this all the time,</b> and we get
-                  it—being in front of the camera can be... uncomfortable. Our response: "Leave it to the pros." We'll
+                  it—being in front of the camera can be... uncomfortable. Our response: &ldquo;Leave it to the pros.&rdquo; We&apos;ll
                   help make the experience comfortable and fun! We specialize in posing and smile coaching—everything
                   from coaching you on the perfect angles, expression and positioning to details like wardrobe and hair.
                 </p>
@@ -175,7 +174,7 @@ export default function QuotesSection() {
                     }}
                   >
                     <span style={{ whiteSpace: isMobile ? "normal" : "nowrap" }}>
-                      Does your company require a specific "look"?
+                      Does your company require a specific &ldquo;look&rdquo;?
                     </span>
                   </h2>
                 </div>

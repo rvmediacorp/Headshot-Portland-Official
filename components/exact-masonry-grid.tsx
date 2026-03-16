@@ -14,6 +14,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
           {/* Column 1 */}
           <div className="masonry-col">
             <div className="masonry-item rounded-[12px] overflow-hidden mb-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-1.webp"
                 alt="Professional headshot of man in dark clothing"
@@ -22,6 +23,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden mb-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-2.webp"
                 alt="Professional headshot of man with beard in suit"
@@ -30,6 +32,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-9.webp"
                 alt="Professional headshot of woman with brown hair in blazer"
@@ -42,6 +45,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
           {/* Column 2 */}
           <div className="masonry-col pt-12">
             <div className="masonry-item rounded-[12px] overflow-hidden mb-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-5.webp"
                 alt="Professional headshot of woman with curly hair"
@@ -50,6 +54,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-3.webp"
                 alt="Professional headshot of Asian man in denim shirt"
@@ -62,6 +67,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
           {/* Column 3 */}
           <div className="masonry-col">
             <div className="masonry-item rounded-[12px] overflow-hidden mb-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-4.webp"
                 alt="Professional headshot of woman with blonde hair"
@@ -70,6 +76,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-8.webp"
                 alt="Professional headshot of man with longer hair"
@@ -82,6 +89,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
           {/* Column 4 */}
           <div className="masonry-col pt-16">
             <div className="masonry-item rounded-[12px] overflow-hidden mb-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-7.webp"
                 alt="Professional headshot of bald man with mustache in suit"
@@ -90,6 +98,7 @@ export default function ExactMasonryGrid({ useOriginalHeight = false }: ExactMas
               />
             </div>
             <div className="masonry-item rounded-[12px] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/headshot-6.webp"
                 alt="Professional closeup headshot of young man with beard"

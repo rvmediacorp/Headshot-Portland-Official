@@ -63,7 +63,7 @@ export default function ThankYouPage() {
 
             <div className="bg-[#1C1B1C] p-8 rounded-lg mb-10 text-left">
               <p className="mb-6 text-lg">
-                We've received your information and will be in touch shortly with your personalized quote. Here's what
+                We&apos;ve received your information and will be in touch shortly with your personalized quote. Here&apos;s what
                 happens next:
               </p>
 
@@ -78,7 +78,7 @@ export default function ThankYouPage() {
                   <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#247BA0] text-white mr-3">
                     2
                   </span>
-                  <span>You'll receive your quote via email within 24 hours (often much sooner).</span>
+                  <span>You&apos;ll receive your quote via email within 24 hours (often much sooner).</span>
                 </li>
                 <li className="flex items-start">
                   <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#247BA0] text-white mr-3">
