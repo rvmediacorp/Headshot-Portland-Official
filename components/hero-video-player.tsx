@@ -1,12 +1,18 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 
 export default function HeroVideoPlayer({ src, poster }: { src: string; poster: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isReady, setIsReady] = useState(false)
+  const [posterLoaded, setPosterLoaded] = useState(false)
+
+  const handlePosterLoad = useCallback(() => {
+    setPosterLoaded(true)
+  }, [])
 
   useEffect(() => {
+    if (!posterLoaded) return
     const video = videoRef.current
     if (!video) return
 
@@ -17,42 +23,44 @@ export default function HeroVideoPlayer({ src, poster }: { src: string; poster: 
 
     video.addEventListener("canplay", handleCanPlay)
 
-    // Delay video load so it doesn't compete with LCP
+    // Only load video after poster has painted + a delay
+    // On mobile this prevents bandwidth competition with LCP
+    const isMobile = window.innerWidth < 768
+    const delay = isMobile ? 4000 : 1000
+
     const timer = setTimeout(() => {
-      video.preload = "auto"
+      video.src = src
       video.load()
-    }, 2000)
+    }, delay)
 
     return () => {
       video.removeEventListener("canplay", handleCanPlay)
       clearTimeout(timer)
     }
-  }, [])
+  }, [posterLoaded, src])
 
   return (
     <>
-      {/* Poster shown until video is ready — this is the fast LCP element */}
       {!isReady && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={poster}
           alt=""
           fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
+          onLoad={handlePosterLoad}
         />
       )}
       <video
         ref={videoRef}
-        suppressHydrationWarning
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isReady ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isReady ? "opacity-100" : "opacity-0"}`}
         muted
         loop
         playsInline
         preload="none"
         aria-label="Background video showing headshot photography studio sessions"
-      >
-        <source src={src} type="video/mp4" />
-      </video>
+      />
     </>
   )
 }

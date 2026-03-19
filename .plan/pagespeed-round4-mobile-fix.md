@@ -1,3 +1,16 @@
+---
+type: performance-optimization
+people: []
+tags:
+  - performance
+  - mobile
+  - lcp
+  - optimization
+  - video
+status: active
+created_date: '2026-03-19'
+description: 'Fix mobile PageSpeed crisis: reduce LCP from 12.8s to <3s by removing video autoplay and compressing assets; improve accessibility and best practices scores'
+---
 # PageSpeed Round 4 — Mobile LCP Crisis Fix
 
 **Date:** 2026-03-19

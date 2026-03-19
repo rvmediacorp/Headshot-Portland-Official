@@ -1,15 +1,15 @@
 ---
-type: performance-audit
+type: performance analysis
 people: []
 tags:
+  - pagespeed
   - performance
-  - optimization
   - web-vitals
-  - accessibility
-  - security
+  - optimization
+  - mobile
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed optimization roadmap for headshotportland.com: audit identifying Core Web Vitals failures (LCP 8.8s, FCP 3.3s, SI 5.5s) with prioritized 5-phase action plan to improve performance score from 65 to 85+'
+description: 'Performance audit of headshotportland.com mobile (score 65). Identifies LCP bottleneck (8.8s) caused by 1.67s JS hydration delay in hero component. Includes prioritized action plan across 5 phases: hero RSC split, image optimization, JS bloat reduction, security headers, and acce'
 ---
 # PageSpeed Optimization — Round 2 (Real PageSpeed Insights + Chrome DevTools)
 

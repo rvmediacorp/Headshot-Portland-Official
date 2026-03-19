@@ -1,16 +1,15 @@
 ---
 type: project
-people:
-  - Nathan
+people: []
 tags:
   - performance
   - accessibility
-  - optimization
   - seo
-  - videos
+  - core-web-vitals
+  - image-optimization
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed Insights optimization round 3 for headshotportland.com—targeting 90+ performance score on mobile/desktop by fixing TBT (330ms on desktop), LCP render delay (3.3s mobile), oversized images, non-lazy-loaded videos (35MB), and accessibility color contrast issues across 10+'
+description: 'Google PageSpeed Insights optimization for headshotportland.com website. Tracks metrics improvement from Round 1 to Round 3 (mobile performance 65→87, desktop 85). Identifies critical issues: Desktop TBT 330ms, Mobile LCP 3.3s, oversized images (176 KiB waste), unused JS (261 KiB'
 ---
 # pagespeed-round3-final-push
 

@@ -27,9 +27,6 @@ export default function RootLayout({
           as="image"
           type="image/webp"
         />
-        {/* Preconnect to Google Maps (used in VisitUs section) */}
-        <link rel="preconnect" href="https://maps.googleapis.com" />
-        <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
         {/* Google tag (gtag.js) — lazyOnload to avoid competing with LCP */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-847156852" strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
