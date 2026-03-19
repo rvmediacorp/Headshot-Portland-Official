@@ -3,14 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
-import { Playfair_Display } from "next/font/google"
 import { useEffect, useRef } from "react"
-
-// Load Playfair Display font
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: "400",
-})
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -37,8 +30,8 @@ export default function Hero() {
             muted
             loop
             playsInline
-            preload="auto"
-            poster="/modern-photography-studio.png"
+            preload="metadata"
+            poster="/modern-photography-studio.webp"
             aria-label="Background video showing headshot photography studio sessions"
             role="img"
           >
@@ -62,14 +55,14 @@ export default function Hero() {
 
           {/* Subheading with Playfair Display */}
           <p
-            className={`${playfairDisplay.className} w-full max-w-3xl mx-auto text-center mb-6 md:mb-6 lg:mb-10 text-white`}
+            className="font-playfair w-full max-w-3xl mx-auto text-center mb-6 md:mb-6 lg:mb-10 text-white"
           >
             We Offer Headshots & Portraits For Individuals, Teams & Everything In Between. Trusted By Portlands Leading
             Companies & Professionals.
           </p>
 
           {/* Tagline */}
-          <p className={`${playfairDisplay.className} text-center mb-10 md:mb-12 lg:mb-16 text-white`}>
+          <p className="font-playfair text-center mb-10 md:mb-12 lg:mb-16 text-white">
             PROFESSIONAL, POLISHED & PRICED RIGHT, EVERY TIME.
           </p>
 
@@ -98,13 +91,13 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* Leave it to the Pros Section - Updated to match Figma design */}
+      {/* Leave it to the Pros Section */}
       <section className="w-full relative mt-0 mb-0">
         <div className="relative">
-          {/* Headshot Grid - Responsive grid of images with updated rows */}
+          {/* Headshot Grid */}
           <div className="w-full relative overflow-hidden">
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 md:gap-2">
-              {/* Row 1 - First set of headshots - Alternating light/dark backgrounds */}
+              {/* Row 1 */}
               <div className="aspect-square overflow-hidden">
                 <Image
                   src="/images/HeroGrid18/angela-headshot-photo.webp"
@@ -112,6 +105,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                   priority
                 />
               </div>
@@ -122,6 +116,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                   priority
                 />
               </div>
@@ -132,6 +127,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                   priority
                 />
               </div>
@@ -142,7 +138,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -152,7 +148,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -162,11 +158,11 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="16vw"
                 />
               </div>
 
-              {/* Row 2 - Second set of headshots - Alternating light/dark backgrounds */}
+              {/* Row 2 */}
               <div className="aspect-square overflow-hidden">
                 <Image
                   src="/images/HeroGrid18/headshot-portland-amy.webp"
@@ -174,7 +170,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -184,7 +180,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -194,7 +190,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
@@ -204,7 +200,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -214,7 +210,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -225,11 +221,11 @@ export default function Hero() {
                   height={200}
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "center 20%" }}
-                  priority
+                  sizes="16vw"
                 />
               </div>
 
-              {/* Row 3 - Third set of headshots - Alternating light/dark backgrounds */}
+              {/* Row 3 */}
               <div className="aspect-square overflow-hidden">
                 <Image
                   src="/images/HeroGrid18/woman-hijab-headshot-studio.webp"
@@ -237,7 +233,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -247,7 +243,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden">
@@ -257,7 +253,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
@@ -267,7 +263,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="(max-width: 768px) 25vw, 16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -277,7 +273,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="16vw"
                 />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
@@ -287,7 +283,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
-                  priority
+                  sizes="16vw"
                 />
               </div>
             </div>
@@ -296,10 +292,9 @@ export default function Hero() {
             <div className="absolute bottom-0 left-0 right-0 h-2/3 md:h-1/2 bg-gradient-to-t from-black/95 via-black/80 to-transparent"></div>
           </div>
 
-          {/* Combined Text Container - Simplified structure */}
+          {/* Combined Text Container */}
           <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 left-0 right-0 text-center z-20 px-4 md:px-0">
             <div className="relative">
-              {/* "LEAVE IT TO THE PROS" heading */}
               <h2
                 className="text-[#247ba0] font-bodoniModa text-center mb-0 md:mb-0"
                 style={{
@@ -309,13 +304,11 @@ export default function Hero() {
                   letterSpacing: "0.02em",
                   textTransform: "uppercase",
                   textShadow: "0px 2px 4px rgba(0,0,0,0.3)",
-                  marginBottom: "-5px", // Negative margin to pull texts closer together
                 }}
               >
                 LEAVE IT TO THE PROS
               </h2>
 
-              {/* "We're a photography studio..." subheading */}
               <p
                 className="collage-subheading text-white mx-auto md:overflow-hidden"
                 style={{

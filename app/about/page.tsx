@@ -1,13 +1,14 @@
-"use client"
-
+import dynamic from "next/dynamic"
 import AboutHero from "@/components/about-hero"
-import AboutFeatures from "@/components/about-features"
-import LeaveItToPros from "@/components/leave-it-to-pros"
-import ProudlyOwnedSection from "@/components/proudly-owned-section"
-import UnlimitedSessions from "@/components/unlimited-sessions"
-import ClientTestimonialsSection from "@/components/client-testimonials-section"
-import Footer from "@/components/footer"
 import GoogleAnalytics from "@/components/google-analytics"
+
+// Lazy load below-fold sections
+const AboutFeatures = dynamic(() => import("@/components/about-features"))
+const LeaveItToPros = dynamic(() => import("@/components/leave-it-to-pros"))
+const ProudlyOwnedSection = dynamic(() => import("@/components/proudly-owned-section"))
+const UnlimitedSessions = dynamic(() => import("@/components/unlimited-sessions"))
+const ClientTestimonialsSection = dynamic(() => import("@/components/client-testimonials-section"))
+const Footer = dynamic(() => import("@/components/footer"))
 
 export default function AboutPage() {
   return (

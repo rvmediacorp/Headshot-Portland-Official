@@ -1,18 +1,21 @@
+import dynamic from "next/dynamic"
 import Hero from "@/components/hero"
-import QuotesSection from "@/components/quotes-section"
-import CreativeProcess from "@/components/creative-process"
-import BeforeAfterSection from "@/components/before-after-section"
-import UnlimitedSessions from "@/components/unlimited-sessions"
-import HighEndRetouchingSection from "@/components/before-after-slider-comp"
-import SimpleAndFunExperience from "@/components/simple-and-fun-experience"
-import ProudlyOwnedSection from "@/components/proudly-owned-section"
-import ClientTestimonialsSection from "@/components/client-testimonials-section"
-import BehindTheScenesSection from "@/components/behind-the-scenes-section"
-import WhoWeWorkWithSection from "@/components/who-we-work-with-section"
-import LatestWorkSection from "@/components/latest-work-section"
-import VisitUsSection from "@/components/visit-us-section"
-import Footer from "@/components/footer"
 import GoogleAnalytics from "@/components/google-analytics"
+
+// Lazy load below-fold sections
+const QuotesSection = dynamic(() => import("@/components/quotes-section"))
+const CreativeProcess = dynamic(() => import("@/components/creative-process"))
+const BeforeAfterSection = dynamic(() => import("@/components/before-after-section"))
+const UnlimitedSessions = dynamic(() => import("@/components/unlimited-sessions"))
+const HighEndRetouchingSection = dynamic(() => import("@/components/before-after-slider-comp"))
+const SimpleAndFunExperience = dynamic(() => import("@/components/simple-and-fun-experience"))
+const ProudlyOwnedSection = dynamic(() => import("@/components/proudly-owned-section"))
+const ClientTestimonialsSection = dynamic(() => import("@/components/client-testimonials-section"))
+const BehindTheScenesSection = dynamic(() => import("@/components/behind-the-scenes-section"))
+const WhoWeWorkWithSection = dynamic(() => import("@/components/who-we-work-with-section"))
+const LatestWorkSection = dynamic(() => import("@/components/latest-work-section"))
+const VisitUsSection = dynamic(() => import("@/components/visit-us-section"))
+const Footer = dynamic(() => import("@/components/footer"))
 
 export default function Home() {
   return (

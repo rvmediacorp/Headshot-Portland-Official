@@ -1,5 +1,3 @@
-"use client"
-
 export default function VisitUsSection() {
   return (
     <div className="w-full px-[10px] my-[10px]">
