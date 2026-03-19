@@ -215,8 +215,8 @@ export default function BehindTheScenesSection() {
                         loop
                         playsInline
                         muted={true}
-                        autoPlay
-                        preload="metadata"
+                        autoPlay={false}
+                        preload="none"
                         poster={testimonial.image || undefined}
                         onClick={() => handleVideoPlay(testimonial.id)}
                       />
@@ -260,8 +260,8 @@ export default function BehindTheScenesSection() {
                         loop
                         playsInline
                         muted={true}
-                        autoPlay
-                        preload="metadata"
+                        autoPlay={false}
+                        preload="none"
                         poster={testimonial.image || undefined}
                         onClick={() => handleVideoPlay(testimonial.id)}
                       />

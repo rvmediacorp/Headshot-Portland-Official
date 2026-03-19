@@ -226,9 +226,9 @@ export default function WhoWeWorkWithSection() {
                     alt={headshot.alt}
                     width={300}
                     height={300}
-                    loading="eager"
-                    decoding="sync"
-                    fetchPriority="high"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -287,7 +287,7 @@ export default function WhoWeWorkWithSection() {
               return (
                 <div key={`mobile-${index}`} className="aspect-square overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={headshot.src} alt={headshot.alt} width={300} height={300} loading="eager" decoding="sync" fetchPriority="high" className="w-full h-full object-cover" />
+                  <img src={headshot.src} alt={headshot.alt} width={300} height={300} loading="lazy" decoding="async" fetchPriority="low" className="w-full h-full object-cover" />
                 </div>
               )
             })}

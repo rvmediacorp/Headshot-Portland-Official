@@ -2,14 +2,14 @@
 type: project
 people: []
 tags:
-  - pagespeed
   - performance
+  - pagespeed
+  - nextjs
   - optimization
-  - next.js
-  - core-web-vitals
+  - frontend
 status: active
 created_date: '2026-03-19'
-description: 'Performance optimization plan for headshotportland.com targeting mobile PageSpeed improvement from ~40-50 to 80+ and desktop to 90+. Four-phase implementation plan addressing critical issues: hero image prioritization (18→3), image optimization, bundle reduction (unused dependenc'
+description: 'Performance optimization plan for headshotportland.com targeting mobile PageSpeed 80+ and desktop 90+. Phased approach: Next.js 16.2 upgrade, image priority fixes, bundle optimization with dynamic imports, image compression, and CLS improvements.'
 ---
 # pagespeed-optimization
 

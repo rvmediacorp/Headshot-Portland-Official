@@ -84,6 +84,7 @@ export default function LatestWorkSection() {
                             : "https://ww3.headshotportland.com/gallery/jennifer-dolan---individual-session"
                     }
                     className="inline-flex items-center text-[#247BA0] border border-[#247BA0] rounded-full px-4 py-2"
+                    aria-label={`See more photos from ${project.title}`}
                   >
                     <span className="mr-2">SEE MORE</span>
                     <ArrowRight size={16} />
@@ -126,6 +127,7 @@ export default function LatestWorkSection() {
                             : project.link
                     }
                     className="inline-flex items-center text-[#247BA0] border border-[#247BA0] rounded-full px-3 py-1.5 text-sm"
+                    aria-label={`See more photos from ${project.title}`}
                   >
                     <span className="mr-1">SEE MORE</span>
                     <ArrowRight size={14} />

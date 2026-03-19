@@ -1,47 +1,19 @@
-"use client"
-
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
-import { useEffect, useRef } from "react"
+import HeroVideoPlayer from "./hero-video-player"
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  // Ensure video plays when component mounts
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch((error) => {
-        console.log("Video autoplay was prevented:", error)
-      })
-    }
-  }, [])
-
   return (
     <>
       {/* Hero Section with Video Background */}
       <section className="w-full min-h-[80vh] relative flex flex-col justify-center px-4 md:px-8 lg:px-16 py-6 md:py-12 overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <video
-            ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
+          <HeroVideoPlayer
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshothero-pdhaIqDrwHMpqHtCjlzLW1nNsrRcPD.mp4"
             poster="/modern-photography-studio.webp"
-            aria-label="Background video showing headshot photography studio sessions"
-            role="img"
-          >
-            <source
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headshothero-pdhaIqDrwHMpqHtCjlzLW1nNsrRcPD.mp4"
-              type="video/mp4"
-            />
-
-            Your browser does not support the video tag.
-          </video>
+          />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/50 z-1"></div>
         </div>
@@ -50,20 +22,18 @@ export default function Hero() {
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Main Heading */}
           <h1 className="hero-heading font-bodoniModa text-center mb-8 md:mb-8 lg:mb-12 text-white">
-            PORTLAND&apos;S TOP-RATED HEADSHOT & PORTRAIT PHOTOGRAPHY STUDIO
+            PORTLAND&apos;S TOP-RATED HEADSHOT &amp; PORTRAIT PHOTOGRAPHY STUDIO
           </h1>
 
-          {/* Subheading with Playfair Display */}
-          <p
-            className="font-playfair w-full max-w-3xl mx-auto text-center mb-6 md:mb-6 lg:mb-10 text-white"
-          >
-            We Offer Headshots & Portraits For Individuals, Teams & Everything In Between. Trusted By Portlands Leading
-            Companies & Professionals.
+          {/* Subheading */}
+          <p className="font-playfair w-full max-w-3xl mx-auto text-center mb-6 md:mb-6 lg:mb-10 text-white">
+            We Offer Headshots &amp; Portraits For Individuals, Teams &amp; Everything In Between. Trusted By Portlands Leading
+            Companies &amp; Professionals.
           </p>
 
           {/* Tagline */}
           <p className="font-playfair text-center mb-10 md:mb-12 lg:mb-16 text-white">
-            PROFESSIONAL, POLISHED & PRICED RIGHT, EVERY TIME.
+            PROFESSIONAL, POLISHED &amp; PRICED RIGHT, EVERY TIME.
           </p>
 
           {/* CTA Buttons */}
@@ -71,6 +41,7 @@ export default function Hero() {
             <Link
               href="https://ww3.headshotportland.com/instant-quote"
               className="cta-button cta-primary button-text w-full md:w-auto text-sm md:text-base py-1 md:py-4"
+              aria-label="Get a free headshot photography quote"
             >
               <span>GET FREE QUOTE</span>
               <span className="arrow-icon w-8 h-8 md:w-10 md:h-10">
@@ -81,6 +52,7 @@ export default function Hero() {
             <Link
               href="https://ww3.headshotportland.com/instant"
               className="cta-button cta-secondary button-text w-full md:w-auto text-sm md:text-base py-1 md:py-4"
+              aria-label="Book a headshot photography session now"
             >
               <span>BOOK NOW</span>
               <span className="arrow-icon w-8 h-8 md:w-10 md:h-10">
@@ -164,127 +136,42 @@ export default function Hero() {
 
               {/* Row 2 */}
               <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/HeroGrid18/headshot-portland-amy.webp"
-                  alt="Professional headshot of Asian woman in white button-up shirt"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
-                />
+                <Image src="/images/HeroGrid18/headshot-portland-amy.webp" alt="Professional headshot of Asian woman in white button-up shirt" width={200} height={200} className="w-full h-full object-cover" sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw" />
               </div>
               <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/HeroGrid18/cameron-suit-headshot.webp"
-                  alt="Professional headshot of young man with glasses in navy suit"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
-                />
+                <Image src="/images/HeroGrid18/cameron-suit-headshot.webp" alt="Professional headshot of young man with glasses in navy suit" width={200} height={200} className="w-full h-full object-cover" sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw" />
               </div>
               <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/HeroGrid18/hannah-headshots-pdx.webp"
-                  alt="Professional headshot of person with short brown hair in green polo"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
-                />
+                <Image src="/images/HeroGrid18/hannah-headshots-pdx.webp" alt="Professional headshot of person with short brown hair in green polo" width={200} height={200} className="w-full h-full object-cover" sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw" />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
-                <Image
-                  src="/images/HeroGrid18/valerie-headshot-photographer.webp"
-                  alt="Professional headshot of woman with short dark hair"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 768px) 25vw, 16vw"
-                />
+                <Image src="/images/HeroGrid18/valerie-headshot-photographer.webp" alt="Professional headshot of woman with short dark hair" width={200} height={200} className="w-full h-full object-cover" sizes="(max-width: 768px) 25vw, 16vw" />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
-                <Image
-                  src="/images/HeroGrid18/portland-headshot-studio-andrew.webp"
-                  alt="Professional headshot of man with glasses and beard"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="16vw"
-                />
+                <Image src="/images/HeroGrid18/portland-headshot-studio-andrew.webp" alt="Professional headshot of man with glasses and beard" width={200} height={200} className="w-full h-full object-cover" sizes="16vw" />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
-                <Image
-                  src="/images/HeroGrid18/maureen-studio-headshot.webp"
-                  alt="Professional headshot of woman with shoulder-length brown hair in light blue shirt"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: "center 20%" }}
-                  sizes="16vw"
-                />
+                <Image src="/images/HeroGrid18/maureen-studio-headshot.webp" alt="Professional headshot of woman with shoulder-length brown hair in light blue shirt" width={200} height={200} className="w-full h-full object-cover" style={{ objectPosition: "center 20%" }} sizes="16vw" />
               </div>
 
               {/* Row 3 */}
               <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/HeroGrid18/woman-hijab-headshot-studio.webp"
-                  alt="Professional headshot of woman in hijab and black blazer"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
-                />
+                <Image src="/images/HeroGrid18/woman-hijab-headshot-studio.webp" alt="Professional headshot of woman in hijab and black blazer" width={200} height={200} className="w-full h-full object-cover" sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw" />
               </div>
               <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/HeroGrid18/siddhi-headshot-photographer.webp"
-                  alt="Professional headshot of woman with reddish-brown hair"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
-                />
+                <Image src="/images/HeroGrid18/siddhi-headshot-photographer.webp" alt="Professional headshot of woman with reddish-brown hair" width={200} height={200} className="w-full h-full object-cover" sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw" />
               </div>
               <div className="aspect-square overflow-hidden">
-                <Image
-                  src="/images/HeroGrid18/woman-white-top-headshot-portraits.webp"
-                  alt="Professional headshot of woman in white top"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
-                />
+                <Image src="/images/HeroGrid18/woman-white-top-headshot-portraits.webp" alt="Professional headshot of woman in white top" width={200} height={200} className="w-full h-full object-cover" sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw" />
               </div>
               <div className="aspect-square overflow-hidden hidden sm:block">
-                <Image
-                  src="/images/HeroGrid18/headshot-medical-portland.webp"
-                  alt="Professional headshot of man with glasses and beard in white shirt and tie"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 768px) 25vw, 16vw"
-                />
+                <Image src="/images/HeroGrid18/headshot-medical-portland.webp" alt="Professional headshot of man with glasses and beard in white shirt and tie" width={200} height={200} className="w-full h-full object-cover" sizes="(max-width: 768px) 25vw, 16vw" />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
-                <Image
-                  src="/images/HeroGrid18/tom-fisher-headshot-photographer.webp"
-                  alt="Professional headshot of man in navy suit"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="16vw"
-                />
+                <Image src="/images/HeroGrid18/tom-fisher-headshot-photographer.webp" alt="Professional headshot of man in navy suit" width={200} height={200} className="w-full h-full object-cover" sizes="16vw" />
               </div>
               <div className="aspect-square overflow-hidden hidden md:block">
-                <Image
-                  src="/images/HeroGrid18/male-headshot-portland.webp"
-                  alt="Professional headshot of man with glasses in plaid jacket"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                  sizes="16vw"
-                />
+                <Image src="/images/HeroGrid18/male-headshot-portland.webp" alt="Professional headshot of man with glasses in plaid jacket" width={200} height={200} className="w-full h-full object-cover" sizes="16vw" />
               </div>
             </div>
 

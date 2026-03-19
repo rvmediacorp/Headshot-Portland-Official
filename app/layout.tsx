@@ -19,17 +19,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${bodoni.variable} ${playfair.variable} ${bodoniModa.variable}`}>
       <head>
-        {/* Preload critical fonts */}
+        {/* Preload LCP image (video poster) */}
         <link
           rel="preload"
-          href="/fonts/LTCBodoni175Pro-Regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
+          href="/modern-photography-studio.webp"
+          as="image"
+          type="image/webp"
         />
-        {/* Google tag (gtag.js) */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-847156852" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        {/* Preconnect to Google Maps (used in VisitUs section) */}
+        <link rel="preconnect" href="https://maps.googleapis.com" />
+        <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
+        {/* Google tag (gtag.js) — lazyOnload to avoid competing with LCP */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-847156852" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
