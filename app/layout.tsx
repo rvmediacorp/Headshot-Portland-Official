@@ -5,6 +5,7 @@ import { inter, bodoni, playfair, bodoniModa } from "./fonts"
 import Script from "next/script"
 import Navbar from "@/components/navbar"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Headshot Portland - Professional Photography Studio",
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
