@@ -12,6 +12,7 @@ export default function HeroVideoPlayer({ src, poster }: { src: string; poster: 
   return (
     <video
       ref={videoRef}
+      suppressHydrationWarning
       className="absolute inset-0 w-full h-full object-cover"
       autoPlay
       muted
@@ -21,7 +22,6 @@ export default function HeroVideoPlayer({ src, poster }: { src: string; poster: 
       poster={poster}
       fetchPriority="high"
       aria-label="Background video showing headshot photography studio sessions"
-      role="img"
     >
       <source src={src} type="video/mp4" />
     </video>

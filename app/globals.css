@@ -12,7 +12,7 @@
 
 :root {
   /* ── Brand Teal ── */
-  --color-brand-teal:       oklch(0.598 0.098 222.899); /* #2A8CAA — primary */
+  --color-brand-teal:       oklch(0.530 0.088 222.899); /* #1e7a96 — primary (WCAG AA on white) */
   --color-brand-teal-hover: oklch(0.491 0.083 226.288); /* #1d6a85 — hover   */
   --color-brand-teal-deep:  oklch(0.332 0.041 229.699); /* #1E3A47 — heading */
 

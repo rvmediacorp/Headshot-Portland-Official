@@ -58,7 +58,7 @@ export default function CreativeProcess() {
                   loop
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   poster="/images/gallery.jpeg"
                   onError={(e) => {
                     console.error("Video failed to load:", e)
@@ -93,7 +93,7 @@ export default function CreativeProcess() {
                     loop
                     muted
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     poster="/images/gallery.jpeg"
                     onError={() => setVideo2Error(true)}
                   >
@@ -128,7 +128,7 @@ export default function CreativeProcess() {
                   loop
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   poster="/images/gallery.jpeg"
                   onError={(e) => {
                     console.error("Video failed to load:", e)
@@ -161,7 +161,7 @@ export default function CreativeProcess() {
                     loop
                     muted
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     poster="/images/gallery.jpeg"
                     onError={() => setVideoError(true)}
                   >

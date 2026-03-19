@@ -55,7 +55,7 @@ export default function ProudlyOwnedSection() {
               {/* Companies Nathan Has Worked With Link */}
               <Link
                 href="/about-nathan"
-                className="text-[#247BA0] font-bold text-base md:text-lg inline-block border-b border-[#247BA0] pb-0.5 mb-12"
+                className="text-[#1a6985] font-bold text-base md:text-lg inline-block border-b border-[#1a6985] pb-0.5 mb-12"
               >
                 COMPANIES NATHAN HAS WORKED WITH
               </Link>
@@ -68,8 +68,10 @@ export default function ProudlyOwnedSection() {
                   <img
                     src="/images/amazon-logo-new.png"
                     alt="Amazon logo"
+                    width={120}
+                    height={40}
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
-                    loading="eager"
+                    loading="lazy"
                   />
                 </div>
 
@@ -79,8 +81,10 @@ export default function ProudlyOwnedSection() {
                   <img
                     src="/images/intel-logo-new.png"
                     alt="Intel logo"
+                    width={80}
+                    height={40}
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
-                    loading="eager"
+                    loading="lazy"
                   />
                 </div>
 
@@ -90,8 +94,10 @@ export default function ProudlyOwnedSection() {
                   <img
                     src="/images/remax-logo-new.svg"
                     alt="RE/MAX logo"
+                    width={120}
+                    height={40}
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
-                    loading="eager"
+                    loading="lazy"
                   />
                 </div>
 
@@ -101,8 +107,10 @@ export default function ProudlyOwnedSection() {
                   <img
                     src="/images/wework-logo-new.svg"
                     alt="WeWork logo"
+                    width={100}
+                    height={40}
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
-                    loading="eager"
+                    loading="lazy"
                   />
                 </div>
 
@@ -112,8 +120,10 @@ export default function ProudlyOwnedSection() {
                   <img
                     src="/images/nike-logo-new.svg"
                     alt="Nike logo"
+                    width={60}
+                    height={40}
                     style={{ maxHeight: "40px", maxWidth: "100%" }}
-                    loading="eager"
+                    loading="lazy"
                   />
                 </div>
               </div>

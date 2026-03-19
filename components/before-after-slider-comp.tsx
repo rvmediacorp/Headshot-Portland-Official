@@ -178,7 +178,7 @@ export default function HighEndRetouchingSection() {
             <h3 className="text-black text-lg md:text-2xl mb-2">HIGH-END RETOUCHING</h3>
             <h2 className="text-4xl md:text-6xl lg:text-7xl mb-8 md:mb-16">
               <span className="text-black font-bodoniModa">THE FINAL </span>
-              <span className="text-[#4A8EAA] font-bodoniModa">
+              <span className="text-[#247BA0] font-bodoniModa">
                 PROFESSIONAL
                 <br className="hidden md:block" /> TOUCH
               </span>
@@ -196,7 +196,7 @@ export default function HighEndRetouchingSection() {
           <div className="text-center max-w-3xl mx-auto px-2">
             <p className="text-gray-800 text-base md:text-lg lg:text-xl">
               Our in-house retouchers give your photos a fresh finish that looks far from filtered or dipped in plastic.{" "}
-              <span className="text-[#4A8EAA] font-medium block md:inline mt-2 md:mt-0">
+              <span className="text-[#247BA0] font-medium block md:inline mt-2 md:mt-0">
                 Included with every purchased digital image.
               </span>
             </p>

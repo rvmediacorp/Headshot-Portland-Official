@@ -47,7 +47,7 @@ export default function LatestWorkSection() {
       >
         <div className="max-w-7xl mx-auto w-full">
           {/* Section Heading */}
-          <h2 className="font-bodoniModa italic text-[#247BA0] text-4xl md:text-5xl lg:text-6xl mb-12 md:mb-16 text-center">
+          <h2 className="font-bodoniModa italic text-[#5AAFCC] text-4xl md:text-5xl lg:text-6xl mb-12 md:mb-16 text-center">
             OUR LATEST WORK
           </h2>
 
@@ -71,7 +71,7 @@ export default function LatestWorkSection() {
                   />
                 </div>
                 <div className="p-6">
-                  <p className="text-[#247BA0] text-sm mb-2">{project.date}</p>
+                  <p className="text-[#5AAFCC] text-sm mb-2">{project.date}</p>
                   <h3 className="font-bodoniModa italic text-white text-2xl mb-4">{project.title}</h3>
                   <Link
                     href={
@@ -83,10 +83,11 @@ export default function LatestWorkSection() {
                             ? "https://ww3.headshotportland.com/galleries/scott-schoettgen"
                             : "https://ww3.headshotportland.com/gallery/jennifer-dolan---individual-session"
                     }
-                    className="inline-flex items-center text-[#247BA0] border border-[#247BA0] rounded-full px-4 py-2"
+                    className="inline-flex items-center text-[#5AAFCC] border border-[#5AAFCC] rounded-full px-4 py-2"
                     aria-label={`See more photos from ${project.title}`}
                   >
                     <span className="mr-2">SEE MORE</span>
+                    <span className="sr-only"> photos from {project.title}</span>
                     <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -114,7 +115,7 @@ export default function LatestWorkSection() {
                   />
                 </div>
                 <div className="p-5">
-                  <p className="text-[#247BA0] text-xs mb-1">{project.date}</p>
+                  <p className="text-[#5AAFCC] text-xs mb-1">{project.date}</p>
                   <h3 className="font-bodoniModa italic text-white text-xl mb-3">{project.title}</h3>
                   <Link
                     href={
@@ -126,10 +127,11 @@ export default function LatestWorkSection() {
                             ? "https://ww3.headshotportland.com/gallery/cameron-hansen-law---headshot"
                             : project.link
                     }
-                    className="inline-flex items-center text-[#247BA0] border border-[#247BA0] rounded-full px-3 py-1.5 text-sm"
+                    className="inline-flex items-center text-[#5AAFCC] border border-[#5AAFCC] rounded-full px-3 py-1.5 text-sm"
                     aria-label={`See more photos from ${project.title}`}
                   >
                     <span className="mr-1">SEE MORE</span>
+                    <span className="sr-only"> photos from {project.title}</span>
                     <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -139,7 +141,7 @@ export default function LatestWorkSection() {
 
           {/* View Gallery Button */}
           <div className="flex justify-center mb-8">
-            <Link href="/gallery" className="bg-[#247BA0] text-white font-bold py-3 px-8 rounded-full text-center">
+            <Link href="/gallery" className="bg-[#1e7a96] text-white font-bold py-3 px-8 rounded-full text-center">
               VIEW GALLERY
             </Link>
           </div>
@@ -149,8 +151,8 @@ export default function LatestWorkSection() {
             <p>
               Follow us on{" "}
               <Link
-                href="https://www.instagram.com/nathanreimchevu/"
-                className="text-[#247BA0] underline decoration-[#247BA0]"
+                href="https://www.instagram.com/headshotportland/"
+                className="text-[#5AAFCC] underline decoration-[#5AAFCC]"
               >
                 Instagram
               </Link>{" "}
