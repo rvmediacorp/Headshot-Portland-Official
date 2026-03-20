@@ -495,27 +495,6 @@ export default function HeadshotsPage() {
     }
   }, [])
 
-  // Add this after the other useEffect hooks
-  useEffect(() => {
-    // Force autoplay for all videos on mobile Safari
-    const videoElements = document.querySelectorAll("video")
-    videoElements.forEach((video) => {
-      video.muted = true
-      video.setAttribute("playsinline", "")
-      video.setAttribute("muted", "")
-
-      // For iOS Safari specifically
-      video.playsInline = true
-
-      // Try to play the video
-      const playPromise = video.play()
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.error("Autoplay prevented:", error)
-        })
-      }
-    })
-  }, [allLoaded]) // Run when all images are loaded
 
   return (
     <main className={styles.container}>
@@ -582,15 +561,7 @@ export default function HeadshotsPage() {
               Our Latest Work
             </h2>
 
-            {/* Loading indicator */}
-            {!allLoaded && (
-              <div className="text-center mb-8">
-                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#247BA0] border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
-                <p className="mt-2 text-gray-400">
-                  Loading gallery... ({loadedCount}/{totalItems})
-                </p>
-              </div>
-            )}
+            {/* Gallery loads progressively — no blocking indicator */}
 
             {/* Masonry Gallery */}
             <div className={styles.masonryContainer}>
@@ -688,24 +659,10 @@ export default function HeadshotsPage() {
                             src={item.src}
                             className={styles.videoThumbnail}
                             poster={item.poster}
-                            preload="metadata"
+                            preload="none"
                             playsInline
                             muted
                             loop
-                            autoPlay
-                            onLoadedMetadata={(e) => {
-                              // Force play on mobile Safari
-                              const video = e.currentTarget
-                              video.muted = true
-                              video.play().catch((err) => {
-                                console.log("Autoplay prevented:", err)
-                                // Show thumbnail as fallback
-                                const thumbnailEl = document.getElementById(`thumbnail-${item.id}`)
-                                if (thumbnailEl) thumbnailEl.style.display = "block"
-                              })
-                              handleImageLoad()
-                            }}
-                            onError={handleImageLoad}
                           />
 
                           {/* Thumbnail image */}

@@ -5,10 +5,11 @@ tags:
   - pagespeed
   - performance
   - optimization
-  - web vitals
+  - web-vitals
+  - next.js
 status: completed
 created_date: '2026-03-20'
-description: Final PageSpeed optimization report for headshotportland.com after 7 rounds of improvements. Achieved 95 (desktop) and 97 (mobile) scores. Mobile performance improved from 65→97; LCP reduced from 8.8s→2.4s. All audit categories 95+. Remaining gaps due to third-party scripts (Goog
+description: Final PageSpeed optimization report for headshotportland.com achieving 97 mobile and 95 desktop performance scores through 7 iterative rounds of improvements. All categories at 95+ with three at 100. Remaining gaps due to third-party scripts and framework overhead.
 ---
 # PageSpeed Final State — Round 7
 

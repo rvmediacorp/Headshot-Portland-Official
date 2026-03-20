@@ -1,15 +1,15 @@
 ---
-type: optimization
+type: project
 people: []
 tags:
-  - pagespeed
   - performance
-  - lcp
   - mobile
-  - video-optimization
+  - lcp
+  - pagespeed
+  - video
 status: active
 created_date: '2026-03-19'
-description: 'Optimize mobile LCP from 5.5s to <2.5s by deferring video load until poster image paints, removing unused preconnects, fixing React hydration error on poster img element, and increasing video load delay on mobile networks.'
+description: 'Optimize mobile LCP from 5.5s to under 2.5s by deferring video load until after poster image renders, removing unused preconnects, and fixing React hydration issues.'
 ---
 # PageSpeed Round 5 — Mobile LCP 5.5s → <2.5s
 

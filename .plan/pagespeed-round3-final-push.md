@@ -1,15 +1,15 @@
 ---
-type: performance-analysis
-people:
-  - Nathan
+type: project
+people: []
 tags:
   - performance
+  - core web vitals
   - pagespeed
   - accessibility
   - seo
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed Insights analysis and optimization action plan for headshotportland.com. Documents performance improvements across 3 rounds (mobile: 65→87, desktop: 85) and identifies remaining blockers: Google Maps TBT (330ms), mobile LCP render delay (740ms), oversized images (176KiB'
+description: 'Performance optimization action plan for headshotportland.com to improve PageSpeed scores across desktop and mobile, addressing Core Web Vitals bottlenecks (TBT, LCP, render delay), unused JavaScript, oversized images, video lazy-loading, color contrast failures, and SEO link des'
 ---
 # pagespeed-round3-final-push
 

@@ -1,15 +1,15 @@
 ---
-type: performance-optimization
+type: performance-optimization-project
 people: []
 tags:
   - pagespeed
   - mobile
+  - performance
   - lcp
-  - video
-  - accessibility
+  - video-optimization
 status: active
 created_date: '2026-03-19'
-description: 'Fix mobile PageSpeed score (74→90+) by resolving LCP crisis (12.8s→<3s) caused by hero video autoplay and multiple video downloads. Implement desktop-only autoplay, remove autoPlay from non-hero videos, and compress BTS poster images to WebP format.'
+description: 'PageSpeed Round 4 optimization: Fix mobile LCP crisis (12.8s) caused by autoplaying videos and excessive payload. Detailed 4-phase action plan targeting mobile performance from 74→90+, accessibility to 100, and best practices to 100.'
 ---
 # PageSpeed Round 4 — Mobile LCP Crisis Fix
 

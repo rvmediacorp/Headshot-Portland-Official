@@ -1,15 +1,15 @@
 ---
-type: performance-project
+type: project
 people: []
 tags:
   - pagespeed
   - performance
   - optimization
-  - core-web-vitals
-  - lcp
+  - lighthouse
+  - web-vitals
 status: active
 created_date: '2026-03-20'
-description: 'PageSpeed Insights optimization targeting 100 on both mobile and desktop. Mobile currently 91 (Performance), 100 (Accessibility), 96 (Best Practices), 100 (SEO). Main blockers: LCP 3.2s (need <2.5s) and console error affecting Best Practices. Priority actions: compress poster ima'
+description: 'Track PageSpeed optimization efforts targeting 100/100 scores on mobile and desktop. Current mobile scores: Performance 91, Best Practices 96. Main blockers: LCP 3.2s (need <2.5s) and console errors. Priority actions: compress poster image (32KB→10KB), fix console errors, verify'
 ---
 # PageSpeed Round 6 — Target 100 on Both
 

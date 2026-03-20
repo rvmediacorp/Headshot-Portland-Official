@@ -1,15 +1,14 @@
 ---
-type: bug-fix
+type: fix
 people: []
 tags:
   - rendering
-  - chromium
-  - images
   - performance
+  - chromium
   - css
 status: completed
 created_date: '2026-03-20'
-description: 'Fix rendering issues in Who We Work With section where images appear one-by-one and black void displays in Chromium browsers due to async decoding, tile-based rasterization, and missing background color'
+description: 'Fix rendering issues in the Who We Work With section where images appeared one-by-one and a large black void was visible in Chromium browsers due to async image decoding and deferred tile rasterization. Solution includes changing decoding to sync, adding background color and min-'
 ---
 # Fix: Who We Work With Section — Rendering Issues
 
