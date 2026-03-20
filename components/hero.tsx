@@ -49,7 +49,7 @@ export default function Hero() {
             <Link
               href="https://ww3.headshotportland.com/instant-quote"
               className="cta-button cta-primary button-text w-full md:w-auto text-sm md:text-base py-1 md:py-4"
-              aria-label="Get a free headshot photography quote"
+              aria-label="GET FREE QUOTE — get a free headshot photography quote"
             >
               <span>GET FREE QUOTE</span>
               <span className="arrow-icon w-8 h-8 md:w-10 md:h-10">
@@ -60,7 +60,7 @@ export default function Hero() {
             <Link
               href="https://ww3.headshotportland.com/instant"
               className="cta-button cta-secondary button-text w-full md:w-auto text-sm md:text-base py-1 md:py-4"
-              aria-label="Book a headshot photography session now"
+              aria-label="BOOK NOW — book a headshot photography session"
             >
               <span>BOOK NOW</span>
               <span className="arrow-icon w-8 h-8 md:w-10 md:h-10">

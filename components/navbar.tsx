@@ -73,14 +73,12 @@ export default function Navbar() {
           <ul className="flex flex-col space-y-6 text-center">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
-                <label htmlFor="nav-toggle" className="cursor-pointer">
-                  <Link
-                    href={item.href}
-                    className="text-white text-xl hover:text-brand-teal transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </label>
+                <Link
+                  href={item.href}
+                  className="text-white text-xl hover:text-brand-teal transition-colors"
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
