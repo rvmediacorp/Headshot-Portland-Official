@@ -1,3 +1,15 @@
+---
+type: performance report
+people: []
+tags:
+  - pagespeed
+  - performance
+  - optimization
+  - web vitals
+status: completed
+created_date: '2026-03-20'
+description: Final PageSpeed optimization report for headshotportland.com after 7 rounds of improvements. Achieved 95 (desktop) and 97 (mobile) scores. Mobile performance improved from 65→97; LCP reduced from 8.8s→2.4s. All audit categories 95+. Remaining gaps due to third-party scripts (Goog
+---
 # PageSpeed Final State — Round 7
 
 **Date:** 2026-03-20

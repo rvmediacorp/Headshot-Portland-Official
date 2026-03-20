@@ -1,15 +1,15 @@
 ---
-type: technical audit
-people: []
+type: performance-analysis
+people:
+  - Nathan
 tags:
-  - pagespeed
-  - frontend
   - performance
+  - pagespeed
   - accessibility
   - seo
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed Insights Round 3 audit for headshotportland.com with detailed performance metrics (mobile: 87, desktop: 85) and prioritized action plan. Covers 14 remaining issues across performance optimization (Google Maps lazy-loading, video optimization, image responsiveness), acce'
+description: 'PageSpeed Insights analysis and optimization action plan for headshotportland.com. Documents performance improvements across 3 rounds (mobile: 65→87, desktop: 85) and identifies remaining blockers: Google Maps TBT (330ms), mobile LCP render delay (740ms), oversized images (176KiB'
 ---
 # pagespeed-round3-final-push
 

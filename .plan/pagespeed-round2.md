@@ -1,15 +1,15 @@
 ---
-type: performance-plan
+type: performance audit with implementation plan
 people: []
 tags:
+  - pagespeed
   - performance
-  - optimization
   - core-web-vitals
-  - mobile
   - next.js
+  - lcp
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed optimization analysis for headshotportland.com (mobile score: 65/100). Critical issues: LCP 8.8s, FCP 3.3s, SI 5.5s. Root cause: JS hydration blocks hero poster paint. Action plan: split hero RSC/client, lazy-load 250MB videos, optimize images, add security headers. Tar'
+description: 'PageSpeed Insights audit for headshotportland.com revealing mobile performance score of 65. Critical issues: LCP 8.8s (target <2.5s) due to JS hydration blocking poster paint, 250MB video payload, render-blocking CSS. Includes 5-phase action plan to improve Performance to 85+, ta'
 ---
 # PageSpeed Optimization — Round 2 (Real PageSpeed Insights + Chrome DevTools)
 
