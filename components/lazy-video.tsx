@@ -41,31 +41,41 @@ export default function LazyVideo({
     const video = videoRef.current
     if (!video) return
 
-    const handleCanPlay = () => {
-      setIsReady(true)
-      video.play().catch(() => {})
+    const handlePlaying = () => {
+      // Wait for actual frame to render before showing
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsReady(true)
+        })
+      })
     }
 
-    video.addEventListener("canplay", handleCanPlay)
+    video.addEventListener("playing", handlePlaying)
     video.src = src
     video.load()
 
-    return () => video.removeEventListener("canplay", handleCanPlay)
+    // Only play once enough data is buffered
+    const handleCanPlayThrough = () => {
+      video.play().catch(() => {})
+    }
+    video.addEventListener("canplaythrough", handleCanPlayThrough)
+
+    return () => {
+      video.removeEventListener("playing", handlePlaying)
+      video.removeEventListener("canplaythrough", handleCanPlayThrough)
+    }
   }, [isVisible, src])
 
   return (
     <div ref={containerRef} className={`relative ${className}`}>
-      {/* Poster shown until video is ready */}
-      {!isReady && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={poster}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 w-full h-full object-cover rounded"
-        />
-      )}
+      {/* Poster stays visible until video is actually playing */}
+      <img
+        src={poster}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className={`absolute inset-0 w-full h-full object-cover rounded transition-opacity duration-500 ${isReady ? "opacity-0" : "opacity-100"}`}
+      />
       <video
         ref={videoRef}
         className={`w-full h-full object-cover rounded transition-opacity duration-500 ${isReady ? "opacity-100" : "opacity-0"}`}
