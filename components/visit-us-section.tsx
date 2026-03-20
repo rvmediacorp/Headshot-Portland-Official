@@ -141,7 +141,7 @@ export default function VisitUsSection() {
           </div>
 
           {/* Google Maps — static image, click to load interactive */}
-          <div className="w-full h-[400px] md:h-[500px] rounded-md overflow-hidden mt-8">
+          <div className="w-full max-w-[1200px] mx-auto h-[400px] md:h-[500px] rounded-md overflow-hidden mt-8">
             <InteractiveMap />
           </div>
         </div>
