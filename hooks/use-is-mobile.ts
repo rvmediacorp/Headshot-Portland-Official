@@ -2,16 +2,13 @@
 
 import { useState, useEffect } from "react"
 
-function getIsMobile() {
-  if (typeof window === "undefined") return false
-  return window.innerWidth < 768
-}
-
 export function useIsMobile(): boolean {
-  const [isMobile, setIsMobile] = useState(getIsMobile)
+  // Always initialize false to match server render — prevents React #418
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const handler = () => setIsMobile(window.innerWidth < 768)
+    handler() // Set real value after hydration
     window.addEventListener("resize", handler)
     return () => window.removeEventListener("resize", handler)
   }, [])
