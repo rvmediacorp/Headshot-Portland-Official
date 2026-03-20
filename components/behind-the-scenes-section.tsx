@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { useIsMobile } from "@/hooks/use-is-mobile"
+import LazyVideo from "./lazy-video"
 
 export default function BehindTheScenesSection() {
   const isMobile = useIsMobile()
@@ -207,18 +208,11 @@ export default function BehindTheScenesSection() {
                 </div>
                 <div className="mt-auto rounded-lg overflow-hidden">
                   <div className="aspect-[9/16] relative">
-                    {testimonial.id <= 6 && testimonial.video ? (
-                      <video
-                        id={`video-${testimonial.id}`}
+                    {testimonial.video ? (
+                      <LazyVideo
                         src={testimonial.video}
-                        className="w-full h-full object-cover rounded-lg"
-                        loop
-                        playsInline
-                        muted={true}
-                        autoPlay={false}
-                        preload="none"
-                        poster={testimonial.image || undefined}
-                        onClick={() => handleVideoPlay(testimonial.id)}
+                        poster={testimonial.image || "/placeholder.svg"}
+                        className="w-full h-full"
                       />
                     ) : (
                       <Image
@@ -252,18 +246,11 @@ export default function BehindTheScenesSection() {
                 {/* Left side - Video */}
                 <div className="w-[40%] h-full relative rounded-lg overflow-hidden">
                   <div className="aspect-[9/16] h-full relative">
-                    {testimonial.id <= 6 && testimonial.video ? (
-                      <video
-                        id={`video-desktop-${testimonial.id}`}
+                    {testimonial.video ? (
+                      <LazyVideo
                         src={testimonial.video}
-                        className="w-full h-full object-cover"
-                        loop
-                        playsInline
-                        muted={true}
-                        autoPlay={false}
-                        preload="none"
-                        poster={testimonial.image || undefined}
-                        onClick={() => handleVideoPlay(testimonial.id)}
+                        poster={testimonial.image || "/placeholder.svg"}
+                        className="w-full h-full"
                       />
                     ) : (
                       <Image
