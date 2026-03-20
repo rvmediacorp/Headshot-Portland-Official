@@ -2,12 +2,9 @@
 
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
-import Image from "next/image"
-import { useState } from "react"
+import LazyVideo from "./lazy-video"
 
 export default function CreativeProcess() {
-  const [videoError, setVideoError] = useState(false)
-  const [video2Error, setVideo2Error] = useState(false)
 
   return (
     <div className="w-full px-[10px] my-[10px]">
@@ -52,24 +49,11 @@ export default function CreativeProcess() {
                 </p>
               </div>
               <div className="h-48 md:h-56 lg:h-64 mx-6 md:mx-8 mb-6 md:mb-8 rounded overflow-hidden relative">
-                <video
-                  className="w-full h-full object-cover rounded"
-                  loop
-                  muted
-                  playsInline
-                  preload="none"
+                <LazyVideo
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FreeQuoteVid-ZxqKD59Mg2TDb5YkPvOLVe254OiWbr.mp4"
                   poster="/images/gallery.jpeg"
-                  onError={(e) => {
-                    console.error("Video failed to load:", e)
-                  }}
-                >
-                  <source
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FreeQuoteVid-ZxqKD59Mg2TDb5YkPvOLVe254OiWbr.mp4"
-                    type="video/mp4"
-                  />
-
-                  Your browser does not support the video tag.
-                </video>
+                  className="w-full h-full"
+                />
               </div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-teal-blue"></div>
             </div>
@@ -85,26 +69,11 @@ export default function CreativeProcess() {
                 </p>
               </div>
               <div className="h-48 md:h-56 lg:h-64 mx-6 md:mx-8 mb-6 md:mb-8 rounded overflow-hidden relative">
-                {!video2Error ? (
-                  <video
-                    className="w-full h-full object-cover rounded"
-                    loop
-                    muted
-                    playsInline
-                    preload="none"
-                    poster="/images/gallery.jpeg"
-                    onError={() => setVideo2Error(true)}
-                  >
-                    <source
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/posing-DVtao2rZVTGCE0xaa7vQlezNpVpvxP.mp4"
-                      type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  /* Fallback if video fails to load */
-                  <div className="w-full h-full bg-[#dadada] rounded"></div>
-                )}
+                <LazyVideo
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/posing-DVtao2rZVTGCE0xaa7vQlezNpVpvxP.mp4"
+                  poster="/images/gallery.jpeg"
+                  className="w-full h-full"
+                />
               </div>
             </div>
 
@@ -120,23 +89,11 @@ export default function CreativeProcess() {
                 </p>
               </div>
               <div className="h-48 md:h-56 lg:h-64 mx-6 md:mx-8 mb-6 md:mb-8 rounded overflow-hidden relative">
-                <video
-                  className="w-full h-full object-cover rounded"
-                  loop
-                  muted
-                  playsInline
-                  preload="none"
+                <LazyVideo
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Images%20-nkHOqGrFlkSZVMHJXsgfOx6U7XkdMD.mp4"
                   poster="/images/gallery.jpeg"
-                  onError={(e) => {
-                    console.error("Video failed to load:", e)
-                  }}
-                >
-                  <source
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Images%20-nkHOqGrFlkSZVMHJXsgfOx6U7XkdMD.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
+                  className="w-full h-full"
+                />
               </div>
             </div>
 
@@ -150,55 +107,12 @@ export default function CreativeProcess() {
                 </p>
               </div>
               <div className="h-48 md:h-56 lg:h-64 mx-6 md:mx-8 mb-6 md:mb-8 rounded overflow-hidden relative">
-                {/* MP4 Video */}
-                {!videoError ? (
-                  <video
-                    className="w-full h-full object-cover rounded"
-                    loop
-                    muted
-                    playsInline
-                    preload="none"
-                    poster="/images/gallery.jpeg"
-                    onError={() => setVideoError(true)}
-                  >
-                    <source
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/EricasGalleryBest1-WQn3tFv86mOGLqXayUDOVrCF6Z2Qld.mp4"
-                      type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  /* Fallback image if video fails to load */
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/images/gallery.jpeg"
-                      alt="Gallery of professional headshots showing final delivered images"
-                      fill
-                      className="object-cover rounded"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="eager"
-                    />
+                <LazyVideo
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/EricasGalleryBest1-WQn3tFv86mOGLqXayUDOVrCF6Z2Qld.mp4"
+                  poster="/images/gallery.jpeg"
+                  className="w-full h-full"
+                />
                     {/* Video play button overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded">
-                      <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="text-black"
-                        >
-                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
