@@ -19,7 +19,7 @@ export default function ProudlyOwnedSection() {
           gap: "10px",
         }}
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto w-full">
           <div
             className={`flex ${isMobile ? "flex-col" : "flex-row"} rounded-2xl overflow-hidden bg-[#fdf0e1] shadow-[0_20px_50px_rgba(0,0,0,0.2)] transition-all duration-300 hover:shadow-[0_25px_60px_rgba(0,0,0,0.3)] transform hover:-translate-y-1`}
           >
