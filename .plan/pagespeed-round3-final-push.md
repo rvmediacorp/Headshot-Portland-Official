@@ -1,16 +1,15 @@
 ---
-type: task
-people:
-  - Nathan
+type: performance-optimization-plan
+people: []
 tags:
   - performance
-  - pagespeed
   - accessibility
   - seo
   - optimization
+  - web-performance
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed Insights Round 3 final push for headshotportland.com targeting performance 90+, accessibility 100, with detailed action plan for Google Maps lazy-loading, video optimization, responsive images, color contrast fixes, and SEO improvements.'
+description: 'PageSpeed optimization report for headshotportland.com with phase-based action plan. Documents progress from Round 1 (Performance 65→87 mobile), remaining issues (TBT, LCP, image sizing, video loading, unused JS), and prioritized implementation tasks targeting Performance 90+, Ac'
 ---
 # pagespeed-round3-final-push
 

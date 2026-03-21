@@ -2,14 +2,14 @@
 type: report
 people: []
 tags:
-  - performance
   - pagespeed
+  - performance
   - optimization
-  - metrics
-  - website
+  - web-vitals
+  - seo
 status: completed
 created_date: '2026-03-20'
-description: 'Final PageSpeed optimization results for headshotportland.com after 7 rounds, achieving 97/100 mobile and 95/100 desktop performance with analysis of remaining improvement barriers'
+description: 'Final PageSpeed Insights optimization results for headshotportland.com achieving 97/100 mobile and 95/100 desktop performance scores through 7 rounds of incremental improvements to rendering, video delivery, and Core Web Vitals metrics'
 ---
 # PageSpeed Final State — Round 7
 

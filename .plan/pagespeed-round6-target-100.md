@@ -1,15 +1,15 @@
 ---
-type: performance optimization project
+type: performance-optimization
 people: []
 tags:
+  - pagespeed
   - performance
+  - lcp
   - mobile
   - optimization
-  - web-vitals
-  - accessibility
 status: active
 created_date: '2026-03-20'
-description: 'Achieve 100 PageSpeed scores on both mobile and desktop. Current mobile scores: Performance 91, Accessibility 100, Best Practices 96, SEO 100. Main blockers: LCP 3.2s (target <2.5s) and console errors. Priority actions: compress poster from 32KB→10KB and fix console errors.'
+description: 'PageSpeed Round 6 targeting 100 on both mobile and desktop. Mobile performance at 91 (LCP 3.2s blocks 100), Best Practices at 96 (console errors). Priority actions: compress poster 32KB→10KB (LCP gain), fix console errors (+4 points).'
 ---
 # PageSpeed Round 6 — Target 100 on Both
 

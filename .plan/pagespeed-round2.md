@@ -1,21 +1,16 @@
 ---
-type: analysis
+type: performance-audit
 people:
-  - Austyn
-  - Angela
-  - Megan
   - Scott Schoettgen
-  - Cameron Hansen
-  - Erica
 tags:
-  - pagespeed
   - performance
-  - lcp
+  - web-vitals
   - mobile
   - optimization
+  - accessibility
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed optimization analysis for headshotportland.com mobile. Performance score 65 with critical LCP 8.8s and FCP 3.3s issues. Identifies 1.67s hydration delay from client-side hero component, 250MB video autoload, and Google Maps bloat. Includes prioritized 5-phase action pla'
+description: 'PageSpeed Insights audit for headshotportland.com identifying mobile performance bottlenecks (65/100 score) with prioritized action plan targeting LCP, FCP, and SI metrics through component restructuring, image optimization, and JavaScript deferral.'
 ---
 # PageSpeed Optimization — Round 2 (Real PageSpeed Insights + Chrome DevTools)
 

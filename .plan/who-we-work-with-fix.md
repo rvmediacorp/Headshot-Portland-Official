@@ -3,13 +3,13 @@ type: bug-fix
 people: []
 tags:
   - rendering
-  - performance
   - chromium
   - images
-  - async-decoding
+  - performance
+  - css
 status: completed
 created_date: '2026-03-20'
-description: 'Fix for Who We Work With section rendering issues in Chromium browsers: removes black void, eliminates one-by-one image loading, and implements sync image decoding with background color and min-height constraints.'
+description: 'Fix rendering issues in who-we-work-with section: prevent images from appearing one-by-one, eliminate black void, and optimize image decoding strategy in components/who-we-work-with-section.tsx.'
 ---
 # Fix: Who We Work With Section — Rendering Issues
 
