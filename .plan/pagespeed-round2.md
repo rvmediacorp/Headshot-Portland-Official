@@ -3,13 +3,13 @@ type: performance-audit
 people: []
 tags:
   - performance
-  - core-web-vitals
+  - optimization
   - mobile
-  - lcp
-  - next.js
+  - web-vitals
+  - pagespeed
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed Insights analysis for headshotportland.com (mobile): Performance 65, LCP 8.8s, FCP 3.3s, SI 5.5s. Prioritized action plan to improve to 85+ via hero RSC refactoring, image optimization, lazy-loading videos/maps, and security headers.'
+description: 'PageSpeed Insights audit for headshotportland.com. Mobile performance 65/100 with critical LCP of 8.8s. Root cause: JS hydration blocks poster image paint (1.67s). Includes detailed breakdown of all opportunities, diagnostics, and prioritized action plan targeting performance 85+'
 ---
 # PageSpeed Optimization — Round 2 (Real PageSpeed Insights + Chrome DevTools)
 

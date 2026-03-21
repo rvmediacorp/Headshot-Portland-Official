@@ -1,15 +1,15 @@
 ---
-type: performance-optimization
+type: performance-issue
 people: []
 tags:
   - performance
   - mobile
+  - lcp
+  - optimization
   - pagespeed
-  - video
-  - accessibility
 status: active
 created_date: '2026-03-19'
-description: 'Performance optimization for headshotportland.com — fixing mobile LCP regression (87→74 score) caused by hero video autoplay. LCP increased to 12.8s due to video buffering on Slow 4G. Action plan includes removing autoPlay from non-hero videos, disabling hero video autoplay on mo'
+description: 'Mobile performance crisis on headshotportland.com: LCP dropped from 87 to 74 due to 12.8s mobile LCP caused by video autoplay. Root cause: hero video and autoplay videos downloading 39 MB despite preload=''none''. Action plan: remove autoPlay from creative-process videos, desktop-o'
 ---
 # PageSpeed Round 4 — Mobile LCP Crisis Fix
 

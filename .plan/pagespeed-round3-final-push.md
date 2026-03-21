@@ -1,16 +1,16 @@
 ---
-type: performance-optimization
+type: project
 people:
   - Nathan
 tags:
   - performance
+  - pagespeed
   - accessibility
   - seo
-  - google-maps
-  - lazy-loading
+  - optimization
 status: active
 created_date: '2026-03-19'
-description: 'PageSpeed Insights Round 3 progress report for headshotportland.com. Mobile performance improved 65→87; desktop 85. Identifies 14 remaining blockers: desktop TBT 330ms, mobile LCP 3.3s, oversized images, unused JS, and accessibility failures. Includes prioritized action plan targ'
+description: 'Google PageSpeed Insights optimization effort for headshotportland.com. Improving mobile performance (87/100) and desktop (85/100) through 4 phases: lazy-loading Google Maps & videos (A1-A2), enabling responsive images (A3), fixing hydration errors (A4), addressing color contrast'
 ---
 # pagespeed-round3-final-push
 

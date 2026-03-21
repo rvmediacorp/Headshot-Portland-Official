@@ -54,7 +54,7 @@ export default function LatestWorkSection() {
           {/* Latest Work Grid - Desktop */}
           <div className="hidden md:grid grid-cols-3 gap-8 mb-12">
             {latestWork.map((project) => (
-              <div key={project.id} className="rounded-lg overflow-hidden bg-[#1C1B1C]">
+              <div key={project.id} className="rounded-lg overflow-hidden bg-[#1C1B1C] flex flex-col">
                 <div className="relative aspect-square">
                   <Image
                     src={project.image || "/placeholder.svg"}
@@ -70,9 +70,9 @@ export default function LatestWorkSection() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <p className="text-[#5AAFCC] text-sm mb-2">{project.date}</p>
-                  <h3 className="font-bodoniModa italic text-white text-2xl mb-4">{project.title}</h3>
+                  <h3 className="font-bodoniModa italic text-white text-2xl flex-1">{project.title}</h3>
                   <Link
                     href={
                       project.id === 2
@@ -83,7 +83,8 @@ export default function LatestWorkSection() {
                             ? "https://ww3.headshotportland.com/galleries/scott-schoettgen"
                             : "https://ww3.headshotportland.com/gallery/jennifer-dolan---individual-session"
                     }
-                    className="inline-flex items-center text-[#5AAFCC] border border-[#5AAFCC] rounded-full px-4 py-2"
+                    className="inline-flex items-center text-[#5AAFCC] border border-[#5AAFCC] rounded-full px-4 py-2 mt-4 self-start hover:bg-[#5AAFCC] hover:text-black transition-all duration-200"
+                    style={{ transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
                     aria-label={`See more photos from ${project.title}`}
                   >
                     <span className="mr-2">SEE MORE</span>

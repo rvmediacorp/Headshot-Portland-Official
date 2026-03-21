@@ -3,13 +3,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight, Instagram, Facebook, Star } from "lucide-react"
-import { useState, useCallback, useEffect } from "react"
+import { useCallback } from "react"
 import styles from "./for-teams.module.css"
 import GoogleAnalytics from "@/components/google-analytics"
 
-export default function ForTeamsPage() {
-  // Gallery items — team headshot images from denverheadshotco.com + cococreativestudio.com
-  const galleryItems = [
+// Static gallery data — outside component to avoid recreation on every render
+const galleryItems = [
     { id: 1, type: "image", src: "/images/teams-gallery/teams-01.webp", alt: "Team headshot photography example" },
     { id: 2, type: "image", src: "/images/teams-gallery/teams-02.webp", alt: "Team headshot photography example" },
     { id: 3, type: "image", src: "/images/teams-gallery/teams-03.webp", alt: "Team headshot photography example" },
@@ -34,10 +33,10 @@ export default function ForTeamsPage() {
     {
       id: 14,
       type: "testimonial",
-      name: "Tom Danowski",
-      title: "VP Content Marketing, Ziply Fiber",
-      quote: "Nathan did an amazing job with my headshot studio shoot. Lots of photos to choose from, gave artistic direction and helped us pick the best photos for the new website! 5stars! Thank You!",
-      avatar: "/images/profile-photos/tom-danowski-headshot.webp",
+      name: "Beth Cooper",
+      title: "Conference Organizer",
+      quote: "We experienced this team at a very large conference where people waited in line to get their headshot. Nathan was incredible! He still gave each person an individualized experience. He never made you feel rushed. This is an excellent company!",
+      avatar: "https://lh3.googleusercontent.com/a/ACg8ocJkJ2zLLv45QcnjDUcyUjvbghnzTf4WIVnga1kQlsSpgZ00Bw=w72-h72-p-rp-mo-br100",
     },
     {
       id: 15,
@@ -119,14 +118,9 @@ export default function ForTeamsPage() {
     { id: 62, type: "image", src: "/images/teams-gallery/teams-56.webp", alt: "Team headshot photography example" },
     { id: 63, type: "image", src: "/images/teams-gallery/teams-57.webp", alt: "Team headshot photography example" },
     { id: 64, type: "image", src: "/images/teams-gallery/teams-58.webp", alt: "Team headshot photography example" },
-  ]
+]
 
-  const [allLoaded, setAllLoaded] = useState(false)
-
-  useEffect(() => {
-    setAllLoaded(true)
-  }, [])
-
+export default function ForTeamsPage() {
   // Function to handle image errors and provide fallbacks
   const getImageSrc = useCallback((src) => {
     if (!src || typeof src !== "string" || src.includes("undefined")) {
@@ -176,23 +170,6 @@ export default function ForTeamsPage() {
     }
   }, [])
 
-  // Force autoplay for all videos on mobile Safari
-  useEffect(() => {
-    const videoElements = document.querySelectorAll("video")
-    videoElements.forEach((video) => {
-      video.muted = true
-      video.setAttribute("playsinline", "")
-      video.setAttribute("muted", "")
-      video.playsInline = true
-
-      const playPromise = video.play()
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.error("Autoplay prevented:", error)
-        })
-      }
-    })
-  }, [allLoaded])
 
   return (
     <main className={styles.container}>

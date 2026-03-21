@@ -1,15 +1,15 @@
 ---
-type: project
+type: task
 people: []
 tags:
   - performance
-  - pagespeed
+  - web-vitals
+  - next.js
+  - images
   - optimization
-  - mobile
-  - lcp
 status: active
 created_date: '2026-03-20'
-description: 'Performance optimization initiative targeting 100 PageSpeed scores on mobile and desktop. Mobile at 91 (gap: 9 points), desktop at 97 (gap: 3 points). Main blocker is LCP metric at 3.2s (target <2.5s). Action plan: compress poster image 32KB→10KB, fix console errors, optimize JS'
+description: 'Optimize PageSpeed scores to 100 on mobile and desktop. Current: Mobile Performance 91 (target 100), Best Practices 96 (target 100). Main blockers: LCP 3.2s (need <2.5s) and console errors. Priority actions: compress poster image 32KB→10KB and fix browser console errors.'
 ---
 # PageSpeed Round 6 — Target 100 on Both
 

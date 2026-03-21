@@ -3,14 +3,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight, Instagram, Facebook, Star } from "lucide-react"
-import { useState, useCallback, useEffect } from "react"
+import { useCallback } from "react"
 import styles from "./model.module.css"
 import GoogleAnalytics from "@/components/google-analytics"
 import VisitUsSection from "@/components/visit-us-section"
 
-export default function ModelPage() {
-  // Gallery items — model portfolio images from ceoportrait.com
-  const galleryItems = [
+// Static gallery data — outside component to avoid recreation on every render
+const galleryItems = [
     { id: 1, type: "image", src: "/images/model-gallery/model-01.webp", alt: "Model portfolio photography example" },
     { id: 2, type: "image", src: "/images/model-gallery/model-02.webp", alt: "Model portfolio photography example" },
     { id: 3, type: "image", src: "/images/model-gallery/model-03.webp", alt: "Model portfolio photography example" },
@@ -36,10 +35,10 @@ export default function ModelPage() {
     {
       id: 15,
       type: "testimonial",
-      name: "Tom Danowski",
-      title: "VP Content Marketing, Ziply Fiber",
-      quote: "Nathan did an amazing job with my headshot studio shoot. Lots of photos to choose from, gave artistic direction and helped us pick the best photos for the new website! 5stars! Thank You!",
-      avatar: "/images/profile-photos/tom-danowski-headshot.webp",
+      name: "Jaden Alexzandra Kaz",
+      title: "Model Portfolio Client",
+      quote: "I needed to have the best pictures and I needed them in a timely manner. Nathan listened to everything I specifically wanted and got it all done efficiently. I don't have any complaints and recommend him to everyone.",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjU0e3_GIHITqUe3SAaLfruFLV2Yzq6cUWpbl25lzdqc9rUiW9iN=w72-h72-p-rp-mo-ba2-br100",
     },
     {
       id: 16,
@@ -142,14 +141,9 @@ export default function ModelPage() {
     { id: 84, type: "image", src: "/images/model-gallery/model-78.webp", alt: "Model portfolio photography example" },
     { id: 85, type: "image", src: "/images/model-gallery/model-79.webp", alt: "Model portfolio photography example" },
     { id: 86, type: "image", src: "/images/model-gallery/model-80.webp", alt: "Model portfolio photography example" },
-  ]
+]
 
-  const [allLoaded, setAllLoaded] = useState(false)
-
-  useEffect(() => {
-    setAllLoaded(true)
-  }, [])
-
+export default function ModelPage() {
   // Function to handle image errors and provide fallbacks
   const getImageSrc = useCallback((src) => {
     if (!src || typeof src !== "string" || src.includes("undefined")) {
@@ -198,24 +192,6 @@ export default function ModelPage() {
       }
     }
   }, [])
-
-  // Force autoplay for all videos on mobile Safari
-  useEffect(() => {
-    const videoElements = document.querySelectorAll("video")
-    videoElements.forEach((video) => {
-      video.muted = true
-      video.setAttribute("playsinline", "")
-      video.setAttribute("muted", "")
-      video.playsInline = true
-
-      const playPromise = video.play()
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.error("Autoplay prevented:", error)
-        })
-      }
-    })
-  }, [allLoaded])
 
   return (
     <main className={styles.container}>

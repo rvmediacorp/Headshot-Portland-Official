@@ -72,36 +72,96 @@ export default function ReviewsPage() {
           }}
         >
           <div className="max-w-6xl mx-auto w-full px-4">
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-              {reviews.map((review, i) => (
-                <div
-                  key={i}
-                  className="break-inside-avoid mb-4 bg-[#1C1B1C] rounded-xl p-6 border border-[#2a2a2a]"
-                >
-                  {/* Stars */}
-                  <div className="flex mb-3">
-                    {[...Array(review.rating)].map((_, j) => (
-                      <StarIcon key={j} />
-                    ))}
-                  </div>
+            {/* Masonry via flex columns — supports flex height stretching */}
+            {(() => {
+              // Interleave image reviews to spread across columns
+              const withImages = reviews.filter(r => r.images && r.images.length > 0)
+              const withoutImages = reviews.filter(r => !r.images || r.images.length === 0)
+              const sorted: typeof reviews = []
+              let imgIdx = 0, txtIdx = 0
+              for (let i = 0; i < reviews.length; i++) {
+                if ((i % 4 === 0 || i % 4 === 1) && imgIdx < withImages.length && i < 12) {
+                  sorted.push(withImages[imgIdx++])
+                } else if (txtIdx < withoutImages.length) {
+                  sorted.push(withoutImages[txtIdx++])
+                } else if (imgIdx < withImages.length) {
+                  sorted.push(withImages[imgIdx++])
+                }
+              }
+              while (imgIdx < withImages.length) sorted.push(withImages[imgIdx++])
+              while (txtIdx < withoutImages.length) sorted.push(withoutImages[txtIdx++])
 
-                  {/* Review text */}
-                  <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4">
-                    &ldquo;{review.text}&rdquo;
-                  </p>
+              // Distribute into columns round-robin
+              const cols: (typeof reviews)[] = [[], [], []]
+              sorted.forEach((r, i) => cols[i % 3].push(r))
 
-                  {/* Author */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-[#247BA0] flex items-center justify-center text-white font-bold text-sm">
-                      {review.name.charAt(0)}
+              return (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+                  {cols.map((col, colIdx) => (
+                    <div key={colIdx} className="flex flex-col gap-4">
+                      {col.map((review, i) => (
+                        <div
+                          key={`${colIdx}-${i}`}
+                          className="bg-[#1C1B1C] rounded-xl border border-[#2a2a2a] flex flex-col"
+                        >
+                          <div className="p-6 flex flex-col flex-1">
+                            {/* Stars + Google logo */}
+                            <div className="flex items-center justify-between mb-3">
+                              <div className="flex">
+                                {[...Array(review.rating)].map((_, j) => (
+                                  <StarIcon key={j} />
+                                ))}
+                              </div>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src="/images/google-g-logo.svg" alt="Google" width={20} height={20} className="w-5 h-5" />
+                            </div>
+
+                            {/* Review text */}
+                            <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4">
+                              &ldquo;{review.text}&rdquo;
+                            </p>
+
+                            {/* Author — pinned to bottom */}
+                            <div className="flex items-center gap-3 mt-auto pt-2">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={review.avatar}
+                                alt={review.name}
+                                width={36}
+                                height={36}
+                                className="w-9 h-9 rounded-full object-cover"
+                                loading="lazy"
+                                referrerPolicy="no-referrer"
+                              />
+                              <p className="text-white font-bodoniModa italic text-sm">
+                                {review.name}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Review images — always at very bottom */}
+                          {review.images && review.images.length > 0 && (
+                            <div className={`grid ${review.images.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-2 px-6 pb-6`}>
+                              {review.images.map((img, k) => (
+                                // eslint-disable-next-line @next/next/no-img-element
+                                <img
+                                  key={k}
+                                  src={img}
+                                  alt={`Photo from ${review.name}'s review`}
+                                  className="w-full rounded-xl object-cover"
+                                  loading="lazy"
+                                  referrerPolicy="no-referrer"
+                                />
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
-                    <p className="text-white font-bodoniModa italic text-sm">
-                      {review.name}
-                    </p>
-                  </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              )
+            })()}
           </div>
         </section>
       </div>

@@ -3,13 +3,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight, Instagram, Facebook, Star } from "lucide-react"
-import { useState, useCallback, useEffect } from "react"
+import { useCallback } from "react"
 import styles from "./portraits.module.css"
 import GoogleAnalytics from "@/components/google-analytics"
 
-export default function PortraitsPage() {
-  // Gallery items array — replace these with portrait images
-  const galleryItems = [
+// Static gallery data — outside component to avoid recreation on every render
+const galleryItems = [
     {
       id: 1,
       type: "image",
@@ -93,11 +92,11 @@ export default function PortraitsPage() {
     {
       id: 13,
       type: "testimonial",
-      name: "Tom Danowski",
-      title: "VP Content Marketing, Ziply Fiber",
+      name: "Lisa Fox",
+      title: "Portrait Client",
       quote:
-        "Nathan did an amazing job with my headshot studio shoot. Lots of photos to choose from, gave artistic direction and helped us pick the best photos for the new website! 5stars! Thank You!",
-      avatar: "/images/profile-photos/tom-danowski-headshot.webp",
+        "Their professionalism, creativity, and attention to detail made the entire process seamless. They captured stunning, natural photos that exceeded my expectations. The final images were absolutely beautiful.",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXtTHWOaNFBB5mb_yIxksUp6_1Mtv4q1ZfKjOqZHAjNRsZjV-vIfg=w72-h72-p-rp-mo-br100",
     },
     {
       id: 14,
@@ -186,14 +185,9 @@ export default function PortraitsPage() {
       url: "https://ww3.headshotportland.com/instant",
       color: "green",
     },
-  ]
+]
 
-  const [allLoaded, setAllLoaded] = useState(false)
-
-  useEffect(() => {
-    setAllLoaded(true)
-  }, [])
-
+export default function PortraitsPage() {
   // Function to handle image errors and provide fallbacks
   const getImageSrc = useCallback((src) => {
     if (!src || typeof src !== "string" || src.includes("undefined")) {
@@ -242,24 +236,6 @@ export default function PortraitsPage() {
       }
     }
   }, [])
-
-  // Force autoplay for all videos on mobile Safari
-  useEffect(() => {
-    const videoElements = document.querySelectorAll("video")
-    videoElements.forEach((video) => {
-      video.muted = true
-      video.setAttribute("playsinline", "")
-      video.setAttribute("muted", "")
-      video.playsInline = true
-
-      const playPromise = video.play()
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.error("Autoplay prevented:", error)
-        })
-      }
-    })
-  }, [allLoaded])
 
   return (
     <main className={styles.container}>

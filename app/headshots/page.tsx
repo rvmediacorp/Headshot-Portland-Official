@@ -7,9 +7,8 @@ import { useState, useCallback, useEffect } from "react"
 import styles from "./headshots.module.css"
 import GoogleAnalytics from "@/components/google-analytics"
 
-export default function HeadshotsPage() {
-  // Gallery items array
-  const galleryItems = [
+// Static gallery data — outside component to avoid recreation on every render
+const galleryItems = [
     {
       id: 1,
       type: "image",
@@ -93,11 +92,11 @@ export default function HeadshotsPage() {
     {
       id: 13,
       type: "testimonial",
-      name: "Tom Danowski",
-      title: "VP Content Marketing, Ziply Fiber",
+      name: "Shannon Dillow",
+      title: "Corporate Professional",
       quote:
-        "Nathan did an amazing job with my headshot studio shoot. Lots of photos to choose from, gave artistic direction and helped us pick the best photos for the new website! 5stars! Thank You!",
-      avatar: "/images/profile-photos/tom-danowski-headshot.webp",
+        "I've had corporate headshots taken before, and they didn't even compare. Nathan had great suggestions on body angles and lighting. He took a ton of photos and provided real-time perspective on which ones he liked best. I'd book him again in a heartbeat.",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVu5Zfdz1yxotvbQgO26157lwGghJFl-FiBGzSDjbL9CgYXrr_n=w72-h72-p-rp-mo-br100",
     },
     {
       id: 14,
@@ -312,11 +311,11 @@ export default function HeadshotsPage() {
     {
       id: 47,
       type: "testimonial",
-      name: "Trenten Cassity",
-      title: "Regional Sales, Nationwide Solar",
+      name: "Kathleen Wilson",
+      title: "Marketing Professional",
       quote:
-        "Great experince working with Nathan, he is the man to go to for headshots and portraits in Portland! He took care of me, made me look great and I'll be back agai!",
-      avatar: "/images/profile-photos/trenten-profile-photo.webp",
+        "Super quick, VERY clear, AMAZING headshots were received. I would absolutely suggest using this organization for your headshots — if AMAZING is what you're looking for!!",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjV_5YbuoNIuIp5FzMv65RCVWTnz8lySAppUrIuAQKmiRdcAx28=w72-h72-p-rp-mo-br100",
     },
     {
       id: 48,
@@ -416,27 +415,20 @@ export default function HeadshotsPage() {
       src: "/images/headshots-gallery/headshot-portland-vestas-3.webp",
       alt: "Professional headshot of woman with long blonde hair wearing a navy blazer with a patterned blouse against a gray background",
     },
-  ]
+]
 
+const totalItems = galleryItems.filter(
+  (item) => item.type === "image" || (item.type === "video" && item.poster),
+).length
+
+export default function HeadshotsPage() {
   // State for tracking loaded images
   const [loadedCount, setLoadedCount] = useState(0)
-  const [allLoaded, setAllLoaded] = useState(false)
-
-  // Count total images and videos that need to load
-  const totalItems = galleryItems.filter(
-    (item) => item.type === "image" || (item.type === "video" && item.poster),
-  ).length
 
   // Handle image load
   const handleImageLoad = useCallback(() => {
-    setLoadedCount((prev) => {
-      const newCount = prev + 1
-      if (newCount >= totalItems) {
-        setAllLoaded(true)
-      }
-      return newCount
-    })
-  }, [totalItems])
+    setLoadedCount((prev) => prev + 1)
+  }, [])
 
   // Function to handle image errors and provide fallbacks
   const getImageSrc = useCallback((src) => {
