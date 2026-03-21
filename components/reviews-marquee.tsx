@@ -58,7 +58,11 @@ export default function ReviewsMarquee() {
   const row2 = reviews.slice(16)
 
   return (
-    <section className="w-full py-8 overflow-hidden bg-black">
+    <section className="w-full py-8 overflow-hidden bg-black relative">
+      {/* Dark edge fades */}
+      <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
       {/* Row 1 — scrolls left */}
       <div className="flex gap-4 mb-4 animate-marquee">
         {[...row1, ...row1].map((review, i) => (
