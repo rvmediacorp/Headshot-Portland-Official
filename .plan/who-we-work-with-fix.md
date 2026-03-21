@@ -3,13 +3,13 @@ type: bug-fix
 people: []
 tags:
   - rendering
+  - performance
   - chromium
   - images
-  - performance
-  - ui-fix
+  - async-decoding
 status: completed
 created_date: '2026-03-20'
-description: 'Fix rendering issues in Who We Work With section where images appear one-by-one and black void is visible. Changes include removing async image decoding, adding background colors, increasing fetch priority, and setting min-height on grid containers.'
+description: 'Fix for Who We Work With section rendering issues in Chromium browsers: removes black void, eliminates one-by-one image loading, and implements sync image decoding with background color and min-height constraints.'
 ---
 # Fix: Who We Work With Section — Rendering Issues
 

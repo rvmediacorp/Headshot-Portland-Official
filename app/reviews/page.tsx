@@ -33,23 +33,27 @@ export default function ReviewsPage() {
                 CLIENT REVIEWS
               </h1>
               <p className="font-playfair text-xl md:text-2xl mb-12">
-                {reviews.length} five-star reviews from real clients
+                119 five-star reviews from real clients
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
-                  href="https://ww3.headshotportland.com/instant-quote"
+                  href="https://maps.app.goo.gl/xRqN4nmhtpQkNQXa7"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white text-[#247BA0] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
                 >
-                  <span className="font-bold">GET FREE QUOTE</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/google-g-logo.svg" alt="Google" width={20} height={20} className="w-5 h-5" />
+                  <span className="font-bold">SEE ALL 119 REVIEWS ON GOOGLE</span>
                   <div className="bg-[#247BA0] rounded-full p-1">
                     <ArrowUpRight className="h-4 w-4 text-white" />
                   </div>
                 </Link>
                 <Link
-                  href="https://ww3.headshotportland.com/instant"
+                  href="https://ww3.headshotportland.com/instant-quote"
                   className="border border-white text-white px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
                 >
-                  <span className="font-bold">BOOK NOW</span>
+                  <span className="font-bold">GET FREE QUOTE</span>
                   <div className="bg-white/20 rounded-full p-1">
                     <ArrowUpRight className="h-4 w-4 text-white" />
                   </div>

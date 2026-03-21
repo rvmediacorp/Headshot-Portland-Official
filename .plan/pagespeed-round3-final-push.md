@@ -1,5 +1,5 @@
 ---
-type: project
+type: task
 people:
   - Nathan
 tags:
@@ -10,7 +10,7 @@ tags:
   - optimization
 status: active
 created_date: '2026-03-19'
-description: 'Google PageSpeed Insights optimization effort for headshotportland.com. Improving mobile performance (87/100) and desktop (85/100) through 4 phases: lazy-loading Google Maps & videos (A1-A2), enabling responsive images (A3), fixing hydration errors (A4), addressing color contrast'
+description: 'PageSpeed Insights Round 3 final push for headshotportland.com targeting performance 90+, accessibility 100, with detailed action plan for Google Maps lazy-loading, video optimization, responsive images, color contrast fixes, and SEO improvements.'
 ---
 # pagespeed-round3-final-push
 

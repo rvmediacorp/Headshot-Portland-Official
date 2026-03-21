@@ -2,14 +2,14 @@
 type: report
 people: []
 tags:
-  - pagespeed
   - performance
+  - pagespeed
   - optimization
-  - mobile
-  - web
+  - metrics
+  - website
 status: completed
 created_date: '2026-03-20'
-description: PageSpeed optimization final report for headshotportland.com showing Lighthouse scores of 95 desktop/97 mobile performance. Documents 7-round optimization journey (65→97 mobile) with analysis of remaining bottlenecks and practical ceiling constraints from third-party scripts and
+description: 'Final PageSpeed optimization results for headshotportland.com after 7 rounds, achieving 97/100 mobile and 95/100 desktop performance with analysis of remaining improvement barriers'
 ---
 # PageSpeed Final State — Round 7
 

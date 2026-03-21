@@ -1,15 +1,15 @@
 ---
-type: task
+type: performance optimization project
 people: []
 tags:
   - performance
-  - web-vitals
-  - next.js
-  - images
+  - mobile
   - optimization
+  - web-vitals
+  - accessibility
 status: active
 created_date: '2026-03-20'
-description: 'Optimize PageSpeed scores to 100 on mobile and desktop. Current: Mobile Performance 91 (target 100), Best Practices 96 (target 100). Main blockers: LCP 3.2s (need <2.5s) and console errors. Priority actions: compress poster image 32KB→10KB and fix browser console errors.'
+description: 'Achieve 100 PageSpeed scores on both mobile and desktop. Current mobile scores: Performance 91, Accessibility 100, Best Practices 96, SEO 100. Main blockers: LCP 3.2s (target <2.5s) and console errors. Priority actions: compress poster from 32KB→10KB and fix console errors.'
 ---
 # PageSpeed Round 6 — Target 100 on Both
 
