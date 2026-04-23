@@ -50,7 +50,7 @@ export default function ReviewsPage() {
                   </div>
                 </Link>
                 <Link
-                  href="https://ww3.headshotportland.com/instant-quote"
+                  href="/google-quote-request"
                   className="border border-white text-white px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
                 >
                   <span className="font-bold">GET FREE QUOTE</span>
@@ -78,26 +78,9 @@ export default function ReviewsPage() {
           <div className="max-w-6xl mx-auto w-full px-4">
             {/* Masonry via flex columns — supports flex height stretching */}
             {(() => {
-              // Interleave image reviews to spread across columns
-              const withImages = reviews.filter(r => r.images && r.images.length > 0)
-              const withoutImages = reviews.filter(r => !r.images || r.images.length === 0)
-              const sorted: typeof reviews = []
-              let imgIdx = 0, txtIdx = 0
-              for (let i = 0; i < reviews.length; i++) {
-                if ((i % 4 === 0 || i % 4 === 1) && imgIdx < withImages.length && i < 12) {
-                  sorted.push(withImages[imgIdx++])
-                } else if (txtIdx < withoutImages.length) {
-                  sorted.push(withoutImages[txtIdx++])
-                } else if (imgIdx < withImages.length) {
-                  sorted.push(withImages[imgIdx++])
-                }
-              }
-              while (imgIdx < withImages.length) sorted.push(withImages[imgIdx++])
-              while (txtIdx < withoutImages.length) sorted.push(withoutImages[txtIdx++])
-
               // Distribute into columns round-robin
               const cols: (typeof reviews)[] = [[], [], []]
-              sorted.forEach((r, i) => cols[i % 3].push(r))
+              reviews.forEach((r, i) => cols[i % 3].push(r))
 
               return (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
@@ -143,22 +126,7 @@ export default function ReviewsPage() {
                             </div>
                           </div>
 
-                          {/* Review images — always at very bottom */}
-                          {review.images && review.images.length > 0 && (
-                            <div className={`grid ${review.images.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-2 px-6 pb-6`}>
-                              {review.images.map((img, k) => (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img
-                                  key={k}
-                                  src={img}
-                                  alt={`Photo from ${review.name}'s review`}
-                                  className="w-full rounded-xl object-cover"
-                                  loading="lazy"
-                                  referrerPolicy="no-referrer"
-                                />
-                              ))}
-                            </div>
-                          )}
+
                         </div>
                       ))}
                     </div>

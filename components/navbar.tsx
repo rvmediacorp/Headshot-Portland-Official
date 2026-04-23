@@ -1,6 +1,22 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import NavLink from "./nav-link"
+
+/**
+ * Routes that supply their own focused header (paid landing pages, etc).
+ * The global marketing nav is suppressed there to keep conversion pages clean.
+ */
+const SUPPRESS_PREFIXES = [
+  "/corporate-headshots",
+  "/actor-headshots",
+  "/linkedin-headshots",
+  "/modeling-headshots",
+  "/realtor-headshots",
+  "/google-quote-request",
+]
 
 const NAV_ITEMS = [
   { label: "HOME", href: "/" },
@@ -14,6 +30,14 @@ const NAV_ITEMS = [
 ]
 
 export default function Navbar() {
+  const pathname = usePathname()
+  if (
+    pathname &&
+    SUPPRESS_PREFIXES.some((prefix) => pathname.startsWith(prefix))
+  ) {
+    return null
+  }
+
   return (
     <>
       {/* Hidden checkbox — controls mobile menu via CSS */}

@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import { inter, bodoni, playfair, bodoniModa } from "./fonts"
 import Script from "next/script"
 import Navbar from "@/components/navbar"
+import StickyCTA from "@/components/sticky-cta"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <StickyCTA />
         <SpeedInsights />
         <Analytics />
       </body>
