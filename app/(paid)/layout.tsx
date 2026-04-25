@@ -32,7 +32,7 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? ""
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#000000",
+  themeColor: "#FAFAF7",
 }
 
 export const metadata: Metadata = {
@@ -104,7 +104,7 @@ const businessJsonLd = {
 export default function PaidLayout({ children }: { children: ReactNode }) {
   return (
     <div
-      className={`${inter.variable} ${bodoni.variable} ${playfair.variable} ${bodoniModa.variable} paid-root min-h-dvh bg-black text-white antialiased`}
+      className={`${inter.variable} ${bodoni.variable} ${playfair.variable} ${bodoniModa.variable} paid-root min-h-dvh bg-[#FAFAF7] text-[#111] antialiased`}
       style={
         {
           ["--brand" as string]: BRAND_COLOR,
@@ -113,17 +113,17 @@ export default function PaidLayout({ children }: { children: ReactNode }) {
       }
     >
       {/*
-        Hard-override the globally dark <body> so overscroll doesn't flash a
-        different color. These routes are already dark-themed.
+        Hard-override the body so overscroll doesn't flash a different color.
+        Paid pages use a light cream theme; only the footer is dark.
       */}
       <style>{`
-        body { background-color: #000 !important; color: #fff !important; }
+        body { background-color: #FAFAF7 !important; color: #111 !important; }
         .paid-root [data-display] { font-family: var(--font-bodoni-moda), Georgia, serif; }
         .paid-root .btn-brand {
           background-color: var(--brand);
           color: #fff;
         }
-        .paid-root .btn-brand:hover { filter: brightness(1.08); }
+        .paid-root .btn-brand:hover { filter: brightness(0.95); }
         .paid-root .focus-ring {
           outline: 2px solid transparent;
           outline-offset: 2px;

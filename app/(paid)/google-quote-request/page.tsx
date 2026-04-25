@@ -10,14 +10,14 @@ export const metadata = {
 
 export default function GoogleQuoteRequestPage() {
   return (
-    <div className="flex min-h-dvh flex-col bg-black antialiased" style={{ "--brand": "#1e7a96" } as React.CSSProperties}>
+    <div className="flex min-h-dvh flex-col bg-[#FAFAF7] antialiased" style={{ "--brand": "#1e7a96" } as React.CSSProperties}>
       <style>{`
-        body { background-color: #000 !important; color: #fff !important; }
+        body { background-color: #FAFAF7 !important; color: #111 !important; }
         .btn-brand {
           background-color: var(--brand);
           color: #fff;
         }
-        .btn-brand:hover { filter: brightness(1.08); }
+        .btn-brand:hover { filter: brightness(0.95); }
         .focus-ring {
           outline: 2px solid transparent;
           outline-offset: 2px;
@@ -30,10 +30,10 @@ export default function GoogleQuoteRequestPage() {
       `}</style>
 
       {/* Header */}
-      <header className="flex h-16 sm:h-[72px] items-center justify-between px-4 lg:px-12 border-b border-white/10 bg-black">
+      <header className="flex h-16 sm:h-[72px] items-center justify-between px-4 lg:px-12 border-b border-black/10 bg-[#FAFAF7]">
         <Link href="/" aria-label="Headshot Portland — home" className="focus-ring rounded-md">
           <Image
-            src="/images/logos/headshot_portland_white.svg"
+            src="/images/logos/headshot_portland_black.svg"
             alt="Headshot Portland"
             width={153}
             height={52}
@@ -56,10 +56,10 @@ export default function GoogleQuoteRequestPage() {
       <main className="flex flex-1 items-center justify-center p-4 sm:p-8">
         <div className="w-full max-w-xl">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl text-white">
+            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl text-[#111]">
               Get your custom quote
             </h1>
-            <p className="mt-2 text-[15px] text-white/70">
+            <p className="mt-2 text-[15px] text-[#444]">
               Select an option below to get started. We reply within 1 business hour.
             </p>
           </div>

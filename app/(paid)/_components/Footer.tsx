@@ -19,7 +19,7 @@ export default function Footer({ currentPath }: FooterProps) {
   const links = NICHE_LINKS.filter((l) => l.href !== currentPath)
   return (
     <div className="w-full px-[10px] my-[10px]">
-    <footer className="w-full rounded-[10px] bg-[#0F0E0F]">
+    <footer className="w-full rounded-[10px] border-[1.5px] border-[#C8C8C8] bg-[#0F0E0F]">
       <div className="mx-auto max-w-6xl px-5 pb-28 pt-12 sm:px-8 sm:py-16">
         {/* Logo row */}
         <Link href="/" className="focus-ring inline-flex items-center">

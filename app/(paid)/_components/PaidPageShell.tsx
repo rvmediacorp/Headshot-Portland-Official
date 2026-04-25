@@ -93,16 +93,16 @@ export default function PaidPageShell({
       <Testimonials />
       <WhyNathan />
       <div className="w-full px-[10px] my-[10px]">
-        <section className="w-full rounded-[10px] bg-[#0F0E0F] py-12 sm:py-20">
+        <section className="w-full rounded-[10px] border-[1.5px] border-[#C8C8C8] bg-[#FDF0E1] py-12 sm:py-20">
           <div className="mx-auto max-w-xl px-5 sm:px-8">
             <div className="text-center mb-8">
               <h2
                 data-display
-                className="text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl"
+                className="text-balance text-3xl font-semibold leading-tight text-[#111] sm:text-4xl"
               >
                 Get your custom quote
               </h2>
-              <p className="mt-2 text-[15px] text-white/70">
+              <p className="mt-2 text-[15px] text-[#444]">
                 Select an option below to get started. We reply within 1 business hour.
               </p>
             </div>

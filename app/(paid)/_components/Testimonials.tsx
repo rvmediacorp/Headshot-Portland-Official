@@ -16,7 +16,7 @@ export default function Testimonials() {
     <div className="w-full px-[10px] my-[10px]">
     <section
       aria-labelledby="testimonials-heading"
-      className="w-full rounded-[10px] bg-[#FDF0E1] text-[#111]"
+      className="w-full rounded-[10px] border-[1.5px] border-[#C8C8C8] bg-[#FDF0E1] text-[#111]"
     >
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <div className="text-center">
