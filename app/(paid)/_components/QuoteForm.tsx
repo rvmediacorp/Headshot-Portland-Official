@@ -226,8 +226,8 @@ export default function QuoteForm({
   // ── UI helpers ───────────────────────────────────────────────────────────
   const isLight = variant === "on-light"
   const cardBg = isLight
-    ? "bg-white text-[#111] shadow-xl ring-1 ring-black/5"
-    : "bg-white/95 text-[#111] shadow-2xl ring-1 ring-black/5 backdrop-blur"
+    ? "bg-white text-[#111] ring-1 ring-black/10"
+    : "bg-white text-[#111] ring-1 ring-black/10"
 
   const tileBase =
     "focus-ring text-left rounded-xl border border-black/10 bg-[#FAFAF7] px-4 py-4 text-sm sm:text-base font-medium transition hover:border-black/30 hover:bg-white"
@@ -235,7 +235,7 @@ export default function QuoteForm({
     "ring-2 ring-[var(--brand)] border-transparent bg-white"
 
   const inputBase =
-    "focus-ring w-full rounded-lg border border-black/15 bg-white px-3.5 py-3 text-base text-[#111] placeholder:text-[#888] outline-none focus:border-[var(--brand)]"
+    "focus-ring w-full rounded-xl border border-black/15 bg-white px-4 py-3.5 text-base text-[#111] placeholder:text-[#888] outline-none focus:border-[var(--brand)]"
 
   const progress = (step / 5) * 100
 
@@ -438,10 +438,11 @@ export default function QuoteForm({
                   <span>{opt}</span>
                   <span
                     aria-hidden
-                    className={`flex h-5 w-5 items-center justify-center rounded-md border ${
+                    style={{ borderRadius: "6px" }}
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center border-2 ${
                       selected
                         ? "border-[var(--brand)] bg-[var(--brand)] text-white"
-                        : "border-black/25 text-transparent"
+                        : "border-black/30 text-transparent"
                     }`}
                   >
                     <Check className="h-3.5 w-3.5" />
@@ -610,7 +611,7 @@ export default function QuoteForm({
           <button
             type="button"
             onClick={() => setStep((s) => Math.max(1, (s - 1)) as FormStep)}
-            className="focus-ring inline-flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm text-[#444] hover:text-[#111]"
+            className="focus-ring inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm text-[#444] hover:text-[#111] hover:bg-black/5"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden /> Back
           </button>
@@ -623,7 +624,7 @@ export default function QuoteForm({
             type="button"
             onClick={nextFromBudget}
             disabled={budgetRanges.length === 0}
-            className="focus-ring btn-brand inline-flex min-h-[48px] items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold disabled:opacity-50 sm:text-base"
+            className="focus-ring btn-brand inline-flex min-h-[48px] items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold disabled:opacity-50 sm:text-base"
           >
             Next <ArrowRight className="h-4 w-4" aria-hidden />
           </button>
@@ -632,7 +633,7 @@ export default function QuoteForm({
           <button
             type="submit"
             disabled={submitting}
-            className="focus-ring btn-brand inline-flex min-h-[52px] items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold disabled:opacity-60 sm:text-base"
+            className="focus-ring btn-brand inline-flex min-h-[52px] items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold disabled:opacity-60 sm:text-base"
           >
             {submitting ? "Sending…" : "Get my custom quote"}
           </button>

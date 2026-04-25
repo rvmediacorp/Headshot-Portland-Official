@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
 import NavLink from "./nav-link"
 
 /**
@@ -31,6 +32,23 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const pathname = usePathname()
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    let ticking = false
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 12)
+        ticking = false
+      })
+    }
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
   if (
     pathname &&
     SUPPRESS_PREFIXES.some((prefix) => pathname.startsWith(prefix))
@@ -43,7 +61,11 @@ export default function Navbar() {
       {/* Hidden checkbox — controls mobile menu via CSS */}
       <input type="checkbox" id="nav-toggle" className="hidden peer/menu" aria-hidden="true" />
 
-      <header className="w-full text-white py-6 px-5 md:px-16 relative">
+      <header
+        className={`sticky top-0 z-50 w-full text-white py-6 px-5 md:px-16 transition-colors duration-200 ${
+          scrolled ? "border-b border-white/10 bg-black/70 backdrop-blur-md" : "border-b border-transparent bg-transparent"
+        }`}
+      >
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="block z-60">

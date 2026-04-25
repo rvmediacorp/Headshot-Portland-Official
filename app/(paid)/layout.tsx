@@ -32,7 +32,7 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? ""
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FAFAF7",
+  themeColor: "#000000",
 }
 
 export const metadata: Metadata = {
@@ -104,7 +104,7 @@ const businessJsonLd = {
 export default function PaidLayout({ children }: { children: ReactNode }) {
   return (
     <div
-      className={`${inter.variable} ${bodoni.variable} ${playfair.variable} ${bodoniModa.variable} paid-root min-h-dvh bg-[#FAFAF7] text-[#111] antialiased`}
+      className={`${inter.variable} ${bodoni.variable} ${playfair.variable} ${bodoniModa.variable} paid-root min-h-dvh bg-black text-white antialiased`}
       style={
         {
           ["--brand" as string]: BRAND_COLOR,
@@ -113,18 +113,17 @@ export default function PaidLayout({ children }: { children: ReactNode }) {
       }
     >
       {/*
-        Hard-override the globally dark <body> while these routes are mounted.
-        The wrapper above already paints the visible viewport; this also stops
-        white scrollbars on overscroll.
+        Hard-override the globally dark <body> so overscroll doesn't flash a
+        different color. These routes are already dark-themed.
       */}
       <style>{`
-        body { background-color: #FAFAF7 !important; color: #111 !important; }
+        body { background-color: #000 !important; color: #fff !important; }
         .paid-root [data-display] { font-family: var(--font-bodoni-moda), Georgia, serif; }
         .paid-root .btn-brand {
           background-color: var(--brand);
           color: #fff;
         }
-        .paid-root .btn-brand:hover { filter: brightness(0.95); }
+        .paid-root .btn-brand:hover { filter: brightness(1.08); }
         .paid-root .focus-ring {
           outline: 2px solid transparent;
           outline-offset: 2px;

@@ -13,10 +13,12 @@ export default function Testimonials() {
   const selectedReviews = reviews.slice(0, 6)
 
   return (
+    <div className="w-full px-[10px] my-[10px]">
     <section
       aria-labelledby="testimonials-heading"
-      className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20"
+      className="w-full rounded-[10px] bg-[#FDF0E1] text-[#111]"
     >
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <div className="text-center">
         <h2
           id="testimonials-heading"
@@ -34,7 +36,7 @@ export default function Testimonials() {
         {selectedReviews.map((review, i) => (
           <div
             key={i}
-            className="mb-5 break-inside-avoid bg-white rounded-xl border border-black/10 flex flex-col shadow-sm"
+            className="mb-5 break-inside-avoid rounded-[16px] border border-[#1D1C1D] flex flex-col bg-[#FDF0E1] hover:bg-[#1D1C1D] transition-colors duration-300 group"
           >
             <div className="p-6 flex flex-col flex-1">
               {/* Stars + Google logo */}
@@ -49,7 +51,7 @@ export default function Testimonials() {
               </div>
 
               {/* Review text */}
-              <p className="text-[#222] text-sm md:text-base leading-relaxed mb-4">
+              <p className="text-[#222] group-hover:text-white transition-colors duration-300 text-sm md:text-base leading-relaxed mb-4">
                 &ldquo;{review.text}&rdquo;
               </p>
 
@@ -65,7 +67,7 @@ export default function Testimonials() {
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
-                <p className="text-[#111] font-semibold text-sm">
+                <p className="text-[#111] group-hover:text-white transition-colors duration-300 font-semibold text-sm">
                   {review.name}
                 </p>
               </div>
@@ -77,17 +79,19 @@ export default function Testimonials() {
       </div>
 
       <div className="mt-12 flex justify-center">
-        <a 
-          href="https://maps.app.goo.gl/xRqN4nmhtpQkNQXa7" 
-          target="_blank" 
+        <a
+          href="https://maps.app.goo.gl/xRqN4nmhtpQkNQXa7"
+          target="_blank"
           rel="noopener noreferrer"
-          className="focus-ring inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3.5 text-sm font-bold tracking-wide text-[#111] shadow-sm hover:bg-black/5 transition-colors"
+          className="focus-ring inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3.5 text-sm font-bold tracking-wide text-[#111] hover:bg-black/5 transition-colors"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/google-g-logo.svg" alt="Google" width={20} height={20} className="w-5 h-5" />
           <span>SEE ALL 119 REVIEWS ON GOOGLE</span>
         </a>
       </div>
+      </div>
     </section>
+    </div>
   )
 }

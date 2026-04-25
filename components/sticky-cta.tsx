@@ -4,6 +4,7 @@ import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import { motion, useReducedMotion } from "motion/react"
 
 /**
  * Routes that supply their own conversion CTA — the global sticky button is
@@ -39,6 +40,7 @@ export default function StickyCTA({
     pathname?.startsWith(prefix)
   )
   const [visible, setVisible] = useState(false)
+  const shouldReduceMotion = useReducedMotion()
 
   useEffect(() => {
     let ticking = false
@@ -73,27 +75,33 @@ export default function StickyCTA({
   if (suppressed) return null
 
   return (
-    <div
-      className={`fixed z-40 inset-x-4 bottom-4 flex justify-center sm:inset-x-auto sm:right-6 sm:bottom-6 sm:justify-end transition-all duration-300 ease-out pointer-events-none ${
-        visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-6 pointer-events-none"
-      }`}
+    <motion.div
+      className="fixed z-40 inset-x-4 bottom-4 flex justify-center sm:inset-x-auto sm:right-6 sm:bottom-6 sm:justify-end pointer-events-none"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      initial={false}
+      animate={{
+        opacity: visible ? 1 : 0,
+        scale: visible ? 1 : 0.96,
+      }}
+      transition={
+        shouldReduceMotion
+          ? { duration: 0 }
+          : { type: "spring", duration: 0.5, bounce: 0.4 }
+      }
       aria-hidden={!visible}
     >
       <Link
         href={href}
-        className="cta-button cta-primary button-text text-sm md:text-base shadow-2xl shadow-black/40 ring-1 ring-white/10 hover:opacity-90 pointer-events-auto"
+        className="cta-button cta-primary button-text text-sm md:text-base shadow-2xl shadow-black/40 ring-1 ring-white/10 hover:opacity-90 active:scale-[0.97] pointer-events-auto group"
         aria-label={`${label} — get a free headshot photography quote`}
         tabIndex={visible ? 0 : -1}
         data-cta="sticky-quote"
       >
         <span>{label}</span>
         <span className="arrow-icon w-8 h-8 md:w-10 md:h-10">
-          <ArrowUpRight size={16} className="md:size-20" />
+          <ArrowUpRight size={16} className="md:size-5 transition-transform duration-150 ease-out motion-reduce:transition-none group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </span>
       </Link>
-    </div>
+    </motion.div>
   )
 }

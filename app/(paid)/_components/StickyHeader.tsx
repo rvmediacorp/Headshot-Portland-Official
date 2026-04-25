@@ -28,41 +28,39 @@ export default function StickyHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-30 w-full transition-all duration-200 ${
-        scrolled
-          ? "border-b border-black/5 bg-white/85 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
+      className={`sticky top-0 z-50 w-full text-white transition-colors duration-200 ${
+        scrolled ? "border-b border-white/10 bg-black/70 backdrop-blur-md" : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-8">
+      <div className="flex items-center justify-between gap-3 px-5 py-6 md:px-16">
         <Link
           href="/"
           aria-label="Headshot Portland — home"
           className="focus-ring -ml-1 inline-flex items-center rounded-md p-1"
         >
           <Image
-            src="/images/logos/headshot_portland_black.svg"
+            src="/images/logos/headshot_portland_white.svg"
             alt="Headshot Portland"
-            width={153}
-            height={52}
+            width={96}
+            height={32}
             priority
-            className="h-9 w-auto sm:h-10"
+            className="h-8 w-auto"
           />
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Trust nudge — desktop only, links to reviews */}
           <a
-            href="https://www.google.com/maps/place/Headshot+Portland"
+            href="https://maps.app.goo.gl/xRqN4nmhtpQkNQXa7"
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring hidden items-center gap-1.5 rounded-full px-3 py-2 text-sm text-[#444] hover:bg-black/5 md:inline-flex"
+            className="focus-ring hidden min-h-[44px] items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur-sm transition-colors hover:border-white/25 hover:bg-white/10 md:inline-flex"
           >
             <span aria-hidden className="text-[#FFB300]">
               ★
             </span>
-            <span className="font-medium text-[#111]">4.9</span>
-            <span className="text-[#666]">·</span>
+            <span className="font-medium text-white">4.9</span>
+            <span className="text-white/40">·</span>
             <span>{REVIEW_COUNT}+ reviews</span>
           </a>
 

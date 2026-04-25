@@ -270,7 +270,13 @@ body {
   justify-content: space-between;
   padding: .5rem 1.5rem;
   border-radius: 9999px;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease, transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-button {
+    transition: none;
+  }
 }
 
 .cta-primary {
@@ -560,4 +566,39 @@ body {
   .grid-masonry {
     grid-template-columns: 1fr;
   }
+}
+
+/* Sticky quote CTA — tighter sizing on desktop */
+@media (min-width: 768px) {
+  [data-cta="sticky-quote"] {
+    padding: 0.625rem 0.5rem 0.625rem 1rem;
+  }
+  [data-cta="sticky-quote"] .arrow-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Pointer cursor on all clickable elements (Tailwind v4 removed the default for buttons) */
+button,
+a,
+[role="button"],
+select,
+summary,
+label:has(input[type="radio"]),
+label:has(input[type="checkbox"]),
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
+button:disabled,
+a[aria-disabled="true"],
+[role="button"][aria-disabled="true"],
+input:disabled {
+  cursor: not-allowed;
 }
