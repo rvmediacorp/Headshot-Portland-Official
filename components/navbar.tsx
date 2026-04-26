@@ -17,6 +17,7 @@ const SUPPRESS_PREFIXES = [
   "/modeling-headshots",
   "/realtor-headshots",
   "/google-quote-request",
+  "/call",
 ]
 
 const NAV_ITEMS = [

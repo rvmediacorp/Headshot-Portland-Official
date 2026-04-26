@@ -18,6 +18,7 @@ const SUPPRESS_PREFIXES = [
   "/realtor-headshots",
   "/thank-you",
   "/google-quote-request",
+  "/call",
 ]
 
 interface StickyCTAProps {

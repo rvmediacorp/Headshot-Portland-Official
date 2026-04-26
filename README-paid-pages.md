@@ -64,6 +64,8 @@ piece in production is your email destination.
 | `NEXT_PUBLIC_BRAND_ORANGE_HEX`     | CSS `--brand` accent color                | `#E07A1F`              |
 | `NEXT_PUBLIC_GOOGLE_REVIEW_COUNT`  | Number used in trust bar + JSON-LD        | `119`                  |
 | `NEXT_PUBLIC_SITE_URL`             | Absolute origin for canonicals + JSON-LD  | `https://headshotportland.com` |
+| `NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID`       | Google Ads AW ID used by `/call` (defaults to `AW-847156852` from the root layout) | `AW-847156852`         |
+| `NEXT_PUBLIC_GOOGLE_ADS_CALL_CONVERSION_LABEL` | Google Ads *Call-Conversion* label fired on `/call` page load (see "Call Now sitelink" section) | `AbCdEfGhIjKlMnOpQ`    |
 
 ### Server-only (consumed by `/api/lead`)
 
@@ -279,6 +281,65 @@ On the HubSpot Private App backing `HUBSPOT_PRIVATE_APP_TOKEN`:
 - **HubSpot deal pipelines** — Settings → Objects → Deals → Pipelines, or via
   `curl -H "Authorization: Bearer $HUBSPOT_PRIVATE_APP_TOKEN" \
   https://api.hubapi.com/crm/v3/pipelines/deals`.
+
+---
+
+## Call Now sitelink — `/call`
+
+A dedicated route at `/call` targets the Google Ads "Call Now" sitelink.
+When a visitor lands there:
+
+1. The page paints immediately (branded UI: logo, 5-star Google rating,
+   large brand-colored phone number, big "Tap to Call Now" button, hours +
+   studio address). Living inside `app/(paid)/call/page.tsx`, so it shares
+   the paid layout's GTM setup and is suppressed from the global Navbar +
+   StickyCTA via the respective component `SUPPRESS_PREFIXES` arrays.
+2. An inline `<script>` fires three things in order:
+   - A `phone_click` event on `window.dataLayer` (for any GTM tag listening
+     — existing or new).
+   - A Google Ads **call conversion** via `gtag('event','conversion', ...)`
+     scoped to `NEXT_PUBLIC_GOOGLE_ADS_CALL_CONVERSION_LABEL`. Skipped
+     silently if the label env is unset.
+   - A `setTimeout(tel: redirect, 500ms)` — gives the page ~half a second
+     to fully paint before the device dialer takes focus, so users never
+     see a blank flash.
+3. A tappable `<a href="tel:+15033137121">` fallback button is always
+   visible so desktop and no-JS visitors (and returning-from-call visitors)
+   have a one-tap path to dial.
+
+### Setting up the Google Ads Call Conversion action
+
+1. Google Ads → **Goals → Conversions → New conversion action**
+2. Source: **Website**
+3. Conversion name: e.g. `Call from Website – /call`
+4. Category: **Phone call lead**
+5. Value: whatever lead-value you want to assign (the page sends `1.0 USD`;
+   you can overwrite in the Google Ads UI or adjust the inline script)
+6. Count: **One** (a single conversion per landing)
+7. Conversion window: 30-day default
+8. Attribution model: data-driven (default)
+9. After the action is created, open its **"Tag setup"** view and copy the
+   **Conversion label** (the short alphanumeric string after the `/` in
+   the `send_to` param, e.g. `AbCdEfGhIjKlMnOpQ`)
+10. In Vercel → the project's **Environment Variables** screen, set
+    `NEXT_PUBLIC_GOOGLE_ADS_CALL_CONVERSION_LABEL` to that label. Apply to
+    Production + Preview. Redeploy (any commit or click "Redeploy").
+11. Verify in Google Ads → Conversions → the action should show incoming
+    events within ~15 minutes of a real test call-button tap.
+
+> **Why the env var instead of hardcoding?** You can rotate the conversion
+> label (e.g. when migrating between Google Ads accounts or test/prod) by
+> setting the env var in Vercel without touching code. The label itself is
+> low-sensitivity (it's effectively public once your ad runs).
+
+### Using it in your Google Ad
+
+In the Google Ads UI for your "Call Now" sitelink extension, set the
+**Sitelink URL** to `https://www.headshotportland.com/call`. That's it —
+no URL tracking template changes needed; the page reads `utm_*` and
+`gclid` from the ad's final URL via the shared attribution cookie
+established by `AttributionCapture`, and the conversion tag fires
+independently.
 
 ---
 
