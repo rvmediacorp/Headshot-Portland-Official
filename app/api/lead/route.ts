@@ -11,7 +11,14 @@ export const dynamic = "force-dynamic"
 // Validation
 // ─────────────────────────────────────────────────────────────────────────────
 
-const NICHES = ["corporate", "actor", "linkedin", "modeling", "realtor"] as const
+const NICHES = [
+  "corporate",
+  "actor",
+  "linkedin",
+  "modeling",
+  "realtor",
+  "general",
+] as const
 const HEADSHOT_TYPES = [
   "LinkedIn",
   "Website & Business Card",

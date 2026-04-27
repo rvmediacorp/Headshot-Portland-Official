@@ -60,6 +60,14 @@ export const HERO_IMAGES: Record<Niche, HeroImage[]> = {
     { src: `${HG}/tom-fisher-headshot-photographer.webp`, alt: "Realtor headshot example — Portland studio (broker portrait)" },
     { src: `${HG}/woman-hijab-headshot-studio.webp`,  alt: "Realtor headshot example — Portland studio (warm professional)" },
   ],
+  general: [
+    { src: `${HG}/john-headshot-portland.webp`,       alt: "Portland headshot example — classic executive portrait" },
+    { src: `${HG}/headshot-portland-amy.webp`,        alt: "Portland headshot example — polished professional" },
+    { src: `${HG}/austyn-portland-headshots.webp`,    alt: "Portland headshot example — character portrait" },
+    { src: `${HG}/abby-headshot-portland.webp`,       alt: "Portland headshot example — warm and approachable" },
+    { src: `${HG}/cameron-suit-headshot.webp`,        alt: "Portland headshot example — young executive" },
+    { src: `${HG}/hannah-headshots-pdx.webp`,         alt: "Portland headshot example — natural portrait" },
+  ],
 }
 
 export const COMPANY_LOGOS: { src: string; alt: string }[] = [

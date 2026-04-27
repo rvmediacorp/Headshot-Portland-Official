@@ -4,6 +4,7 @@ export type Niche =
   | "linkedin"
   | "modeling"
   | "realtor"
+  | "general"
 
 export type FormStep = 1 | 2 | 3 | 4 | 5
 

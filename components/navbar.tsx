@@ -16,6 +16,7 @@ const SUPPRESS_PREFIXES = [
   "/linkedin-headshots",
   "/modeling-headshots",
   "/realtor-headshots",
+  "/best-headshot-photographer-portland-oregon",
   "/google-quote-request",
   "/call",
 ]

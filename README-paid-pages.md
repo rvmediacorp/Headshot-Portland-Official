@@ -1,15 +1,16 @@
 # Paid landing pages — Headshot Portland
 
-Five Google Ads landing pages live under the `app/(paid)/` route group and
+Six Google Ads landing pages live under the `app/(paid)/` route group and
 share a single, light-themed layout.
 
-| Route                       | Ad group / niche       |
-| --------------------------- | ---------------------- |
-| `/corporate-headshots`      | Corporate / executive  |
-| `/actor-headshots`          | Actor / theatrical     |
-| `/linkedin-headshots`       | LinkedIn / personal    |
-| `/modeling-headshots`       | Modeling / portfolio   |
-| `/realtor-headshots`        | Realtor / brokers      |
+| Route                                              | Ad group / niche                       |
+| -------------------------------------------------- | -------------------------------------- |
+| `/corporate-headshots`                             | Corporate / executive                  |
+| `/actor-headshots`                                 | Actor / theatrical                     |
+| `/linkedin-headshots`                              | LinkedIn / personal                    |
+| `/modeling-headshots`                              | Modeling / portfolio                   |
+| `/realtor-headshots`                               | Realtor / brokers                      |
+| `/best-headshot-photographer-portland-oregon`      | General / brand-term (multi-niche)     |
 
 Each page is **statically rendered** (`force-static`, ISR 1h) and emits a
 per-niche `Service` JSON-LD plus a shared `PhotographyBusiness` block.
