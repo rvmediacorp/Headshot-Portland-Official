@@ -40,6 +40,12 @@ export default function RootLayout({
             gtag('config', 'AW-847156852');
           `}
         </Script>
+        {/* LeadPipe — B2B visitor identification / fingerprint-based lead feed. */}
+        <Script
+          id="leadpipe"
+          src="https://leadpipe.aws53.cloud/p/0185ff98-20cd-4e9b-99e4-4c59098a8ec1.js"
+          strategy="lazyOnload"
+        />
       </head>
       <body suppressHydrationWarning>
         <Navbar />
