@@ -4,12 +4,12 @@ const ITEMS = [
   {
     title: "Expression coaching",
     body: "Real-time expression and posing coaching — you'll look like yourself on your best day.",
-    bgImage: "/images/HeroGrid18/hannah-headshots-pdx.webp",
+    bgImage: "/images/headshots-gallery/headshot-portland-colby-5.webp",
   },
   {
     title: "Professional retouching",
     body: "Fully retouched files for LinkedIn, press kits, or team directories. Same-day rush often available.",
-    bgImage: "/images/HeroGrid18/cheryl-doctor-headshots.webp",
+    bgImage: "/images/headshots-gallery/erica-headshot-portland-sm.webp",
   },
   {
     title: "Real photos, no AI",
