@@ -8,7 +8,12 @@ import {
   Phone,
   Check,
 } from "lucide-react"
-import { newEventId, track } from "@/lib/analytics"
+import {
+  newEventId,
+  normalizeEmail,
+  normalizePhoneE164,
+  track,
+} from "@/lib/analytics"
 import { readAttribution } from "@/lib/AttributionCapture"
 import type {
   Niche,
@@ -207,10 +212,20 @@ export default function QuoteForm({
 
       track("generate_lead", {
         niche,
-        value: 0,
+        value: 1.0,
         currency: "USD",
         event_id: payload.event_id,
         attribution: payload.attribution,
+        // Enhanced Conversions match keys. GTM reads these via Data Layer
+        // Variables and hands them to the Google Ads tag's user-provided data
+        // fields, which hashes them in-browser before sending. Fires only after
+        // /api/lead confirms success, so this never reports a failed lead.
+        user_data: {
+          email: normalizeEmail(email),
+          phone_number: normalizePhoneE164(phone),
+          first_name: firstName.trim().toLowerCase(),
+          last_name: lastName.trim().toLowerCase(),
+        },
       })
       setSubmitted(true)
     } catch (err) {

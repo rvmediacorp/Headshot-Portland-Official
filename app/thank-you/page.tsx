@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import Script from "next/script"
 import { Phone, ArrowLeft, Calendar } from "lucide-react"
 import GoogleAnalytics from "@/components/google-analytics"
 
@@ -9,12 +8,13 @@ export default function ThankYouPage() {
     <main className="min-h-screen bg-dark-bg text-white">
       <GoogleAnalytics />
 
-      {/* Google Ads Conversion Tracking */}
-      <Script id="google-conversion-tracking" strategy="afterInteractive">
-        {`
-          gtag('event', 'conversion', {'send_to': 'AW-847156852/DiA7CM_nqYEDEPSs-pMD'});
-        `}
-      </Script>
+      {/*
+        The Google Ads conversion that used to fire here is now owned by Google
+        Tag Manager. It was firing twice — once here and once from a useEffect
+        in components/google-analytics.tsx — with no transaction_id to dedupe.
+        If this page needs to report a conversion, add a GTM trigger on its
+        page view rather than a hardcoded gtag call.
+      */}
 
       {/* Thank You Content */}
       <div className="w-full px-[10px] my-[10px]">

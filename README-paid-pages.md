@@ -375,7 +375,7 @@ corporate: [
 | `form_start`           | First interaction with step 1              | `niche`, `form_id`                           |
 | `form_step_complete`   | Each step advance (steps 1 through 5)      | `step` (1-5), `next_step` (1-5), `niche`     |
 | `form_submit`          | User clicks submit (pre-API)               | `niche`, `form_id`                           |
-| `generate_lead`        | API confirmed success                      | `value`, `currency`, `event_id`, `attribution` |
+| `generate_lead`        | API confirmed success                      | `value`, `currency`, `event_id`, `attribution`, `user_data` |
 | `phone_click`          | Click-to-call (header / sticky / errors)   | `from`                                       |
 | `external_cta_click`   | Fallback link clicked after API failure    | `from`, `href`                               |
 | `sticky_cta_click`     | Mobile sticky CTA tapped                   | `destination`                                |
@@ -389,6 +389,82 @@ Wire these in GTM:
 - `generate_lead` → GA4 conversion + Google Ads conversion action +
   Meta Pixel `Lead` (with the same `event_id` so the server-side CAPI call
   dedups — the API uses the form's `event_id` field).
+
+---
+
+## Google Ads conversion tracking via GTM
+
+### How the container is installed
+
+**Do not paste the GTM head/body snippets anywhere.** `app/layout.tsx` already
+renders both — the head loader and the `<body>` noscript iframe — driven by
+`NEXT_PUBLIC_GTM_CONTAINER_ID`. Pasting them again loads the container twice
+and double-counts every conversion.
+
+| Setting | Value |
+| ------- | ----- |
+| GTM account / container | `Headshot Portland` / `headshotportland.com` (Web) |
+| Container ID | `GTM-5FJHDL59` |
+| Google Ads Conversion ID | `847156852` (the account-level ID, from `AW-847156852`) |
+| Conversion label | `DiA7CM_nqYEDEPSs-pMD` ("Submit lead form") |
+
+`NEXT_PUBLIC_GTM_CONTAINER_ID` must be set in Vercel (Production + Preview).
+Until it is, the loader is a silent no-op — GTM never loads, and no tag fires.
+
+Do not confuse the **Conversion ID** (`847156852`, account-level, what GTM
+wants) with the **conversion action ID** (`227093171`, the API resource id,
+used server-side as `GOOGLE_ADS_CONVERSION_ACTION_ID`). Entering the action id
+in GTM fires into a non-existent account and records nothing.
+
+### Consent Mode
+
+`app/layout.tsx` sets Consent Mode v2 to **granted** by default with
+`ads_data_redaction: false`, and it runs `beforeInteractive` so it lands ahead
+of GTM — consent set *after* the container loads does not apply retroactively.
+This is valid for US-only traffic (CCPA/CPRA is opt-out). **If ads ever target
+the EEA/UK, this must become denied-by-default plus a banner calling
+`gtag('consent','update', ...)` on accept.**
+
+### Tags to build in the GTM UI
+
+1. **Conversion Linker** — trigger: All Pages.
+2. **Custom Event trigger** — event name exactly `generate_lead`.
+3. **Google Ads Conversion Tracking** tag — Conversion ID and label from the
+   table above, fired by trigger 2.
+4. **Data Layer Variables**, named exactly as the form publishes them:
+   `user_data.email`, `user_data.phone_number`, `user_data.first_name`,
+   `user_data.last_name`, plus `value`, `currency`, `event_id`.
+5. In the conversion tag, enable **Include user-provided data** and map the four
+   `user_data.*` variables. They are **already normalized** by
+   `normalizeEmail()` / `normalizePhoneE164()` in `lib/analytics.ts` (lowercased
+   email, E.164 phone). Do not enable automatic collection or let GTM
+   re-normalize — the client and server must produce identical match keys or
+   Google treats one lead as two people.
+
+### Why the trigger is not a thank-you page
+
+The paid form never navigates. `QuoteForm.tsx` calls `setSubmitted(true)` and
+swaps to an inline success state on the same URL, so there is no page load to
+trigger on. `generate_lead` fires only after `/api/lead` returns success, which
+is a stronger signal than a thank-you URL — that can be reached by refresh,
+bookmark, or the back button.
+
+### Deploy order matters
+
+The hardcoded `/thank-you` conversions were removed (they fired twice: once from
+an inline script, once from a `useEffect` in `components/google-analytics.tsx`,
+with no `transaction_id` to dedupe). GTM is now the only source of conversions,
+so **configure and publish the container before deploying the code**, or there
+is a window with no conversion tracking at all:
+
+1. Set `NEXT_PUBLIC_GTM_CONTAINER_ID` in Vercel
+2. Build tags 1–5 above
+3. **Submit / Publish** the GTM container (Preview mode alone does not go live)
+4. Deploy the code
+5. Verify with GTM Preview + Google Tag Assistant ("Succeeded")
+
+A verification submission creates a **real lead** — `/api/lead` pushes to GHL,
+HubSpot, Bloom and BlueBubbles. Use obviously fake details and delete after.
 
 ---
 

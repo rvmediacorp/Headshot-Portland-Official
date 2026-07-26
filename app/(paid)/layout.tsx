@@ -27,7 +27,6 @@ const SITE_URL =
 const GOOGLE_REVIEW_COUNT =
   process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT ?? "119"
 const BRAND_COLOR = process.env.NEXT_PUBLIC_BRAND_COLOR_HEX ?? "#1e7a96"
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? ""
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -143,48 +142,11 @@ export default function PaidLayout({ children }: { children: ReactNode }) {
         Skip to main content
       </a>
 
-      {/* Consent Mode v2 — must run before GTM */}
-      <Script id="consent-mode-default" strategy="beforeInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('consent', 'default', {
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied',
-            analytics_storage: 'denied',
-            functionality_storage: 'granted',
-            security_storage: 'granted',
-            wait_for_update: 500
-          });
-          gtag('set', 'ads_data_redaction', true);
-          gtag('set', 'url_passthrough', true);
-        `}
-      </Script>
-
-      {GTM_ID ? (
-        <Script id="gtm-loader" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${GTM_ID}');
-          `}
-        </Script>
-      ) : null}
-
-      {GTM_ID ? (
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="gtm-noscript"
-          />
-        </noscript>
-      ) : null}
+      {/*
+        Consent Mode and the GTM container now live in the root layout
+        (app/layout.tsx) so they cover the whole site, not just paid pages.
+        Loading GTM here as well would double-fire every tag.
+      */}
 
       <Script
         id="business-jsonld"

@@ -17,12 +17,10 @@ function GoogleAnalyticsInner() {
         page_path: url,
       })
 
-      // Track conversion if it's the thank you page
-      if (pathname === "/thank-you") {
-        window.gtag?.("event", "conversion", {
-          send_to: "AW-847156852/DiA7CM_nqYEDEPSs-pMD",
-        })
-      }
+      // The /thank-you conversion previously fired here AND from an inline
+      // script in app/thank-you/page.tsx — the same send_to twice, with no
+      // transaction_id to dedupe on. Google Tag Manager now owns conversion
+      // tags; do not re-add a hardcoded gtag conversion here.
     }
   }, [pathname, searchParams])
 
