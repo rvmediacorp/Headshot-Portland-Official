@@ -18,6 +18,7 @@ export interface HeroImage {
  */
 
 const HG = "/images/HeroGrid18"
+const GAL = "/images/headshots-gallery"
 
 export const HERO_IMAGES: Record<Niche, HeroImage[]> = {
   corporate: [
@@ -62,11 +63,11 @@ export const HERO_IMAGES: Record<Niche, HeroImage[]> = {
   ],
   general: [
     { src: `${HG}/john-headshot-portland.webp`,       alt: "Portland headshot example — classic executive portrait" },
-    { src: `${HG}/headshot-portland-amy.webp`,        alt: "Portland headshot example — polished professional" },
-    { src: `${HG}/austyn-portland-headshots.webp`,    alt: "Portland headshot example — character portrait" },
+    { src: `${GAL}/headshot-portland-angela-headshot.webp`, alt: "Portland headshot example — polished professional" },
+    { src: `${HG}/scott-black-shirt-headshot.webp`,   alt: "Portland headshot example — studio portrait on dark background" },
     { src: `${HG}/abby-headshot-portland.webp`,       alt: "Portland headshot example — warm and approachable" },
-    { src: `${HG}/cameron-suit-headshot.webp`,        alt: "Portland headshot example — young executive" },
-    { src: `${HG}/hannah-headshots-pdx.webp`,         alt: "Portland headshot example — natural portrait" },
+    { src: `${HG}/tom-fisher-headshot-photographer.webp`, alt: "Portland headshot example — senior executive portrait" },
+    { src: `${GAL}/headshot-portland-vestas-2.webp`,  alt: "Portland headshot example — natural portrait" },
   ],
 }
 
