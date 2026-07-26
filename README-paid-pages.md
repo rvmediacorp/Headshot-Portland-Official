@@ -164,6 +164,23 @@ Pulled at integration time via `GET /crm/v3/properties/contacts`. Override via
 
 ### Bloom CRM routing
 
+> ### ⚠️ A local form submission creates a REAL lead in the live CRM
+>
+> `sendBloom()` is **opt-out, not opt-in** — it runs unless
+> `BLOOM_DISABLED === "true"`, and Bloom's API needs no credentials. Every
+> other integration (GHL, HubSpot, Resend, BlueBubbles, Google Ads, Meta) is
+> gated behind a token and silently no-ops on localhost, so it is very easy to
+> assume nothing was sent.
+>
+> Worse, the skip messages mislead. A local submit logs six
+> `skipped — missing X` lines and **nothing at all for Bloom**, because Bloom
+> succeeded and success isn't logged. Absence of a Bloom line means it worked,
+> not that it was skipped.
+>
+> **Set `BLOOM_DISABLED=true` in `.env.local` before testing the form.**
+> Otherwise every test lands in the studio's real inbox and has to be
+> cleaned up by hand.
+
 [Bloom.io](https://bloom.io) is the studio's backend CRM. Every lead is
 forwarded to it in parallel with GHL / HubSpot / email via `sendBloom(lead)`
 in [app/api/lead/route.ts](app/api/lead/route.ts), which calls into
@@ -440,6 +457,67 @@ the EEA/UK, this must become denied-by-default plus a banner calling
    email, E.164 phone). Do not enable automatic collection or let GTM
    re-normalize — the client and server must produce identical match keys or
    Google treats one lead as two people.
+
+### What is actually published in the container
+
+Container version 2, "v1 — Lead form conversion tracking", published
+2026-07-26. Recreate this exactly if the container is ever rebuilt:
+
+**Tags (2)**
+
+| Name | Type | Trigger |
+| ---- | ---- | ------- |
+| `Conversion Linker` | Conversion Linker | All Pages |
+| `Google Ads - Lead Form Conversion` | Google Ads Conversion Tracking | `CE - generate_lead` |
+
+**Trigger (1)** — `CE - generate_lead`, Custom Event, `_event equals generate_lead`
+
+**Variables (8 user-defined)** — seven Data Layer Variables named
+`DLV - <path>` reading `user_data.email`, `user_data.phone_number`,
+`user_data.first_name`, `user_data.last_name`, `value`, `currency`,
+`event_id`; plus `UPD - Lead Form`, a User-Provided Data variable in
+**Manual configuration** mode mapping Email and Phone only.
+
+The address block in `UPD - Lead Form` is deliberately left empty. GTM treats
+it as all-or-nothing: populating First/Last Name forces Country and Postal
+Code to be filled too, and the form never collects those. A hardcoded postal
+code would be worse than nothing — every value is SHA-256 hashed, so a wrong
+one produces an unrelated hash that matches nobody rather than degrading
+gracefully. Email is the primary match key; phone is a strong secondary.
+
+### Verified end-to-end on production, 2026-07-26
+
+Tag Assistant against
+`www.headshotportland.com/best-headshot-photographer-portland-oregon`:
+
+- Event order `Consent Default (1) → Container Loaded (6) → generate_lead (16)`
+  — consent lands before the container, which is required for it to apply
+- `Google Ads - Lead Form Conversion` — **Fired 1 time**; Tags Not Fired: none
+- All six consent types `granted`, no `consent update` (expected — we grant at
+  default)
+- Variables resolved: `event_id` a real UUID, `value` `1`, `currency` `USD`,
+  email lowercased, phone `+1XXXXXXXXXX`
+- `UPD - Lead Form` resolves with `_tag_mode: "MANUAL"` — reading the
+  dataLayer, not scraping the DOM
+
+Note the site 308-redirects apex → `www`. Use the `www` URL in GTM Preview;
+the extra hop is a common cause of "the window was closed before a connection
+could be established".
+
+### Still outstanding
+
+- **Enhanced Conversions is not active.** `UPD - Lead Form` is published and
+  resolving correctly but no tag consumes it. This GTM version has no
+  "include user-provided data" field on the Google Ads Conversion Tracking
+  tag — it belongs on a **Google tag**, which the container does not have
+  (hence "No Google tag found in this container"). Adding one means also
+  removing the hardcoded `gtag.js` from `app/layout.tsx`, or the page runs two
+  Google tags for `847156852`.
+- **Server-side Google Ads is not active.** `sendGoogleAdsEnhancedConversion()`
+  reads a static `GOOGLE_ADS_ACCESS_TOKEN`, and there is no refresh-token
+  handling anywhere in the repo. Google OAuth access tokens expire in about an
+  hour, so setting that env var alone buys roughly one hour of uploads and
+  then fails silently. Build the refresh flow first.
 
 ### Why the trigger is not a thank-you page
 
