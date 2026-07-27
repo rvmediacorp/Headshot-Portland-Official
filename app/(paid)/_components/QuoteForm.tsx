@@ -210,10 +210,16 @@ export default function QuoteForm({
         throw new Error(json.error || `Request failed (${res.status})`)
       }
 
+      // Deliberately no `value`/`currency` here. Lead value is not a property of
+      // the form — it is a property of the ad platform, because close rates
+      // differ per channel (Google search leads close far better than Meta).
+      // A single dataLayer number would force every platform to share one
+      // value, so each platform owns its own instead: Google Ads on the
+      // conversion action, Meta in its own tag. Revisit only if lead value
+      // needs to vary per submission (e.g. scaled off `budgetRanges`), and if
+      // so, send a per-channel multiplier rather than one flat figure.
       track("generate_lead", {
         niche,
-        value: 1.0,
-        currency: "USD",
         event_id: payload.event_id,
         attribution: payload.attribution,
         // Enhanced Conversions match keys. GTM reads these via Data Layer

@@ -423,7 +423,23 @@ and double-counts every conversion.
 | GTM account / container | `Headshot Portland` / `headshotportland.com` (Web) |
 | Container ID | `GTM-5FJHDL59` |
 | Google Ads Conversion ID | `847156852` (the account-level ID, from `AW-847156852`) |
-| Conversion label | `DiA7CM_nqYEDEPSs-pMD` ("Submit lead form") |
+| Conversion label | `DiA7CM_nqYEDEPSs-pMD` ("Website Submit Lead Form") |
+
+The Google Ads account has several similarly-named lead conversion actions.
+Ours is the one whose **Source is "Website"** — renamed from "Submit lead form"
+to **"Website Submit Lead Form"** to distinguish it from:
+
+- `Lead form - Submit` — Source "Google hosted", Google's native lead-form ad
+  extension. Nothing to do with this site; its value of `1` is unrelated.
+- `PB Submit Lead` — a different brand in the same Ads account.
+
+Match on the **Conversion ID and Label above**, never on the name — the name is
+a display label and can be changed at will, while the ID and label are fixed.
+
+Conversion value lives on the conversion action in Google Ads (currently `$50`),
+deliberately *not* in the dataLayer. Close rates differ per channel, so a single
+shared number would be wrong for at least one of them; each platform owns its
+own. Change it in the Google Ads UI — no deploy needed.
 
 `NEXT_PUBLIC_GTM_CONTAINER_ID` must be set in Vercel (Production + Preview).
 Until it is, the loader is a silent no-op — GTM never loads, and no tag fires.
